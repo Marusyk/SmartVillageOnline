@@ -53,6 +53,29 @@
     <Compile Include="Abstract\BaseDictionary.cs" />
     <Compile Include="Abstract\BaseEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\Dictionaries\ActivityTypes.cs" />
+    <Compile Include="Entities\Dictionaries\Address.cs" />
+    <Compile Include="Entities\Dictionaries\Animals.cs" />
+    <Compile Include="Entities\Dictionaries\City.cs" />
+    <Compile Include="Entities\Dictionaries\CityType.cs" />
+    <Compile Include="Entities\Dictionaries\Companies.cs" />
+    <Compile Include="Entities\Dictionaries\Country.cs" />
+    <Compile Include="Entities\Dictionaries\District.cs" />
+    <Compile Include="Entities\Dictionaries\DocumentType.cs" />
+    <Compile Include="Entities\Dictionaries\EducationDegree.cs" />
+    <Compile Include="Entities\Dictionaries\FamilyRelations.cs" />
+    <Compile Include="Entities\Dictionaries\FamilyStatus.cs" />
+    <Compile Include="Entities\Dictionaries\Institution.cs" />
+    <Compile Include="Entities\Dictionaries\Materials.cs" />
+    <Compile Include="Entities\Dictionaries\Nationality.cs" />
+    <Compile Include="Entities\Dictionaries\PassAuthority.cs" />
+    <Compile Include="Entities\Dictionaries\PensionType.cs" />
+    <Compile Include="Entities\Dictionaries\Person.cs" />
+    <Compile Include="Entities\Dictionaries\Position.cs" />
+    <Compile Include="Entities\Dictionaries\Region.cs" />
+    <Compile Include="Entities\Dictionaries\Specialities.cs" />
+    <Compile Include="Entities\Dictionaries\Street.cs" />
+    <Compile Include="Entities\Dictionaries\StreetType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mapping\" />
