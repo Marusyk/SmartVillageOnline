@@ -76,6 +76,13 @@
     <Compile Include="Entities\Dictionaries\Specialities.cs" />
     <Compile Include="Entities\Dictionaries\Street.cs" />
     <Compile Include="Entities\Dictionaries\StreetType.cs" />
+    <Compile Include="Entities\Catalog.cs" />
+    <Compile Include="Entities\Document.cs" />
+    <Compile Include="Entities\Education.cs" />
+    <Compile Include="Entities\Employment.cs" />
+    <Compile Include="Entities\House.cs" />
+    <Compile Include="Entities\People.cs" />
+    <Compile Include="Entities\PersonDocuments.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mapping\" />
