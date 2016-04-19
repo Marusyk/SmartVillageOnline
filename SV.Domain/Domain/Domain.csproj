@@ -83,6 +83,7 @@
     <Compile Include="Entities\House.cs" />
     <Compile Include="Entities\People.cs" />
     <Compile Include="Entities\PersonDocuments.cs" />
+    <Compile Include="Entities\SystemEntities\SYS_Dictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mapping\" />
