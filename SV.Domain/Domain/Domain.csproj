@@ -53,6 +53,29 @@
     <Compile Include="Abstract\BaseDictionary.cs" />
     <Compile Include="Abstract\BaseEntity.cs" />
     <Compile Include="Mapping\CatalogMap.cs" />
+    <Compile Include="Mapping\Dictionaries\ActivityTypesMap.cs" />
+    <Compile Include="Mapping\Dictionaries\AddressMap.cs" />
+    <Compile Include="Mapping\Dictionaries\AnimalsMap.cs" />
+    <Compile Include="Mapping\Dictionaries\CityMap.cs" />
+    <Compile Include="Mapping\Dictionaries\CityTypeMap.cs" />
+    <Compile Include="Mapping\Dictionaries\CompaniesMap.cs" />
+    <Compile Include="Mapping\Dictionaries\CountryMap.cs" />
+    <Compile Include="Mapping\Dictionaries\DistrictMap.cs" />
+    <Compile Include="Mapping\Dictionaries\DocumentTypeMap.cs" />
+    <Compile Include="Mapping\Dictionaries\EducationDegreeMap.cs" />
+    <Compile Include="Mapping\Dictionaries\FamilyRelationsMap.cs" />
+    <Compile Include="Mapping\Dictionaries\FamilyStatusMap.cs" />
+    <Compile Include="Mapping\Dictionaries\InstitutionMap.cs" />
+    <Compile Include="Mapping\Dictionaries\MaterialsMap.cs" />
+    <Compile Include="Mapping\Dictionaries\NationalityMap.cs" />
+    <Compile Include="Mapping\Dictionaries\PassAuthorityMap.cs" />
+    <Compile Include="Mapping\Dictionaries\PensionTypeMap.cs" />
+    <Compile Include="Mapping\Dictionaries\PersonMap.cs" />
+    <Compile Include="Mapping\Dictionaries\PositionMap.cs" />
+    <Compile Include="Mapping\Dictionaries\RegionMap.cs" />
+    <Compile Include="Mapping\Dictionaries\SpecialitiesMap.cs" />
+    <Compile Include="Mapping\Dictionaries\StreetMap.cs" />
+    <Compile Include="Mapping\Dictionaries\StreetTypeMap.cs" />
     <Compile Include="Mapping\DocumentMap.cs" />
     <Compile Include="Mapping\EducationMap.cs" />
     <Compile Include="Mapping\EmploymentMap.cs" />
@@ -93,9 +116,7 @@
     <Compile Include="Entities\PersonDocuments.cs" />
     <Compile Include="Entities\SystemEntities\SYS_Dictionary.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mapping\Dictionaries\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
