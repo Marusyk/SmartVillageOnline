@@ -13,7 +13,7 @@ Build status: [![Build status](https://ci.appveyor.com/api/projects/status/77fhs
 
 **IIІ. Аrchitecture** <br>
 В загальному архітектура має такий вигляд:
-![Image of Yaktocat](https://lh6.googleusercontent.com/--VOYXxebqBo/VZIypud6VzI/AAAAAAAAIxk/6fVmc3awbYA/w800-h600-no/Smart%2BVillage%2B-%2BOnline%2B%2BGetting%2BStart.jpg)
+![Image of Yaktocat](https://lh3.googleusercontent.com/Pv6XVXFPh5dS_4SByhewqwD-kBAc2pScTLktbKyDicnyA5eu2cmYvBOgWskRJ7JdY7NF=w1600-h900-rw-no)
 
 Більш детальна схема архітектури
 
