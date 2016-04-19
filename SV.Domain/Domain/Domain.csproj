@@ -52,6 +52,13 @@
   <ItemGroup>
     <Compile Include="Abstract\BaseDictionary.cs" />
     <Compile Include="Abstract\BaseEntity.cs" />
+    <Compile Include="Mapping\CatalogMap.cs" />
+    <Compile Include="Mapping\DocumentMap.cs" />
+    <Compile Include="Mapping\EducationMap.cs" />
+    <Compile Include="Mapping\EmploymentMap.cs" />
+    <Compile Include="Mapping\HouseMap.cs" />
+    <Compile Include="Mapping\PeopleMap.cs" />
+    <Compile Include="Mapping\PersonDocumentsMap.cs" />
     <Compile Include="Mapping\SystemEntities\DictionaryMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Dictionaries\ActivityTypes.cs" />
