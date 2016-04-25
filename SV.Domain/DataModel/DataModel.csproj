@@ -121,7 +121,12 @@
     <Compile Include="Entities\PersonDocuments.cs" />
     <Compile Include="Entities\SystemEntities\SYS_Dictionary.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\SV.Common\DependencyResolver\DependencyResolver.csproj">
+      <Project>{fe2f9c04-ddae-4be3-a3ef-de22d30b2a04}</Project>
+      <Name>DependencyResolver</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
