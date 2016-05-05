@@ -57,5 +57,44 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="Indexes" />
+    <Folder Include="ForeignConstraints" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\ActivityType.sql" />
+    <Build Include="Tables\District.sql" />
+    <Build Include="Tables\Country.sql" />
+    <Build Include="Tables\Company.sql" />
+    <Build Include="Tables\CityType.sql" />
+    <Build Include="Tables\City.sql" />
+    <Build Include="Tables\Catalog.sql" />
+    <Build Include="Tables\Animal.sql" />
+    <Build Include="Tables\Address.sql" />
+    <Build Include="Tables\SYS_Dictionary.sql" />
+    <Build Include="Tables\SYS_Administration.sql" />
+    <Build Include="Tables\StreetType.sql" />
+    <Build Include="Tables\Speciality.sql" />
+    <Build Include="Tables\Position.sql" />
+    <Build Include="Tables\PassAuthority.sql" />
+    <Build Include="Tables\Nationality.sql" />
+    <Build Include="Tables\Material.sql" />
+    <Build Include="Tables\PensionType.sql" />
+    <Build Include="Tables\FamilyStatus.sql" />
+    <Build Include="Tables\FamilyRelations.sql" />
+    <Build Include="Tables\EducationDegree.sql" />
+    <Build Include="Tables\Street.sql" />
+    <Build Include="Tables\Region.sql" />
+    <Build Include="Tables\PersonDocument.sql" />
+    <Build Include="Tables\Document.sql" />
+    <Build Include="Tables\DocumentType.sql" />
+    <Build Include="Tables\Institution.sql" />
+    <Build Include="Tables\Person.sql" />
+    <Build Include="Tables\People.sql" />
+    <Build Include="Tables\House.sql" />
+    <Build Include="Tables\Employment.sql" />
+    <Build Include="Tables\Education.sql" />
+    <Build Include="Indexes\City_IDX_Region.sql" />
+    <Build Include="ForeignConstraints\FK_City_Region_RegionID.sql" />
   </ItemGroup>
 </Project>
