@@ -1,6 +1,6 @@
-﻿using Domain.Abstract;
+﻿using DataModel.Abstract;
 
-namespace Domain.Entities.SystemEntities
+namespace DataModel.Entities.SystemEntities
 {
     public class SYS_Dictionary : BaseEntity
     {

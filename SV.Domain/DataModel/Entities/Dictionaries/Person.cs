@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
-using Domain.Abstract;
+using DataModel.Abstract;
 
-namespace Domain.Entities.Dictionaries
+namespace DataModel.Entities.Dictionaries
 {
     public class Person : BaseEntity
     {
@@ -74,7 +74,7 @@ namespace Domain.Entities.Dictionaries
         public virtual ICollection<Education> Educations { get; set; }
 
         [IgnoreDataMember]
-        public virtual ICollection<PersonDocuments> PersonDocuments { get; set; }
+        public virtual ICollection<PersonDocument> PersonDocuments { get; set; }
 
         [IgnoreDataMember]
         public virtual ICollection<Employment> Employments { get; set; }

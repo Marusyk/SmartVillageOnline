@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using Domain.Entities.SystemEntities;
+using DataModel.Entities.SystemEntities;
 
-namespace Domain.Mapping.SystemEntities
+namespace DataModel.Mapping.SystemEntities
 {
     public class DictionaryMap : EntityTypeConfiguration<SYS_Dictionary>
     {

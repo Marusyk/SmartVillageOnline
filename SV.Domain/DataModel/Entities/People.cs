@@ -1,8 +1,8 @@
 ﻿using System;
-using Domain.Abstract;
-using Domain.Entities.Dictionaries;
+using DataModel.Abstract;
+using DataModel.Entities.Dictionaries;
 
-namespace Domain.Entities
+namespace DataModel.Entities
 {
     public class People : BaseEntity
     {

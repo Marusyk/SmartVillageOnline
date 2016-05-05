@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domain.Abstract
+namespace DataModel.Abstract
 {
     public abstract class BaseEntity
     {

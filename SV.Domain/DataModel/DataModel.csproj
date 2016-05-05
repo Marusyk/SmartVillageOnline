@@ -7,8 +7,8 @@
     <ProjectGuid>{15B3351F-8F54-44BB-936E-2FAAB1BA88A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain</RootNamespace>
-    <AssemblyName>Domain</AssemblyName>
+    <RootNamespace>DataModel</RootNamespace>
+    <AssemblyName>DataModel</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,6 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -53,14 +54,15 @@
   <ItemGroup>
     <Compile Include="Abstract\BaseDictionary.cs" />
     <Compile Include="Abstract\BaseEntity.cs" />
-    <Compile Include="Concrete\EFDbContext.cs" />
+    <Compile Include="DBContext\EFDbContext.cs" />
+    <Compile Include="DepenencyResolver.cs" />
     <Compile Include="Mapping\CatalogMap.cs" />
-    <Compile Include="Mapping\Dictionaries\ActivityTypesMap.cs" />
+    <Compile Include="Mapping\Dictionaries\ActivityTypeMap.cs" />
     <Compile Include="Mapping\Dictionaries\AddressMap.cs" />
-    <Compile Include="Mapping\Dictionaries\AnimalsMap.cs" />
+    <Compile Include="Mapping\Dictionaries\AnimalMap.cs" />
     <Compile Include="Mapping\Dictionaries\CityMap.cs" />
     <Compile Include="Mapping\Dictionaries\CityTypeMap.cs" />
-    <Compile Include="Mapping\Dictionaries\CompaniesMap.cs" />
+    <Compile Include="Mapping\Dictionaries\CompanyMap.cs" />
     <Compile Include="Mapping\Dictionaries\CountryMap.cs" />
     <Compile Include="Mapping\Dictionaries\DistrictMap.cs" />
     <Compile Include="Mapping\Dictionaries\DocumentTypeMap.cs" />
@@ -68,14 +70,14 @@
     <Compile Include="Mapping\Dictionaries\FamilyRelationsMap.cs" />
     <Compile Include="Mapping\Dictionaries\FamilyStatusMap.cs" />
     <Compile Include="Mapping\Dictionaries\InstitutionMap.cs" />
-    <Compile Include="Mapping\Dictionaries\MaterialsMap.cs" />
+    <Compile Include="Mapping\Dictionaries\MaterialMap.cs" />
     <Compile Include="Mapping\Dictionaries\NationalityMap.cs" />
     <Compile Include="Mapping\Dictionaries\PassAuthorityMap.cs" />
     <Compile Include="Mapping\Dictionaries\PensionTypeMap.cs" />
     <Compile Include="Mapping\Dictionaries\PersonMap.cs" />
     <Compile Include="Mapping\Dictionaries\PositionMap.cs" />
     <Compile Include="Mapping\Dictionaries\RegionMap.cs" />
-    <Compile Include="Mapping\Dictionaries\SpecialitiesMap.cs" />
+    <Compile Include="Mapping\Dictionaries\SpecialityMap.cs" />
     <Compile Include="Mapping\Dictionaries\StreetMap.cs" />
     <Compile Include="Mapping\Dictionaries\StreetTypeMap.cs" />
     <Compile Include="Mapping\DocumentMap.cs" />
@@ -83,18 +85,15 @@
     <Compile Include="Mapping\EmploymentMap.cs" />
     <Compile Include="Mapping\HouseMap.cs" />
     <Compile Include="Mapping\PeopleMap.cs" />
-    <Compile Include="Mapping\PersonDocumentsMap.cs" />
+    <Compile Include="Mapping\PersonDocumentMap.cs" />
     <Compile Include="Mapping\SystemEntities\DictionaryMap.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Migrations\CustomDbConfiguration.cs" />
-    <Compile Include="Migrations\CustomSqlGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entities\Dictionaries\ActivityTypes.cs" />
+    <Compile Include="Entities\Dictionaries\ActivityType.cs" />
     <Compile Include="Entities\Dictionaries\Address.cs" />
-    <Compile Include="Entities\Dictionaries\Animals.cs" />
+    <Compile Include="Entities\Dictionaries\Animal.cs" />
     <Compile Include="Entities\Dictionaries\City.cs" />
     <Compile Include="Entities\Dictionaries\CityType.cs" />
-    <Compile Include="Entities\Dictionaries\Companies.cs" />
+    <Compile Include="Entities\Dictionaries\Company.cs" />
     <Compile Include="Entities\Dictionaries\Country.cs" />
     <Compile Include="Entities\Dictionaries\District.cs" />
     <Compile Include="Entities\Dictionaries\DocumentType.cs" />
@@ -102,14 +101,14 @@
     <Compile Include="Entities\Dictionaries\FamilyRelations.cs" />
     <Compile Include="Entities\Dictionaries\FamilyStatus.cs" />
     <Compile Include="Entities\Dictionaries\Institution.cs" />
-    <Compile Include="Entities\Dictionaries\Materials.cs" />
+    <Compile Include="Entities\Dictionaries\Material.cs" />
     <Compile Include="Entities\Dictionaries\Nationality.cs" />
     <Compile Include="Entities\Dictionaries\PassAuthority.cs" />
     <Compile Include="Entities\Dictionaries\PensionType.cs" />
     <Compile Include="Entities\Dictionaries\Person.cs" />
     <Compile Include="Entities\Dictionaries\Position.cs" />
     <Compile Include="Entities\Dictionaries\Region.cs" />
-    <Compile Include="Entities\Dictionaries\Specialities.cs" />
+    <Compile Include="Entities\Dictionaries\Speciality.cs" />
     <Compile Include="Entities\Dictionaries\Street.cs" />
     <Compile Include="Entities\Dictionaries\StreetType.cs" />
     <Compile Include="Entities\Catalog.cs" />
@@ -118,8 +117,12 @@
     <Compile Include="Entities\Employment.cs" />
     <Compile Include="Entities\House.cs" />
     <Compile Include="Entities\People.cs" />
-    <Compile Include="Entities\PersonDocuments.cs" />
+    <Compile Include="Entities\PersonDocument.cs" />
     <Compile Include="Entities\SystemEntities\SYS_Dictionary.cs" />
+    <Compile Include="Repository\EFRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SV.Common\DependencyResolver\DependencyResolver.csproj">
@@ -130,6 +133,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

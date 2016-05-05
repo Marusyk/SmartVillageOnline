@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Domain.Abstract;
-using Domain.Entities.Dictionaries;
+using DataModel.Abstract;
+using DataModel.Entities.Dictionaries;
 
-namespace Domain.Entities
+namespace DataModel.Entities
 {
     public class Document : BaseDictionary
     {
@@ -28,6 +28,6 @@ namespace Domain.Entities
         public virtual ICollection<Education> Educations { get; set; }
 
         [IgnoreDataMember]
-        public virtual ICollection<PersonDocuments> PersonDocuments { get; set; }
+        public virtual ICollection<PersonDocument> PersonDocuments { get; set; }
     }
 }

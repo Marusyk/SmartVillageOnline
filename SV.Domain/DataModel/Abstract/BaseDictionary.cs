@@ -1,4 +1,4 @@
-﻿namespace Domain.Abstract
+﻿namespace DataModel.Abstract
 {
     public abstract class BaseDictionary : BaseEntity
     {

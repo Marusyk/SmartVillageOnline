@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Domain.Abstract;
+using DataModel.Abstract;
 
-namespace Domain.Entities.Dictionaries
+namespace DataModel.Entities.Dictionaries
 {
     public class PassAuthority : BaseDictionary
     {

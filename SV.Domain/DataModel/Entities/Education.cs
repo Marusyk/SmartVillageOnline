@@ -1,7 +1,7 @@
-﻿using Domain.Abstract;
-using Domain.Entities.Dictionaries;
+﻿using DataModel.Abstract;
+using DataModel.Entities.Dictionaries;
 
-namespace Domain.Entities
+namespace DataModel.Entities
 {
     public class Education : BaseEntity
     {
@@ -24,7 +24,7 @@ namespace Domain.Entities
         //FK
         public virtual Person Person { get; set; }
         public virtual Institution Institution { get; set; }
-        public virtual Specialities Specialities { get; set; }
+        public virtual Speciality Speciality { get; set; }
         public virtual EducationDegree EducationDegree { get; set; }
         public virtual Document Document { get; set; }
     }

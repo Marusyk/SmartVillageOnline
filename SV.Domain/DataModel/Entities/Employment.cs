@@ -1,8 +1,8 @@
 ﻿using System;
-using Domain.Abstract;
-using Domain.Entities.Dictionaries;
+using DataModel.Abstract;
+using DataModel.Entities.Dictionaries;
 
-namespace Domain.Entities
+namespace DataModel.Entities
 {
     public class Employment : BaseEntity
     {
@@ -24,8 +24,8 @@ namespace Domain.Entities
 
         //FK
         public virtual Person Person { get; set; }
-        public virtual ActivityTypes ActivityTypes { get; set; }
-        public virtual Companies Company { get; set; }
+        public virtual ActivityType ActivityType { get; set; }
+        public virtual Company Company { get; set; }
         public virtual Position Position { get; set; }
     }
 }

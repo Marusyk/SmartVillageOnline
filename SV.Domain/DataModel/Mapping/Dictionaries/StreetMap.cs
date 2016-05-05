@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using Domain.Entities.Dictionaries;
+using DataModel.Entities.Dictionaries;
 
-namespace Domain.Mapping.Dictionaries
+namespace DataModel.Mapping.Dictionaries
 {
     public class StreetMap : EntityTypeConfiguration<Street>
     {

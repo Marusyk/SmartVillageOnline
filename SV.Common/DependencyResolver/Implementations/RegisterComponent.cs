@@ -1,4 +1,5 @@
-﻿using DependencyResolution.Interfaces;
+﻿using System;
+using DependencyResolution.Interfaces;
 using Microsoft.Practices.Unity;
 
 namespace DependencyResolution.Implementations
@@ -22,6 +23,11 @@ namespace DependencyResolution.Implementations
             {
                 _container.RegisterType<TFrom, TTo>();
             }
+        }
+
+        public void RegisterType(Type typeFrom, Type typeTo)
+        {
+            _container.RegisterType(typeFrom, typeTo);
         }
 
         public void RegisterTypeWithControlledLifeTime<TFrom, TTo>(bool withInterception = false) where TTo : TFrom

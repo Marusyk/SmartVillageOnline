@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using Domain.Entities;
+using DataModel.Entities;
 
-namespace Domain.Mapping
+namespace DataModel.Mapping
 {
     public class EducationMap : EntityTypeConfiguration<Education>
     {
