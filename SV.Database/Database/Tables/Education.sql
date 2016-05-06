@@ -3,7 +3,7 @@
 	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
 ,   [PersonId] [int] NOT NULL
 ,   [InstitutionId] [int] NOT NULL
-,   [SpecialitiesId] [int] NULL
+,   [SpecialityId] [int] NULL
 ,   [EducationDegreeId] [int] NULL
 ,   [StartYear] [int] NULL
 ,   [EndYear] [int] NULL  

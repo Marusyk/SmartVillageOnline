@@ -2,7 +2,7 @@
 (
 	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
 ,   [PersonId] [int] NOT NULL
-,   [ActivityTypesId] [int] NULL
+,   [ActivityTypeId] [int] NULL
 ,   [CompanyId] [int] NULL
 ,   [PositionId] [int] NULL
 ,   [DateStart] [smalldatetime] NULL
