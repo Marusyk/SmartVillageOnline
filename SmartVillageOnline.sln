@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "SV.WebUI\WebAPI\W
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SV.Database", "SV.Database", "{9D3EF112-37AE-4E60-96F7-097ACA64A9B6}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{AFF22242-9C12-444D-ACBC-DB97F03766FC}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "SV.Database\Database\Database.sqlproj", "{AFF22242-9C12-444D-ACBC-DB97F03766FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
