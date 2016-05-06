@@ -6,7 +6,7 @@
 ,   [DataBaseName] [nvarchar](100)
 ,   [SVVersion] [nvarchar](50) NOT NULL
 ,   [DBVersion] [nvarchar](50) NOT NULL
-,   [DataBaseGUID] [uniqueidentifier]
-,   [LastUpdDT] [smalldatetime] NOT NULL
-,   [LastUpdUS] [nvarchar](50) NOT NULL
+,   [DataBaseGuid] [uniqueidentifier]
+,   [LastUpdDt] [smalldatetime] NOT NULL
+,   [LastUpdUs] [nvarchar](50) NOT NULL	
 )

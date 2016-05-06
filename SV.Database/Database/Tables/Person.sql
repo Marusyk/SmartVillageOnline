@@ -26,6 +26,6 @@
 ,   [DatFirstName] [nvarchar](60) NULL
 ,   [DatName] [nvarchar](60) NULL
 ,   [DatLastName] [nvarchar](60) NULL
-,   [LastUpdDT] [smalldatetime] NOT NULL
-,   [LastUpdUS] [nvarchar](50) NOT NULL	
+,   [LastUpdDt] [smalldatetime] NOT NULL
+,   [LastUpdUs] [nvarchar](50) NOT NULL	
 )
