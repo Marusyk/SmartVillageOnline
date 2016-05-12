@@ -1,4 +1,4 @@
 ﻿CREATE NONCLUSTERED INDEX [City_IDX_Region] ON [dbo].[City]
 (
-  [RegionID] ASC
+  [RegionId] ASC
 ) ON [PRIMARY]

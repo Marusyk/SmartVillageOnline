@@ -62,6 +62,9 @@
     <Folder Include="Tables" />
     <Folder Include="Indexes" />
     <Folder Include="ForeignConstraints" />
+    <Folder Include="Views" />
+    <Folder Include="Procedures" />
+    <Folder Include="PostDeployment" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\ActivityType.sql" />
@@ -130,8 +133,32 @@
     <Build Include="ForeignConstraints\FK_PersonDocuments_Document_DocumentID.sql" />
     <Build Include="ForeignConstraints\FK_Person_PassAuthority_PassAuthorityId.sql" />
     <Build Include="ForeignConstraints\FK_PersonDocument_Person_PersonID.sql" />
+    <Build Include="Views\AddressView.sql" />
+    <Build Include="Procedures\usp_PeopleSetMain.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
+    <None Include="PostDeployment\Animal.sql" />
+    <None Include="PostDeployment\SYS_Dictionary.sql" />
+    <None Include="PostDeployment\Catalog.sql" />
+    <None Include="PostDeployment\DocumentType.sql" />
+    <None Include="PostDeployment\FamilyRelations.sql" />
+    <None Include="PostDeployment\FamilyStatus.sql" />
+    <None Include="PostDeployment\Material.sql" />
+    <None Include="PostDeployment\Nationality.sql" />
+    <None Include="PostDeployment\Country.sql" />
+    <None Include="PostDeployment\Region.sql" />
+    <None Include="PostDeployment\District.sql" />
+    <None Include="PostDeployment\CityType.sql" />
+    <None Include="PostDeployment\StreetType.sql" />
+    <None Include="PostDeployment\City.sql" />
+    <None Include="PostDeployment\Street.sql" />
+    <None Include="PostDeployment\Address.sql" />
+    <None Include="PostDeployment\House.sql" />
+    <None Include="PostDeployment\Person.sql" />
+    <None Include="PostDeployment\People.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostDeployment.sql" />
   </ItemGroup>
 </Project>
