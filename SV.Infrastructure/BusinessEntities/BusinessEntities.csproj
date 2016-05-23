@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,10 +44,19 @@
     <Compile Include="BaseBusinessEntities\BaseBusinessEntities.cs" />
     <Compile Include="BaseBusinessEntities\BaseDictionaryEntity.cs" />
     <Compile Include="Dictionaries\AnimalEntity.cs" />
+    <Compile Include="Dictionaries\CountryEntity.cs" />
+    <Compile Include="Dictionaries\DistrictEntity.cs" />
+    <Compile Include="Dictionaries\RegionEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SystemEntities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SV.Domain\DataModel\DataModel.csproj">
+      <Project>{15B3351F-8F54-44BB-936E-2FAAB1BA88A2}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

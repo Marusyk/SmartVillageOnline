@@ -8,11 +8,11 @@ namespace DataModel.Mapping.Dictionaries
     {
         public StreetTypeMap()
         {
-            HasKey(t => t.ID);
-            Property(t => t.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(t => t.Id);
+            Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(t => t.Name).IsRequired().HasMaxLength(50);
             HasMany(a => a.Streets).WithRequired(p => p.StreetType).HasForeignKey(p => p.StreetTypeID);
-            Property(t => t.LastUpdUS).IsRequired().HasMaxLength(50);
+            Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
             ToTable("StreetType");
         }
     }

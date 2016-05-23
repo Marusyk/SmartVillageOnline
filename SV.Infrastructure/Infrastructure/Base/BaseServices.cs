@@ -15,11 +15,11 @@ namespace Infrastructure
 {
     public abstract class BaseServices<TEntity, TBase> : IServices<TEntity> where TEntity : class where TBase: BaseEntity
     {
-        protected readonly UnitOfWork _unitOfWork;
+        protected readonly UnitOfWork UnitOfWork;
 
         protected BaseServices(UnitOfWork unitOfWork)
         {
-            _unitOfWork = unitOfWork;
+            UnitOfWork = unitOfWork;
         }
 
         public IEnumerable<TEntity> Get()
@@ -34,17 +34,19 @@ namespace Infrastructure
 
         public TEntity GetById(object id)
         {
-            var animal = _unitOfWork.Repository<TBase>().GetById(id);
+            var entity = UnitOfWork.Repository<TBase>().GetById(id);
 
-            if (animal == null)
+            if (entity == null)
                 return null;
+
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<TBase, TEntity>();
             });
             var mapper = config.CreateMapper();
-            var animalModel = mapper.Map<TBase, TEntity>(animal);
-            return animalModel;
+            var entityModel = mapper.Map<TBase, TEntity>(entity);
+
+            return entityModel;
         }
 
         public TEntity Get(Func<TEntity, bool> @where)

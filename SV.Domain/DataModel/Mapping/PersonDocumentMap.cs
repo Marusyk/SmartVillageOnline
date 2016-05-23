@@ -8,11 +8,11 @@ namespace DataModel.Mapping
     {
         public PersonDocumentMap()
         {
-            HasKey(t => t.ID);
-            Property(t => t.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(t => t.Id);
+            Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(t => t.DocumentID).IsRequired();
             Property(t => t.PersonID).IsRequired();
-            Property(t => t.LastUpdUS).IsRequired().HasMaxLength(50);
+            Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
             ToTable("PersonDocument");
         }
     }

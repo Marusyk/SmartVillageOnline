@@ -48,6 +48,8 @@
     <Compile Include="Dictionaries\AnimalService.cs" />
     <Compile Include="Base\BaseServices.cs" />
     <Compile Include="DependencyResolver.cs" />
+    <Compile Include="Dictionaries\CountryService.cs" />
+    <Compile Include="Dictionaries\RegionService.cs" />
     <Compile Include="Interfaces\IServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -4,8 +4,10 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessEntities.Dictionaries;
 using DependencyResolution.Interfaces;
 using DataModel.Abstract;
+using Infrastructure.Dictionaries;
 using Infrastructure.Interfaces;
 
 namespace Infrastructure
@@ -15,7 +17,9 @@ namespace Infrastructure
     {
         public void SetUp(IRegisterComponent registerComponent)
         {
-            registerComponent.RegisterType(typeof(IServices<>), typeof(AnimalService));
-        }
+            registerComponent.RegisterType(typeof(IServices<AnimalEntity>), typeof(AnimalService));
+			registerComponent.RegisterType(typeof(IServices<CountryEntity>), typeof(CountryService));
+			registerComponent.RegisterType(typeof(IServices<RegionEntity>), typeof(RegionService));
+		}
     }
 }

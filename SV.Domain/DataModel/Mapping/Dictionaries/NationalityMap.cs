@@ -8,11 +8,11 @@ namespace DataModel.Mapping.Dictionaries
     {
         public NationalityMap()
         {
-            HasKey(t => t.ID);
-            Property(t => t.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(t => t.Id);
+            Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(t => t.Name).IsRequired().HasMaxLength(50);
             HasMany(a => a.Persons).WithOptional(p => p.Nationality).HasForeignKey(p => p.NationalityId);
-            Property(t => t.LastUpdUS).IsRequired().HasMaxLength(50);
+            Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
             ToTable("Nationality");
         }
     }

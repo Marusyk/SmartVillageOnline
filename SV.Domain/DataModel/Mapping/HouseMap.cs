@@ -8,8 +8,8 @@ namespace DataModel.Mapping
     {
         public HouseMap()
         {
-            HasKey(t => t.ID);
-            Property(t => t.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(t => t.Id);
+            Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(t => t.HouseNr).IsRequired().HasMaxLength(10);
             Property(t => t.KadastrNr).HasMaxLength(30);
             Property(t => t.BuildNr).IsRequired().HasMaxLength(10);
@@ -19,7 +19,7 @@ namespace DataModel.Mapping
             Property(t => t.FaxNr).HasMaxLength(12);
             Property(t => t.Code).HasMaxLength(50);
             HasMany(a => a.Peoples).WithRequired(p => p.Houses).HasForeignKey(p => p.HouseID);
-            Property(t => t.LastUpdUS).IsRequired().HasMaxLength(50);
+            Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
             ToTable("House");
         }
     }
