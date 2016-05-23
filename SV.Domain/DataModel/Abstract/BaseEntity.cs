@@ -6,14 +6,14 @@ namespace DataModel.Abstract
     {
         protected BaseEntity()
         {
-            LastUpdUS = "SV";
-            LastUpdDT = DateTime.Now;
+            LastUpdUs = "SV";
+            LastUpdDt = DateTime.Now;
         }
 
-        public int ID { get; set; }
+        public int Id { get; set; }
         
-        public DateTime LastUpdDT { get; set; }
+        public DateTime LastUpdDt { get; set; }
 
-        public string LastUpdUS { get; set; }
+        public string LastUpdUs { get; set; }
     }
 }

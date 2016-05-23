@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BusinessEntities.BaseBusinessEntities
 {
-    class BaseDictionaryEntity
+    public class BaseDictionaryEntity
     {
+        public string Name { get; set; }
     }
 }
