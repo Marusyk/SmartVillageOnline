@@ -8,7 +8,7 @@ using DataModel.Entities.Dictionaries;
 using DataModel.UnitOfWork;
 
 namespace Infrastructure.Dictionaries {
-	public class CountryService : BaseServices<CountryEntity, Country>
+	public class CountryService : BaseServices<Country, CountryEntity>
 	{
 		public CountryService(UnitOfWork unitOfWork) : base(unitOfWork)
         {

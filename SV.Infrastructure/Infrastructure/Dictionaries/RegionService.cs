@@ -8,7 +8,7 @@ using DataModel.Entities.Dictionaries;
 using DataModel.UnitOfWork;
 
 namespace Infrastructure.Dictionaries {
-	public class RegionService : BaseServices<RegionEntity, Region> 
+	public class RegionService : BaseServices<Region, RegionEntity> 
 	{
 		public RegionService(UnitOfWork unitOfWork) : base(unitOfWork) 
 		{

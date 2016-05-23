@@ -37,7 +37,15 @@ namespace WebAPI.Infrastructure {
 		// Get all entities
 		public HttpResponseMessage Get() 
 		{
-			throw new NotImplementedException();
+			var entities = EntityServices.GetAll();
+
+			if (entities != null) 
+			{
+				return Request.CreateResponse(HttpStatusCode.OK, entities);
+			}
+
+			var message = $"{GenericTypeName}: No content";
+			return ErrorMsg(HttpStatusCode.NoContent, message);
 		}
 
 		// Get entity with paging

@@ -13,7 +13,7 @@ using Infrastructure.Interfaces;
 
 namespace Infrastructure
 {
-    public abstract class BaseServices<TEntity, TBase> : IServices<TEntity> where TEntity : class where TBase: BaseEntity
+    public abstract class BaseServices<TEntity, TBusinessEntity> : IServices<TBusinessEntity> where TBusinessEntity : class where TEntity: BaseEntity
     {
         protected readonly UnitOfWork UnitOfWork;
 
@@ -22,59 +22,75 @@ namespace Infrastructure
             UnitOfWork = unitOfWork;
         }
 
-        public IEnumerable<TEntity> Get()
-        {
-            throw new NotImplementedException();
+        public IEnumerable<TBusinessEntity> Get() 
+		{
+	        var entities = UnitOfWork.Repository<TEntity>().Get();
+
+	       // if (entities == null)
+		        return null;
+			
+			
         }
 
-        public IEnumerable<TEntity> GetAll()
-        {
-            throw new NotImplementedException();
+        public IEnumerable<TBusinessEntity> GetAll() {
+
+	        var entities = UnitOfWork.Repository<TEntity>().GetAll().ToList();
+
+	        if (!entities.Any()) 
+				return null;
+
+	        var config = new MapperConfiguration(cfg =>
+	        {
+				cfg.CreateMap<TEntity, TBusinessEntity>();
+	        });
+	        var mapper = config.CreateMapper();
+	        var entitiesModel = mapper.Map<List<TEntity>, List<TBusinessEntity>>(entities);
+	        return entitiesModel;
         }
 
-        public TEntity GetById(object id)
+        public TBusinessEntity GetById(object id)
         {
-            var entity = UnitOfWork.Repository<TBase>().GetById(id);
+            var entity = UnitOfWork.Repository<TEntity>().GetById(id);
 
             if (entity == null)
                 return null;
 
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<TBase, TEntity>();
+                cfg.CreateMap<TEntity, TBusinessEntity>();
             });
             var mapper = config.CreateMapper();
-            var entityModel = mapper.Map<TBase, TEntity>(entity);
+            var entityModel = mapper.Map<TEntity, TBusinessEntity>(entity);
 
             return entityModel;
         }
 
-        public TEntity Get(Func<TEntity, bool> @where)
+        public TBusinessEntity Get(Func<TBusinessEntity, bool> @where)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<TEntity> GetMany(Func<TEntity, bool> @where)
+        public IEnumerable<TBusinessEntity> GetMany(Func<TBusinessEntity, bool> @where)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<TEntity> GetManyQueryable(Func<TEntity, bool> @where)
+        public IQueryable<TBusinessEntity> GetManyQueryable(Func<TBusinessEntity, bool> @where)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<TEntity> GetWithInclude(Expression<Func<TEntity, bool>> predicate, params string[] include)
+        public IQueryable<TBusinessEntity> GetWithInclude(Expression<Func<TBusinessEntity, bool>> predicate, params string[] include)
         {
             throw new NotImplementedException();
         }
 
-        public TEntity GetSingle(Func<TEntity, bool> predicate)
+        public TBusinessEntity GetSingle(Func<TBusinessEntity, bool> predicate)
         {
             throw new NotImplementedException();
         }
 
-        public TEntity GetFirst(Func<TEntity, bool> predicate)
+        public TBusinessEntity GetFirst(Func<TBusinessEntity, bool> predicate)
         {
             throw new NotImplementedException();
         }
@@ -84,17 +100,17 @@ namespace Infrastructure
             throw new NotImplementedException();
         }
 
-        public void Insert(TEntity entity)
+        public void Insert(TBusinessEntity entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(TEntity entityToUpdate)
+        public void Update(TBusinessEntity entityToUpdate)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(TEntity entityToDelete)
+        public void Delete(TBusinessEntity entityToDelete)
         {
             throw new NotImplementedException();
         }
