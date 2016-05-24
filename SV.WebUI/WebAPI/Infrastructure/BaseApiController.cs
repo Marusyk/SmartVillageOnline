@@ -74,15 +74,21 @@ namespace WebAPI.Infrastructure {
 		}
 
 		// Remove the entity by ID
-		public HttpResponseMessage Delete(int id) 
-		{
-			throw new NotImplementedException();
+		public HttpResponseMessage Delete(int id) {
+			if (id <= 0)
+				return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
+			var result = EntityServices.Delete(id);
+			var message = $"{GenericTypeName} with ID = {id} was " + (result ? "deleted" : "not deleted");
+			return result ? Request.CreateResponse(HttpStatusCode.OK, message) : ErrorMsg(HttpStatusCode.InternalServerError, message);
 		}
 
 		// Update the entity
 		public HttpResponseMessage Put(int id, [FromBody] T entity) 
 		{
-			throw new NotImplementedException();
+			if (id <= 0)
+				return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
+			var result = EntityServices.Update(id, entity);
+			return result ? Request.CreateResponse(HttpStatusCode.OK, "GOOOD") : ErrorMsg(HttpStatusCode.InternalServerError, "FAIL"); ;
 		}
 		#endregion
 	}

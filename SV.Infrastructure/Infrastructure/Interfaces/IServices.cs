@@ -17,9 +17,9 @@ namespace Infrastructure.Interfaces
         TEntity GetSingle(Func<TEntity, bool> predicate);
         TEntity GetFirst(Func<TEntity, bool> predicate);
         bool Exists(object primaryKey);
-        void Insert(TEntity entity);
-        void Update(TEntity entityToUpdate);
-        void Delete(TEntity entityToDelete);
-        void Delete(object id);
+        int Insert(TEntity entity);
+        bool Update(int id, TEntity entityToUpdate);
+        bool Delete(TEntity entityToDelete);
+        bool Delete(object id);
     }
 }

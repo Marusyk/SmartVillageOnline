@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using AutoMapper;
 using BusinessEntities.Dictionaries;
 using DataModel.Abstract;
@@ -100,24 +101,73 @@ namespace Infrastructure
             throw new NotImplementedException();
         }
 
-        public void Insert(TBusinessEntity entity)
+        public int Insert(TBusinessEntity entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(TBusinessEntity entityToUpdate)
-        {
-            throw new NotImplementedException();
+        public bool Update(int id, TBusinessEntity entityToUpdate) 
+		{
+	        var success = false;
+	        if (entityToUpdate != null) 
+			{
+		        using (var scope = new TransactionScope()) 
+				{
+			        var entity = UnitOfWork.Repository<TEntity>().GetById(id);
+			        if (entity != null) 
+					{
+						var config = new MapperConfiguration(cfg =>
+						{
+							cfg.CreateMap<TBusinessEntity, TEntity>();
+						});
+						var mapper = config.CreateMapper();
+						var entityModel = mapper.Map<TBusinessEntity, TEntity>(entityToUpdate);
+						entity = entityModel;
+						UnitOfWork.Repository<TEntity>().Update(entity);
+						UnitOfWork.Save();
+						scope.Complete();
+				        success = true;
+			        }
+		        }
+	        }
+	        return success;
         }
 
-        public void Delete(TBusinessEntity entityToDelete)
+        public bool Delete(TBusinessEntity entityToDelete)
         {
-            throw new NotImplementedException();
-        }
+			var success = false;
 
-        public void Delete(object id)
-        {
-            throw new NotImplementedException();
+			if (entityToDelete != null) {
+				using (var scope = new TransactionScope()) 
+				{
+					UnitOfWork.Repository<TEntity>().Delete(entityToDelete);
+					UnitOfWork.Save();
+					scope.Complete();
+					success = true;
+				}
+			}
+			return success;
+		}
+
+        public bool Delete(object id) 
+		{
+	        var success = false;
+
+	        if ((int) id > 0) 
+			{
+		        using (var scope = new TransactionScope()) 
+				{
+					var entity = UnitOfWork.Repository<TEntity>().GetById(id);
+					if (entity != null) 
+					{
+						UnitOfWork.Repository<TEntity>().Delete(entity);
+						UnitOfWork.Save();
+				        scope.Complete();
+						success = true;
+					}
+				}
+	        }
+	        return success;
         }
     }
 }
