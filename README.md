@@ -38,37 +38,8 @@ Build status: [![Build status](https://ci.appveyor.com/api/projects/status/77fhs
 **UPDATE** <br>
 З 12.2015 проект повністю перенесено на нову платформу .NET 4.6 де використовується новий компілятор [Roslyn](https://roslyn.codeplex.com/) і синтаксис [C# 6.0](https://msdn.microsoft.com/en-us/magazine/dn683793.aspx)
 
-**V. Subversion** <br>
-Існує 2 Git-репозиторія на GitHub:<br>
-__*SmartVillageOnline*__ - source code <br>
-Містить у собі Visual Studio Solution який складається з трьох проектів:
-* *Domain* - це бібліотека (Class Library) яка містить доменні об’єкти і логіку; підтримує механізм збереження за домогою патернів [Repository](https://msdn.microsoft.com/en-us/library/ff649690.aspx) та [UnitOfWork](http://www.codeproject.com/Articles/581487/Unit-of-Work-Design-Pattern), створених використовуючи Entity Framework. Реалізує Data Layer архітектури.<br>
-* *WebUI* - є проектом ASP.NET [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) 4 Web Application і містить  контролери і представлення; є інтерфейсом додатку і реалізує Presentation layer і Business layer архітектури.<br>
-* *UnitTests* - (Unit Test Project) містить модульні тести для 2-х проектів<br>
+.....
 
-__*SmartVillageOnlineDB*__ - скрипти бази даних, має наступну структуру:
-
- ![Image of Yaktocat](https://lh3.googleusercontent.com/-jycLRblmjS8/VZQ-3t0reQI/AAAAAAAAI0Q/OpfaLwtCWZE/w346-h642/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA%2B%25281%2529.PNG)
-
-**VI. Domain**
-Бібліотека для роботи з даними реалізована на основі [generic](https://en.wikipedia.org/wiki/Generic_programming)-патерну [Repository](https://msdn.microsoft.com/en-us/library/ff649690.aspx) і патерну [UnitOfWork](http://www.codeproject.com/Articles/581487/Unit-of-Work-Design-Pattern) <br>.
-Використовується [MS SQL Server 2014](http://www.microsoft.com/ru-ru/server-cloud/products/sql-server/) та [Entity Framework (EF)](https://msdn.microsoft.com/ru-ru/data/ef.aspx), який є [ORM-платформою](https://en.wikipedia.org/wiki/Object-relational_mapping) .NET. Платформа ORM дозволяє працювати
-з таблицями, стовпцями і рядками в реляційній базі даних за  допомогою звичайних об’єктів C#.
-
- ![Image of Yaktocat](https://lh6.googleusercontent.com/-VJQvvYYF774/VZIyqI3GqmI/AAAAAAAAIxU/gV1jrHnXAgg/w637-h486-no/architecture.png)
- 
-Має таку структуру файлів:
-
- ![Image of Yaktocat](https://lh6.googleusercontent.com/-M0c837M6nT0/VZIyq4ZBwWI/AAAAAAAAIxc/Ymoa__igAUg/w238-h326-no/%25D0%25B0.PNG)
- 
-* *Abstract* - містить generic-інтерфейс IRepository який описує загальну структуру репозиторію і абстрактний базовий клас BaseEntity для всіх таблиць бази даних.  
-* *Concrete* - клас EFDbContext реалізує клас DbContext  який відповідає за підключення до бази даних. EFRepository реалізує інтерфейс IRepository та описує основні операції для роботи з даними. 
-* *Entities* - опис таблиць бази даних
-* *Mapping*  - конфігурація таблиць
-* *Migrations*  - Параметри міграції бази.
-
- ![Image of Yaktocat](https://lh5.googleusercontent.com/-DWt3ouG2rPc/VZIyprKTEgI/AAAAAAAAIxs/fo-ZZY80S4E/w550-h340-no/IC423395.png)
- 
 **VI. UnitTests**<br>
 Проект призначений для створення [юніт-тестів](https://en.wikipedia.org/wiki/Unit_testing). Ми збираємося слідувати підходу [Test-driven development (TDD).](https://en.wikipedia.org/wiki/Test-driven_development)
 <br>
@@ -92,7 +63,7 @@ WebUI - є проектом [ASP.NET MVC.](http://www.asp.net/mvc)<br>
 
  ![Image of Yaktocat](https://lh4.googleusercontent.com/-TMI5OTmsToA/VZIyptvmrUI/AAAAAAAAIxo/wcMIXv_d81k/w763-h134-no/22.PNG)
  
- Але в першу чергу реалізує програний інтерфейс [WebAPI](https://en.wikipedia.org/wiki/Web_API), який дозволяє легко створювати служби [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) для широкого діапазону клієнтів, включаючи браузери і мобільні пристрої. WebUI - є [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) додатком на платформі [.NET Framework](https://en.wikipedia.org/wiki/.NET_Framework).
+ Але в першу чергу реалізує програмний інтерфейс [WebAPI](https://en.wikipedia.org/wiki/Web_API), який дозволяє легко створювати служби [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) для широкого діапазону клієнтів, включаючи браузери і мобільні пристрої. WebUI - є [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) додатком на платформі [.NET Framework](https://en.wikipedia.org/wiki/.NET_Framework).
  <br>
  Реалізація клієнтської частини:
  
