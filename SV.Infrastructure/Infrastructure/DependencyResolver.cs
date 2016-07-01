@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using BusinessEntities.Dictionaries;
 using DependencyResolution.Interfaces;
-using DataModel.Abstract;
 using Infrastructure.Dictionaries;
 using Infrastructure.Interfaces;
 

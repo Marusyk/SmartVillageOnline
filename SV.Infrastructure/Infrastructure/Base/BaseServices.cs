@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Transactions;
 using AutoMapper;
 using BusinessEntities.Dictionaries;
-using DataModel.Abstract;
+using DataModel.Entities.Abstract;
 using DataModel.Entities.Dictionaries;
 using DataModel.UnitOfWork;
 using Infrastructure.Interfaces;

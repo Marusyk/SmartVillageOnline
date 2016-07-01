@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataModel.Abstract;
 using System.Linq.Expressions;
+using DataModel.Entities.Abstract;
 
 namespace DataModel.Repository
 {

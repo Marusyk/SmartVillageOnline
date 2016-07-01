@@ -1,4 +1,4 @@
-﻿using DataModel.Abstract;
+﻿using DataModel.Entities.Abstract;
 
 namespace DataModel.Entities.Dictionaries
 {

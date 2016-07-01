@@ -1,5 +1,4 @@
-﻿using DataModel.Abstract;
-using DataModel.Repository;
+﻿using DataModel.Repository;
 
 namespace DataModel.UnitOfWork
 {

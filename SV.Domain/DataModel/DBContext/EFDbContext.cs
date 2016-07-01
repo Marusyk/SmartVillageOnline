@@ -4,7 +4,8 @@ using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Reflection;
-using DataModel.Abstract;
+using DataModel.Entities.Abstract;
+
 //using DataModel.Migrations;
 
 namespace DataModel.DBContext

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
-using DataModel.Abstract;
 using DataModel.DBContext;
+using DataModel.Entities.Abstract;
 using DataModel.Repository;
 
 namespace DataModel.UnitOfWork

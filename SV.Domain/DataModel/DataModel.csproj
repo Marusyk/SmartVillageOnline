@@ -52,8 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\BaseDictionary.cs" />
-    <Compile Include="Abstract\BaseEntity.cs" />
+    <Compile Include="Entities\Abstract\BaseDictionary.cs" />
+    <Compile Include="Entities\Abstract\BaseEntity.cs" />
     <Compile Include="DBContext\EFDbContext.cs" />
     <Compile Include="DepenencyResolver.cs" />
     <Compile Include="Mapping\CatalogMap.cs" />

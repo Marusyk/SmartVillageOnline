@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using DataModel.Abstract;
+using DataModel.Entities.Abstract;
 
 namespace DataModel.Entities.Dictionaries
 {
