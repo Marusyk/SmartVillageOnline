@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[VillageCouncil]
+(
+	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
+,	[Name] NVARCHAR(250) NOT NULL
+,	[ShortName] NVARCHAR(50) NOT NULL
+,	[AddressId] INT NOT NULL
+,	[EDRPOUCode] NVARCHAR(10)
+)
