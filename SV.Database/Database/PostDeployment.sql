@@ -9,6 +9,8 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+:r .\PostDeployment\EntityType.sql
+GO
 :r .\PostDeployment\SYS_Dictionary.sql
 GO
 :r .\PostDeployment\Animal.sql

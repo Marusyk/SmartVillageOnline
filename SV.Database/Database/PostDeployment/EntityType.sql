@@ -1,0 +1,27 @@
+﻿SET IDENTITY_INSERT [dbo].[EntityType] ON
+
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (1, NULL, N'Адреси', NULL, 'Address')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (2, NULL, N'Тварини', NULL, 'Animal')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (3, NULL, N'Населені пункти', NULL, 'City')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (4, NULL, N'Типи населених пунктів', NULL, 'CityType')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (5, NULL, N'Країни', NULL, 'Country')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (6, NULL, N'Райони', NULL, 'District')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (7, NULL, N'Типи документів', NULL, 'DocumentType')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (8, NULL, N'Родинні відносини', NULL, 'FamilyRelations')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (9, NULL, N'Сімейний стан', NULL, 'FamilyStatus')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (10, NULL, N'Матеріали', NULL, 'Material')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (11, NULL, N'Національності', NULL, 'Nationality')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (12, NULL, N'Орган, який видав документ', NULL, 'PassAuthority')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (13, NULL, N'Види пенсій', NULL, 'PensionType')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (14, NULL, N'Посади', NULL, 'Position')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (15, NULL, N'Області', NULL, 'Region')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (16, NULL, N'Вулиці', NULL, 'Street')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (17, NULL, N'Типи вулиць', NULL, 'StreetType')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (18, NULL, N'Контрагенти', NULL, 'Person')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (19, NULL, N'Навчальні заклади', NULL, 'Institution')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (20, NULL, N'Спеціальності', NULL, 'Speciality')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (21, NULL, N'Рівні освіти', NULL, 'EducationDegree')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (22, NULL, N'Види діяльності', NULL, 'ActivityType')
+INSERT INTO [dbo].[EntityType] ([Id], [ParentId], [Name], [Description], [SystemName]) VALUES (23, NULL, N'Компанії', NULL, 'Company')
+
+SET IDENTITY_INSERT [dbo].[EntityType] OFF
