@@ -13,7 +13,7 @@ Build status: [![Build status](https://ci.appveyor.com/api/projects/status/77fhs
 
 **IIІ. Аrchitecture** <br>
 В загальному архітектура має такий вигляд:
-![Image of Yaktocat](https://lh3.googleusercontent.com/Pv6XVXFPh5dS_4SByhewqwD-kBAc2pScTLktbKyDicnyA5eu2cmYvBOgWskRJ7JdY7NF=w1600-h900-rw-no)
+![Image of Yaktocat](https://docs.google.com/drawings/d/1i3Zimnpw-2yp8Fp4jmmnpJ0tq0B24lFB1a2GAw0fhAg/pub?w=1210&h=758)
 
 Більш детальна схема архітектури
 
