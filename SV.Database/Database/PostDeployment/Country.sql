@@ -1,24 +1,29 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+﻿DECLARE @LastUpdDt SMALLDATETIME, @LastUpdUs NVARCHAR(50);
 
-IF NOT EXISTS(select 1 from Country where Name = N'Україна')
+SET @LastUpdDt = GETDATE();
+SET @LastUpdUs = N'SV';
+
+IF NOT EXISTS(SELECT 1 FROM [Country] WHERE [Name] = N'Україна')
 BEGIN
-  insert into Country (Name, LastUpdDt, LastUpdUs) values (N'Україна', @LastUpdDt, @LastUpdUs)	
-END
+	INSERT INTO [Country]([Name], [LastUpdDt], [LastUpdUs]) VALUES (N'Україна', @LastUpdDt, @LastUpdUs);
+END;
 
-IF NOT EXISTS(select 1 from Country where Name = N'Польща')
+IF NOT EXISTS(SELECT 1 FROM [Country] WHERE [Name] = N'Польща')
 BEGIN
-  insert into Country (Name, LastUpdDt, LastUpdUs) values (N'Польща', @LastUpdDt, @LastUpdUs)	
-END
+	INSERT INTO [Country]([Name], [LastUpdDt], [LastUpdUs]) VALUES (N'Польща', @LastUpdDt, @LastUpdUs);
+END;
 
-IF NOT EXISTS(select 1 from Country where Name = N'Білорусія')
+IF NOT EXISTS(SELECT 1 FROM [Country] WHERE [Name] = N'Білорусія')
 BEGIN
-  insert into Country (Name, LastUpdDt, LastUpdUs) values (N'Білорусія', @LastUpdDt, @LastUpdUs)	
-END
+	INSERT INTO [Country]([Name], [LastUpdDt], [LastUpdUs]) VALUES (N'Білорусія', @LastUpdDt, @LastUpdUs);
+END;
 
-IF NOT EXISTS(select 1 from Country where Name = N'Молдова')
+IF NOT EXISTS(SELECT 1 FROM [Country] WHERE [Name] = N'Молдова')
 BEGIN
-  insert into Country (Name, LastUpdDt, LastUpdUs) values (N'Молдова', @LastUpdDt, @LastUpdUs)	
-END
+	INSERT INTO [Country]([Name], [LastUpdDt], [LastUpdUs]) VALUES (N'Молдова', @LastUpdDt, @LastUpdUs);
+END;
 
+IF NOT EXISTS(SELECT 1 FROM [Country] WHERE [Name] = N'Росія')
+BEGIN
+	INSERT INTO [Country]([Name], [LastUpdDt], [LastUpdUs]) VALUES (N'Росія', @LastUpdDt, @LastUpdUs);
+END;

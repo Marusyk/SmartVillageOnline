@@ -4,7 +4,7 @@
 ,	[ParentId] INT
 ,	[Name] NVARCHAR(250) NOT NULL
 ,	[ShortName] NVARCHAR(50) NOT NULL
-,	[AddressId] INT NOT NULL
+,	[AddressId] INT
 ,	[EDRPOUCode] NVARCHAR(10)
 ,	CONSTRAINT [PK_Council] PRIMARY KEY CLUSTERED ([Id])
 )

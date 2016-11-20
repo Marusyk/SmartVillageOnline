@@ -9,9 +9,26 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-:r .\PostDeployment\EntityType.sql
-GO
 :r .\PostDeployment\SYS_Dictionary.sql
+GO
+:r .\PostDeployment\Country.sql
+GO
+/*
+:r .\PostDeployment\Region.sql
+GO
+:r .\PostDeployment\District.sql
+GO
+:r .\PostDeployment\CityType.sql
+GO
+:r .\PostDeployment\StreetType.sql
+GO
+:r .\PostDeployment\City.sql
+GO
+:r .\PostDeployment\Street.sql
+GO
+:r .\PostDeployment\Council.sql
+GO
+:r .\PostDeployment\Address.sql
 GO
 :r .\PostDeployment\Animal.sql
 GO
@@ -27,25 +44,10 @@ GO
 GO
 :r .\PostDeployment\Nationality.sql
 GO
-:r .\PostDeployment\Country.sql
-GO
-:r .\PostDeployment\Region.sql
-GO
-:r .\PostDeployment\District.sql
-GO
-:r .\PostDeployment\CityType.sql
-GO
-:r .\PostDeployment\StreetType.sql
-GO
-:r .\PostDeployment\City.sql
-GO
-:r .\PostDeployment\Street.sql
-GO
-:r .\PostDeployment\Address.sql
-GO
 :r .\PostDeployment\House.sql
 GO
 :r .\PostDeployment\Person.sql
 GO
 :r .\PostDeployment\People.sql
 GO
+*/

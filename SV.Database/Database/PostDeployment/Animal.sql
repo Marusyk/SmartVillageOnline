@@ -1,7 +1,9 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
+﻿DECLARE @LastUpdDt SMALLDATETIME, @LastUpdUs NVARCHAR(50);
 
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+SET @LastUpdDt = GETDATE();
+SET @LastUpdUs = N'SV';
+
+DECLARE @CouncilId INT = 3;
 
 INSERT INTO [dbo].[Animal] (Name, LastUpdDt, LastUpdUs)
 select N'Корова', @LastUpdDt, @LastUpdUs

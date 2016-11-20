@@ -1,4 +1,4 @@
-﻿ALTER TABLE [dbo].[VillageCouncil]
-	ADD CONSTRAINT [FK_VillageCouncil_Address_AddressID]
+﻿ALTER TABLE [dbo].[Council]
+	ADD CONSTRAINT [FK_Council_Address_AddressID]
 	FOREIGN KEY (AddressId)
 	REFERENCES [Address] (Id)

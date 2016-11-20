@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http;
 using BusinessEntities.BaseBusinessEntities;
 using Infrastructure.Interfaces;
 
-namespace WebAPI.Infrastructure {
-	public class BaseApiController<T> : ApiController where T: BaseBusinessEntities
+namespace WebAPI.Infrastructure
+{
+	public class BaseApiController<T> : ApiController where T : BaseBusinessEntities
 	{
-	    #region Constructors
-		public BaseApiController(IServices<T> entityServices) 
+		#region Constructors
+		public BaseApiController(IServices<T> entityServices)
 		{
 			EntityServices = entityServices;
 		}
@@ -23,8 +21,10 @@ namespace WebAPI.Infrastructure {
 
 		protected string GenericTypeName => typeof(T).Name;
 
-		protected HttpResponseMessage ErrorMsg(HttpStatusCode statusCode, string errorMsg) {
-			var error = new HttpError() {
+		protected HttpResponseMessage ErrorMsg(HttpStatusCode statusCode, string errorMsg)
+		{
+			var error = new HttpError()
+			{
 				Message = $"code: {statusCode}",
 				MessageDetail = errorMsg
 			};
@@ -35,11 +35,11 @@ namespace WebAPI.Infrastructure {
 		#region Public
 
 		// Get all entities
-		public HttpResponseMessage Get() 
+		public HttpResponseMessage Get()
 		{
 			var entities = EntityServices.GetAll();
 
-			if (entities != null) 
+			if (entities != null)
 			{
 				return Request.CreateResponse(HttpStatusCode.OK, entities);
 			}
@@ -49,16 +49,16 @@ namespace WebAPI.Infrastructure {
 		}
 
 		// Get entity with paging
-		public HttpResponseMessage Get(int pageNo, int pageSize) 
+		public HttpResponseMessage Get(int pageNo, int pageSize)
 		{
 			throw new NotImplementedException();
 		}
 
 		// Get entity by ID
-		public HttpResponseMessage GetById(int id) 
+		public HttpResponseMessage GetById(int id)
 		{
 			var entity = EntityServices.GetById(id);
-			if (entity != null) 
+			if (entity != null)
 			{
 				return Request.CreateResponse(HttpStatusCode.OK, entity);
 			}
@@ -68,13 +68,14 @@ namespace WebAPI.Infrastructure {
 		}
 
 		// Insert new entity
-		public HttpResponseMessage Post([FromBody] T entity) 
+		public HttpResponseMessage Post([FromBody] T entity)
 		{
 			throw new NotImplementedException();
 		}
 
 		// Remove the entity by ID
-		public HttpResponseMessage Delete(int id) {
+		public HttpResponseMessage Delete(int id)
+		{
 			if (id <= 0)
 				return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
 			var result = EntityServices.Delete(id);
@@ -83,7 +84,7 @@ namespace WebAPI.Infrastructure {
 		}
 
 		// Update the entity
-		public HttpResponseMessage Put(int id, [FromBody] T entity) 
+		public HttpResponseMessage Put(int id, [FromBody] T entity)
 		{
 			if (id <= 0)
 				return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");

@@ -59,10 +59,6 @@
       <Project>{fe2f9c04-ddae-4be3-a3ef-de22d30b2a04}</Project>
       <Name>DependencyResolver</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SV.Domain\DataModel\DataModel.csproj">
-      <Project>{15b3351f-8f54-44bb-936e-2faab1ba88a2}</Project>
-      <Name>DataModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
       <Project>{f6c8cd96-a30b-43ee-9e95-8f6cfbdfee97}</Project>
       <Name>BusinessEntities</Name>
