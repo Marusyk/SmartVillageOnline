@@ -1,31 +1,33 @@
 ﻿CREATE TABLE [dbo].[Person]
 (
-	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
-,   [FirstName] [nvarchar](60) NOT NULL
-,   [LastName] [nvarchar](60) NOT NULL
-,   [MiddleName] [nvarchar](60) NOT NULL
-,   [DateBirth] [date] NOT NULL
-,   [Sex] [bit] NOT NULL
-,   [IsResident] [bit] NOT NULL DEFAULT 1
-,   [AddressBirthId] [int] NULL
-,   [AddressLiveId] [int] NULL
-,   [NationalityId] [int] NULL
-,   [IdentificationCode] [nvarchar](10) NULL
-,   [PassSeria] [nvarchar](5) NULL
-,   [PassNr] [int] NULL
-,   [PassDate] [date] NULL
-,   [PassAuthorityId] [int] NULL
-,   [FamilyStatusId] [int] NULL
-,   [CitizenshipId] [int] NULL
-,   [CatalogId] [int] NOT NULL
-,   [IsSojourn] [bit] NOT NULL DEFAULT 0
-,   [Photo] [binary]
-,   [PadFirstName] [nvarchar](60) NULL
-,   [PadName] [nvarchar](60) NULL
-,   [PadLastName] [nvarchar](60) NULL
-,   [DatFirstName] [nvarchar](60) NULL
-,   [DatName] [nvarchar](60) NULL
-,   [DatLastName] [nvarchar](60) NULL
-,   [LastUpdDt] [smalldatetime] NOT NULL
-,   [LastUpdUs] [nvarchar](50) NOT NULL	
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[FirstName] NVARCHAR(60) NOT NULL
+,	[LastName] NVARCHAR(60) NOT NULL
+,	[MiddleName] NVARCHAR(60) NOT NULL
+,	[DateBirth] DATE NOT NULL
+,	[Sex] BIT
+,	[IsResident] BIT NOT NULL DEFAULT 1
+,	[AddressBirthId] INT
+,	[AddressLiveId] INT
+,	[NationalityId] INT
+,	[IdentificationCode] NVARCHAR(10)
+,	[PassSeria] NVARCHAR(5)
+,	[PassNr] INT
+,	[PassDate] DATE
+,	[PassAuthorityId] INT
+,	[FamilyStatusId] INT
+,	[CitizenshipId] INT
+,	[CatalogId] INT NOT NULL
+,	[IsSojourn] BIT NOT NULL DEFAULT 0
+,	[Photo] BINARY
+,	[PadFirstName] NVARCHAR(60)
+,	[PadName] NVARCHAR(60)
+,	[PadLastName] NVARCHAR(60)
+,	[DatFirstName] NVARCHAR(60)
+,	[DatName] NVARCHAR(60)
+,	[DatLastName] NVARCHAR(60)
+,	[CouncilId] INT NOT NULL
+,	[LastUpdDt] SMALLDATETIME NOT NULL
+,	[LastUpdUs] NVARCHAR(50) NOT NULL
+,	CONSTRAINT [PK_Person] PRIMARY KEY CLUSTERED ([Id])
 )

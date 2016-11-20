@@ -1,14 +1,15 @@
 ﻿CREATE TABLE [dbo].[Education]
 (
-	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
-,   [PersonId] [int] NOT NULL
-,   [InstitutionId] [int] NOT NULL
-,   [SpecialityId] [int] NULL
-,   [EducationDegreeId] [int] NULL
-,   [StartYear] [int] NULL
-,   [EndYear] [int] NULL  
-,   [DocumentId] [int] NULL
-,   [Description] [nvarchar](500) 
-,   [LastUpdDt] [smalldatetime] NOT NULL
-,   [LastUpdUs] [nvarchar](50) NOT NULL
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[PersonId] INT NOT NULL
+,	[InstitutionId] INT NOT NULL
+,	[SpecialityId] INT
+,	[EducationDegreeId] INT
+,	[StartYear] INT
+,	[EndYear] INT
+,	[DocumentId] INT
+,	[Description] NVARCHAR(500)
+,	[LastUpdDt] SMALLDATETIME NOT NULL
+,	[LastUpdUs] NVARCHAR(50) NOT NULL
+,	CONSTRAINT [PK_Education] PRIMARY KEY CLUSTERED ([Id])
 )

@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Council]
+(
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[ParentId] INT
+,	[Name] NVARCHAR(250) NOT NULL
+,	[ShortName] NVARCHAR(50) NOT NULL
+,	[AddressId] INT NOT NULL
+,	[EDRPOUCode] NVARCHAR(10)
+,	CONSTRAINT [PK_Council] PRIMARY KEY CLUSTERED ([Id])
+)

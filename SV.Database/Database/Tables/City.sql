@@ -1,10 +1,11 @@
 ﻿CREATE TABLE [dbo].[City]
 (
-	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
-,   [Name] [nvarchar](50) NOT NULL
-,   [CityTypeId] [int] NOT NULL
-,   [DistrictId] [int] NULL
-,   [RegionId] [int] NOT NULL
-,   [LastUpdDt] [smalldatetime] NOT NULL
-,   [LastUpdUs] [nvarchar](50) NOT NULL
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[Name] NVARCHAR(50) NOT NULL
+,	[CityTypeId] INT NOT NULL
+,	[DistrictId] INT
+,	[RegionId] INT NOT NULL
+,	[LastUpdDt] SMALLDATETIME NOT NULL
+,	[LastUpdUs] NVARCHAR(50) NOT NULL
+,	CONSTRAINT [PK_City] PRIMARY KEY CLUSTERED ([Id])
 )

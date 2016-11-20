@@ -1,9 +1,10 @@
 ﻿CREATE TABLE [dbo].[SYS_Dictionary]
 (
-	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
-,   [Name] [nvarchar](50) NOT NULL
-,   [Description] [nvarchar](250) NOT NULL
-,   [IsStatic] [bit] NOT NULL DEFAULT 0
-,   [LastUpdDt] [smalldatetime] NOT NULL
-,   [LastUpdUs] [nvarchar](50) NOT NULL	
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[Name] NVARCHAR(50) NOT NULL
+,	[Description] NVARCHAR(250) NOT NULL
+,	[IsStatic] BIT NOT NULL DEFAULT 0
+,	[LastUpdDt] SMALLDATETIME NOT NULL
+,	[LastUpdUs] NVARCHAR(50) NOT NULL
+,	CONSTRAINT [PK_Dictionary] PRIMARY KEY CLUSTERED ([Id])
 )

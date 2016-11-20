@@ -1,8 +1,9 @@
 ﻿CREATE TABLE [dbo].[PersonDocument]
 (
-    [Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
-,   [PersonId] [int] NOT NULL
-,   [DocumentId] [int] NOT NULL
-,   [LastUpdDt] [smalldatetime] NOT NULL
-,   [LastUpdUs] [nvarchar](50) NOT NULL	
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[PersonId] INT NOT NULL
+,	[DocumentId] INT NOT NULL
+,	[LastUpdDt] SMALLDATETIME NOT NULL
+,	[LastUpdUs] NVARCHAR(50) NOT NULL
+,	CONSTRAINT [PK_PersonDocument] PRIMARY KEY CLUSTERED ([Id])
 )

@@ -1,9 +1,10 @@
 ﻿CREATE TABLE [dbo].[Catalog]
 (
-	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
-,   [ParentId] [int] NULL
-,   [Name] [nvarchar](50) NOT NULL
-,   [ModuleId] [int] NULL
-,   [LastUpdDt] [smalldatetime] NOT NULL
-,   [LastUpdUs] [nvarchar](50) NOT NULL
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[ParentId] INT
+,	[Name] NVARCHAR(50) NOT NULL
+,	[CouncilId] INT NOT NULL
+,	[LastUpdDt] SMALLDATETIME NOT NULL
+,	[LastUpdUs] NVARCHAR(50) NOT NULL
+,	CONSTRAINT [PK_Catalog] PRIMARY KEY CLUSTERED ([Id])
 )

@@ -1,15 +1,17 @@
 ﻿CREATE TABLE [dbo].[House]
 (
-	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
-,   [HouseNr] [nvarchar](10) NOT NULL
-,   [KadastrNr] [nvarchar](30)
-,   [BuildNr] [nvarchar](10) NOT NULL
-,   [AddressId] [int] NOT NULL
-,   [PhoneNr] [nvarchar](12) NULL
-,   [PhoneCode] [nvarchar](5) NULL
-,   [FaxNr] [nvarchar](12) NULL
-,   [Year] [int] NULL
-,   [Code] [nvarchar](50) NULL
-,   [LastUpdDt] [smalldatetime] NOT NULL
-,   [LastUpdUs] [nvarchar](50) NOT NULL
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[HouseNr] NVARCHAR(10) NOT NULL
+,	[KadastrNr] NVARCHAR(30)
+,	[BuildNr] NVARCHAR(10) NOT NULL
+,	[AddressId] INT NOT NULL
+,	[PhoneNr] NVARCHAR(12)
+,	[PhoneCode] NVARCHAR(5)
+,	[FaxNr] NVARCHAR(12)
+,	[Year] INT
+,	[Code] NVARCHAR(50)
+,	[CouncilId] INT NOT NULL
+,	[LastUpdDt] SMALLDATETIME NOT NULL
+,	[LastUpdUs] NVARCHAR(50) NOT NULL
+,	CONSTRAINT [PK_House] PRIMARY KEY CLUSTERED ([Id])
 )

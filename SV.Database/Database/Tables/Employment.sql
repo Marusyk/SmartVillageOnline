@@ -1,14 +1,15 @@
 ﻿CREATE TABLE [dbo].[Employment]
 (
-	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
-,   [PersonId] [int] NOT NULL
-,   [ActivityTypeId] [int] NULL
-,   [CompanyId] [int] NULL
-,   [PositionId] [int] NULL
-,   [DateStart] [smalldatetime] NULL
-,   [DateEnd] [smalldatetime] NULL
-,   [IsCurrent] [bit] NOT NULL DEFAULT 0
-,   [Description] [nvarchar](500) NULL
-,   [LastUpdDt] [smalldatetime] NOT NULL
-,   [LastUpdUs] [nvarchar](50) NOT NULL
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[PersonId] INT NOT NULL
+,	[ActivityTypeId] INT
+,	[CompanyId] INT
+,	[PositionId] INT
+,	[DateStart] SMALLDATETIME
+,	[DateEnd] SMALLDATETIME
+,	[IsCurrent] BIT NOT NULL DEFAULT 0
+,	[Description] NVARCHAR(500)
+,	[LastUpdDt] SMALLDATETIME NOT NULL
+,	[LastUpdUs] NVARCHAR(50) NOT NULL
+,	CONSTRAINT [PK_Employment] PRIMARY KEY CLUSTERED ([Id])
 )

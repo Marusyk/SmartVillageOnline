@@ -1,11 +1,13 @@
 ﻿CREATE TABLE [dbo].[Address]
 (
-	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
-,   [CityId] [int] NOT NULL
-,   [StreetId] [int] NULL
-,   [PostCode] [int] NULL
-,   [BuildNr] [nvarchar](10) NULL
-,   [FlatNr] [nvarchar](10) NULL
-,   [LastUpdDt] [smalldatetime] NOT NULL
-,   [LastUpdUs] [nvarchar](50) NOT NULL
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[CityId] INT NOT NULL
+,	[StreetId] INT
+,	[PostCode] INT
+,	[BuildNr] NVARCHAR(10)
+,	[FlatNr] NVARCHAR(10)
+,	[CouncilId] INT NOT NULL
+,	[LastUpdDt] SMALLDATETIME NOT NULL
+,	[LastUpdUs] NVARCHAR(50) NOT NULL
+,	CONSTRAINT [PK_Address] PRIMARY KEY CLUSTERED ([Id])
 )

@@ -1,12 +1,13 @@
 ﻿CREATE TABLE [dbo].[SYS_Administration]
 (
-	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY
-,   [Name] [nvarchar](50) NOT NULL
-,   [Description] [nvarchar](250)
-,   [DataBaseName] [nvarchar](100)
-,   [SVVersion] [nvarchar](50) NOT NULL
-,   [DBVersion] [nvarchar](50) NOT NULL
-,   [DataBaseGuid] [uniqueidentifier]
-,   [LastUpdDt] [smalldatetime] NOT NULL
-,   [LastUpdUs] [nvarchar](50) NOT NULL	
+	[Id] INT NOT NULL IDENTITY(1, 1)
+,	[Name] NVARCHAR(50) NOT NULL
+,	[Description] NVARCHAR(250)
+,	[DataBaseName] NVARCHAR(100)
+,	[SVVersion] NVARCHAR(50) NOT NULL
+,	[DBVersion] NVARCHAR(50) NOT NULL
+,	[DataBaseGuid] UNIQUEIDENTIFIER
+,	[LastUpdDt] SMALLDATETIME NOT NULL
+,	[LastUpdUs] NVARCHAR(50) NOT NULL
+,	CONSTRAINT [PK_Administration] PRIMARY KEY CLUSTERED ([Id])
 )

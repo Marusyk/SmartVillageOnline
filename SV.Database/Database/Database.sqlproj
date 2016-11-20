@@ -135,12 +135,11 @@
     <Build Include="ForeignConstraints\FK_PersonDocument_Person_PersonID.sql" />
     <Build Include="Views\AddressView.sql" />
     <Build Include="Procedures\usp_PeopleSetMain.sql" />
-    <Build Include="Tables\EntityAccess.sql" />
-    <Build Include="Tables\EntityType.sql" />
-    <Build Include="Tables\VillageCouncil.sql" />
+    <Build Include="Tables\Council.sql" />
     <Build Include="ForeignConstraints\FK_EntityAccess_EntityType_EntityTypeId.sql" />
     <Build Include="ForeignConstraints\FK_EntityAccess_VillageCouncil_VillageCouncilID.sql" />
     <Build Include="ForeignConstraints\FK_VillageCouncil_Address_AddressID.sql" />
+    <Build Include="Indexes\EntityAccess_IDX_Entity.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database.publish.xml" />
@@ -164,6 +163,7 @@
     <None Include="PostDeployment\Person.sql" />
     <None Include="PostDeployment\People.sql" />
     <None Include="PostDeployment\EntityType.sql" />
+    <None Include="PostDeployment\VillageCouncil.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeployment.sql" />
