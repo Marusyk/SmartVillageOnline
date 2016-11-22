@@ -11,7 +11,6 @@ namespace DataModel.Abstract
 		}
 
 		public int Id { get; set; }
-		public int CouncilId { get; set; }
 		public DateTime LastUpdDt { get; set; }
 		public string LastUpdUs { get; set; }
 	}

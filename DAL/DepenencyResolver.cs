@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.Composition;
-using DataModel.Repository;
-using DataModel.UnitOfWork;
+using DAL.Repository;
+using DAL.UnitOfWork;
 using DependencyResolution.Interfaces;
 
 namespace DataModel
@@ -10,7 +10,7 @@ namespace DataModel
 	{
 		public void SetUp(IRegisterComponent registerComponent)
 		{
-			registerComponent.RegisterType<IUnitOfWork, UnitOfWork.UnitOfWork>();
+			registerComponent.RegisterType<IUnitOfWork, UnitOfWork>();
 			registerComponent.RegisterType(typeof(IRepository<>), typeof(EFRepository<>));
 		}
 	}

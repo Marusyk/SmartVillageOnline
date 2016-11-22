@@ -3,23 +3,21 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using BusinessEntities.BaseBusinessEntities;
-using Infrastructure.Interfaces;
+using BLL.Interfaces;
 
 namespace WebAPI.Infrastructure
 {
 	public class BaseApiController<T> : ApiController where T : BaseBusinessEntities
 	{
 		#region Constructors
-		public BaseApiController(IServices<T> entityServices)
+		public BaseApiController(IService<T> entityService)
 		{
-			EntityServices = entityServices;
+			EntityService = entityService;
 		}
 		#endregion
 
 		#region Protected
-		protected readonly IServices<T> EntityServices;
-
-		protected string GenericTypeName => typeof(T).Name;
+		protected readonly IService<T> EntityService;
 
 		protected HttpResponseMessage ErrorMsg(HttpStatusCode statusCode, string errorMsg)
 		{
@@ -37,17 +35,17 @@ namespace WebAPI.Infrastructure
 		// Get all entities
 		public HttpResponseMessage Get()
 		{
-			var entities = EntityServices.GetAll();
+			var entities = EntityService.Get();
 
 			if (entities != null)
 			{
 				return Request.CreateResponse(HttpStatusCode.OK, entities);
 			}
 
-			var message = $"{GenericTypeName}: No content";
+			var message = $"{nameof(T)}: No content";
 			return ErrorMsg(HttpStatusCode.NoContent, message);
 		}
-
+		/*
 		// Get entity with paging
 		public HttpResponseMessage Get(int pageNo, int pageSize)
 		{
@@ -90,7 +88,7 @@ namespace WebAPI.Infrastructure
 				return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
 			var result = EntityServices.Update(id, entity);
 			return result ? Request.CreateResponse(HttpStatusCode.OK, "GOOOD") : ErrorMsg(HttpStatusCode.InternalServerError, "FAIL"); ;
-		}
+		}*/
 		#endregion
 	}
 }

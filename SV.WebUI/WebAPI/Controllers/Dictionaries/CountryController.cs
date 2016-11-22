@@ -1,13 +1,11 @@
-﻿using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using BusinessEntities.Dictionaries;
-using Infrastructure.Interfaces;
+﻿using BusinessEntities.Dictionaries;
+using BLL.Interfaces;
 using WebAPI.Infrastructure;
 
-namespace WebAPI.Controllers.Dictionaries {
+namespace WebAPI.Controllers.Dictionaries
+{
 	public class CountryController : BaseApiController<CountryEntity>
 	{
-		public CountryController(IServices<CountryEntity> entityServices) : base(entityServices) { }
+		public CountryController(IService<CountryEntity> entityService) : base(entityService) { }
 	}
 }

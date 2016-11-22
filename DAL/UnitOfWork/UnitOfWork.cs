@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
-using DataModel.DBContext;
-using DataModel.Entities.Abstract;
-using DataModel.Repository;
+using DAL.DBContext;
+using DataModel.Abstract;
+using DAL.Repository;
 
-namespace DataModel.UnitOfWork
+namespace DAL.UnitOfWork
 {
 	public class UnitOfWork : IUnitOfWork, IDisposable
 	{

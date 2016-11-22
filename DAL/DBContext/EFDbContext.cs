@@ -4,11 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Reflection;
-using DataModel.Entities.Abstract;
+using DataModel.Abstract;
 
-//using DataModel.Migrations;
-
-namespace DataModel.DBContext
+namespace DAL.DBContext
 {
 	//[DbConfigurationType(typeof(CustomDbConfiguration))]
 	public class EFDbContext : DbContext
@@ -39,6 +37,5 @@ namespace DataModel.DBContext
 				modelBuilder.Configurations.Add((dynamic)configurationInstance);
 			}
 		}
-
 	}
 }

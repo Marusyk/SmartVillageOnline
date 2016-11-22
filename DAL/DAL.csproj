@@ -39,6 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +53,7 @@
     <Compile Include="DBContext\EFDbContext.cs" />
     <Compile Include="DepenencyResolver.cs" />
     <Compile Include="Mapping\CatalogMap.cs" />
+    <Compile Include="Mapping\CouncilMap.cs" />
     <Compile Include="Mapping\Dictionaries\ActivityTypeMap.cs" />
     <Compile Include="Mapping\Dictionaries\AddressMap.cs" />
     <Compile Include="Mapping\Dictionaries\AnimalMap.cs" />
@@ -89,6 +91,10 @@
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SV.Common\DependencyResolver\DependencyResolver.csproj">
+      <Project>{fe2f9c04-ddae-4be3-a3ef-de22d30b2a04}</Project>
+      <Name>DependencyResolver</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SV.Domain\DataModel\DataModel.csproj">
       <Project>{15b3351f-8f54-44bb-936e-2faab1ba88a2}</Project>
       <Name>DataModel</Name>

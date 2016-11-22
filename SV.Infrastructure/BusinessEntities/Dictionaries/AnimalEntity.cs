@@ -2,7 +2,5 @@
 
 namespace BusinessEntities.Dictionaries
 {
-    public class AnimalEntity : BaseDictionaryEntity
-    {
-    }
+	public class AnimalEntity : BaseDictionaryEntity { }
 }

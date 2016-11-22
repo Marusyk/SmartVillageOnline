@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using DataModel.Abstract;
+using BusinessEntities.BaseBusinessEntities;
 
-namespace DAL.Repository
+namespace BLL.Interfaces
 {
-	public interface IRepository<TEntity> where TEntity : BaseEntity
+	public interface IService<TEntity> where TEntity : BaseBusinessEntities
 	{
 		IEnumerable<TEntity> Get();
-		IEnumerable<TEntity> GetAll();
+		/*IEnumerable<TEntity> GetAll();
 		TEntity GetById(object id);
 		TEntity Get(Func<TEntity, bool> where);
 		IEnumerable<TEntity> GetMany(Func<TEntity, bool> where);
@@ -18,9 +18,9 @@ namespace DAL.Repository
 		TEntity GetSingle(Func<TEntity, bool> predicate);
 		TEntity GetFirst(Func<TEntity, bool> predicate);
 		bool Exists(object primaryKey);
-		void Insert(TEntity entity);
-		void Update(TEntity entityToUpdate);
-		void Delete(TEntity entityToDelete);
-		void Delete(object id);
+		int Insert(TEntity entity);
+		bool Update(int id, TEntity entityToUpdate);
+		bool Delete(TEntity entityToDelete);
+		bool Delete(object id);*/
 	}
 }

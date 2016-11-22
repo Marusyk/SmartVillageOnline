@@ -412,6 +412,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BLL\BLL.csproj">
+      <Project>{dce76e41-1894-4a0f-9fa2-aed2e8868aa1}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SV.Common\DependencyResolver\DependencyResolver.csproj">
       <Project>{fe2f9c04-ddae-4be3-a3ef-de22d30b2a04}</Project>
       <Name>DependencyResolver</Name>
@@ -419,10 +423,6 @@
     <ProjectReference Include="..\..\SV.Infrastructure\BusinessEntities\BusinessEntities.csproj">
       <Project>{f6c8cd96-a30b-43ee-9e95-8f6cfbdfee97}</Project>
       <Name>BusinessEntities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SV.Infrastructure\Infrastructure\Infrastructure.csproj">
-      <Project>{f34ac1ad-7cc2-4b32-9587-dcbe867b0e56}</Project>
-      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

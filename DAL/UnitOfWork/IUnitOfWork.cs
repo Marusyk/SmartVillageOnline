@@ -1,7 +1,7 @@
-﻿using DataModel.Entities.Abstract;
-using DataModel.Repository;
+﻿using DataModel.Abstract;
+using DAL.Repository;
 
-namespace DataModel.UnitOfWork
+namespace DAL.UnitOfWork
 {
 	public interface IUnitOfWork
 	{

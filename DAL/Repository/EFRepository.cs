@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using DataModel.Entities.Abstract;
+using DataModel.Abstract;
 
-namespace DataModel.Repository
+namespace DAL.Repository
 {
 	public class EFRepository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
 	{

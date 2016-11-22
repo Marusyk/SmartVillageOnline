@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BusinessEntities.BaseBusinessEntities;
 
-namespace BusinessEntities.Dictionaries {
-	class DistrictEntity {
+namespace BusinessEntities.Dictionaries
+{
+	public class DistrictEntity : BaseDictionaryEntity
+	{
+		public int RegionId { get; set; }
+		//FK
+		public virtual RegionEntity Region { get; set; }
 	}
 }
