@@ -13,10 +13,9 @@ Post-Deployment Script Template
 GO
 :r .\PostDeployment\Country.sql
 GO
-/*
 :r .\PostDeployment\Region.sql
 GO
-:r .\PostDeployment\District.sql
+/*:r .\PostDeployment\District.sql
 GO
 :r .\PostDeployment\CityType.sql
 GO

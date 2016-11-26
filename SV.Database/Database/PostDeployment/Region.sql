@@ -1,225 +1,250 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
-declare @CountryId int
+﻿DECLARE @LastUpdDt SMALLDATETIME, @LastUpdUs NVARCHAR(50);
+DECLARE @CountryId INT;
 
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+SET @LastUpdDt = GETDATE();
+SET @LastUpdUs = N'SV';
 
-select @CountryId = Id 
-from   Country
-where  Name = N'Україна'
+SELECT
+	@CountryId = [Id]
+FROM	[Country]
+WHERE	[Name] = N'Україна';
 
-IF NOT EXISTS(select 1 from Region where Name = N'Вінницька')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Вінницька')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Вінницька'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Вінницька'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
+
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Волинська')
+BEGIN
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Волинська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
+
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Дніпропетровська')
+BEGIN
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Дніпропетровська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
+
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Донецька')
+BEGIN
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Донецька'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
 END
 
-IF NOT EXISTS(select 1 from Region where Name = N'Волинська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Житомирська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Волинська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Житомирська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Дніпропетровська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Закарпатська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Дніпропетровська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Закарпатська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Донецька')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Запорізька')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Донецька'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Запорізька'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Житомирська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Івано-Франківська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Житомирська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Івано-Франківська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Закарпатська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Київська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Закарпатська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Київська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Запорізька')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Кіровоградська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Запорізька'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Кіровоградська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Івано-Франківська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Луганська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Івано-Франківська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Луганська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Київська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Львівська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Київська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Львівська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Кіровоградська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Миколаївська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Кіровоградська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Миколаївська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Луганська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Одеська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Луганська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Одеська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Львівська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Полтавська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Львівська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Полтавська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Миколаївська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Рівненська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Миколаївська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Полтавська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Одеська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Сумська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Одеська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Сумська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Полтавська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Тернопільська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Полтавська'
-  ,     @CountryId
-  ,     @LastUpdDt
-  ,     @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Тернопільська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Рівненська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Харківська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Рівненська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Харківська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Сумська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Херсонська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Сумська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Херсонська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Тернопільська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Хмельницька')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Тернопільська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Хмельницька'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Харківська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Черкаська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Харківська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Черкаська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Херсонська')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Чернівецька')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Херсонська'
-  ,     @CountryId
-  ,     @LastUpdDt
-  ,     @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Чернівецька'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Region where Name = N'Хмельницька')
+IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Чернігівська')
 BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Хмельницька'
-  ,     @CountryId
-  ,     @LastUpdDt
-  ,     @LastUpdUs
-END
-
-IF NOT EXISTS(select 1 from Region where Name = N'Черкаська')
-BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Черкаська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
-
-IF NOT EXISTS(select 1 from Region where Name = N'Чернівецька')
-BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Чернівецька'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
-
-IF NOT EXISTS(select 1 from Region where Name = N'Чернігівська')
-BEGIN
-  insert into Region(Name, CountryId, LastUpdDt, LastUpdUs)
-  select N'Чернігівська'
-  ,      @CountryId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Чернігівська'
+	,	@CountryId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
