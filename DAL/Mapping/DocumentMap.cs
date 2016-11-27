@@ -22,6 +22,7 @@ namespace DAL.Mapping
 
 			HasMany(a => a.Educations).WithOptional(p => p.Document).HasForeignKey(p => p.DocumentId);
 			HasMany(a => a.PersonDocuments).WithRequired(p => p.Document).HasForeignKey(p => p.DocumentId);
+
 			ToTable("Document");
 		}
 	}

@@ -15,6 +15,7 @@ namespace DAL.Mapping.Dictionaries
 			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
 
 			HasMany(p => p.Educations).WithOptional(p => p.EducationDegree).HasForeignKey(p => p.EducationDegreeId);
+
 			ToTable("EducationDegree");
 		}
 	}

@@ -43,6 +43,7 @@ namespace DAL.Mapping.Dictionaries
 			HasMany(a => a.Educations).WithRequired(p => p.Person).HasForeignKey(p => p.PersonId);
 			HasMany(a => a.PersonDocuments).WithRequired(p => p.Person).HasForeignKey(p => p.PersonId);
 			HasMany(a => a.Employments).WithRequired(p => p.Person).HasForeignKey(p => p.PersonId);
+
 			ToTable("Person");
 		}
 	}

@@ -149,7 +149,6 @@
     <Build Include="ForeignConstraints\FK_Institution_Council_CouncilId.sql" />
     <Build Include="ForeignConstraints\FK_Material_Council_CouncilId.sql" />
     <Build Include="ForeignConstraints\FK_PassAuthority_Council_CouncilId.sql" />
-    <Build Include="ForeignConstraints\FK_PensionType_Council_CouncilId.sql" />
     <Build Include="ForeignConstraints\FK_Person_Council_CouncilId.sql" />
     <Build Include="ForeignConstraints\FK_Position_Council_CouncilId.sql" />
     <Build Include="ForeignConstraints\FK_Speciality_Council_CouncilId.sql" />

@@ -17,6 +17,7 @@ namespace DAL.Mapping.Dictionaries
 
 			HasMany(a => a.Districts).WithRequired(p => p.Region).HasForeignKey(p => p.RegionId);
 			HasMany(a => a.Cities).WithRequired(p => p.Region).HasForeignKey(p => p.RegionId);
+
 			ToTable("Region");
 		}
 	}

@@ -17,6 +17,7 @@ namespace DAL.Mapping.Dictionaries
 			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
 
 			HasMany(a => a.Employments).WithOptional(p => p.Company).HasForeignKey(p => p.CompanyId);
+
 			ToTable("Company");
 		}
 	}

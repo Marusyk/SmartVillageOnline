@@ -17,6 +17,7 @@ namespace DAL.Mapping.Dictionaries
 			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
 
 			HasMany(a => a.Addresses).WithOptional(p => p.Street).HasForeignKey(p => p.StreetId);
+
 			ToTable("Street");
 		}
 	}

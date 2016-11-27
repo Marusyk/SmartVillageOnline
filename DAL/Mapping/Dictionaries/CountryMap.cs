@@ -16,6 +16,7 @@ namespace DAL.Mapping.Dictionaries
 
 			HasMany(a => a.Regions).WithRequired(p => p.Country).HasForeignKey(p => p.CountryId);
 			HasMany(a => a.Persons).WithOptional(p => p.Citizenship).HasForeignKey(p => p.CitizenshipId);
+
 			ToTable("Country");
 		}
 	}

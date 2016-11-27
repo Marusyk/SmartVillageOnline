@@ -26,6 +26,6 @@ namespace DataModel.Dictionaries
 		[IgnoreDataMember]
 		public virtual ICollection<Council> Councils { get; set; }
 		[IgnoreDataMember]
-		public virtual ICollection<Company> Companys { get; set; }
+		public virtual ICollection<Company> Companies { get; set; }
 	}
 }

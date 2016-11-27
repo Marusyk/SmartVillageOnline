@@ -24,7 +24,7 @@ namespace DataModel
 		[IgnoreDataMember]
 		public virtual ICollection<Animal> Animals { get; set; }
 		[IgnoreDataMember]
-		public virtual ICollection<Company> Companys { get; set; }
+		public virtual ICollection<Company> Companies { get; set; }
 		[IgnoreDataMember]
 		public virtual ICollection<DocumentType> DocumentTypes { get; set; }
 		[IgnoreDataMember]

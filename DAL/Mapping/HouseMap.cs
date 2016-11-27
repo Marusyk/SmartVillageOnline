@@ -24,6 +24,7 @@ namespace DAL.Mapping
 			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
 
 			HasMany(a => a.Peoples).WithRequired(p => p.Houses).HasForeignKey(p => p.HouseId);
+
 			ToTable("House");
 		}
 	}

@@ -17,6 +17,7 @@ namespace DAL.Mapping.Dictionaries
 			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
 
 			HasMany(p => p.Documents).WithOptional(p => p.DocumentType).HasForeignKey(p => p.DocumentTypeId);
+
 			ToTable("DocumentType");
 		}
 	}

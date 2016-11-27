@@ -17,6 +17,7 @@ namespace DAL.Mapping.Dictionaries
 
 			HasMany(a => a.Persons).WithOptional(p => p.PassAuthority).HasForeignKey(p => p.PassAuthorityId);
 			HasMany(a => a.Documents).WithOptional(p => p.PassAuthority).HasForeignKey(p => p.PassAuthorityId);
+
 			ToTable("PassAuthority");
 		}
 	}

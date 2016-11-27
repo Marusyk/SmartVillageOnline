@@ -15,6 +15,7 @@ namespace DAL.Mapping.Dictionaries
 			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
 
 			HasMany(a => a.Cities).WithRequired(p => p.CityType).HasForeignKey(p => p.CityTypeId);
+
 			ToTable("CityType");
 		}
 	}
