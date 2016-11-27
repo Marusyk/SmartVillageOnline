@@ -1,49 +1,54 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
-declare @RegionId int
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV',
+	@RegionId INT;
 
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+SELECT
+	@RegionId = [Id]
+FROM  [Region]
+WHERE [Name] = N'Івано-Франківська';
 
-select @RegionId = Id
-from   Region
-where  Name = N'Івано-Франківська'
-
-IF NOT EXISTS(select 1 from District where Name = N'Снятинський')
+IF NOT EXISTS(SELECT 1 FROM [District] WHERE [Name] = N'Снятинський')
 BEGIN
-  insert into District(Name, RegionId, LastUpdDt, LastUpdUs)
-  select N'Снятинський'
-  ,      @RegionId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [District]([Name], [RegionId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Снятинський'
+	,	@RegionId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from District where Name = N'Косівський')
+IF NOT EXISTS(SELECT 1 FROM [District] WHERE [Name] = N'Косівський')
 BEGIN
-  insert into District(Name, RegionId, LastUpdDt, LastUpdUs)
-  select N'Косівський'
-  ,      @RegionId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [District]([Name], [RegionId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Косівський'
+	,	@RegionId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-select @RegionId = Id
-from   Region
-where  Name = N'Чернівецька'
+SELECT
+	@RegionId = [Id]
+FROM  [Region]
+WHERE [Name] = N'Чернівецька';
 
-IF NOT EXISTS(select 1 from District where Name = N'Кіцманський')
+IF NOT EXISTS(SELECT 1 FROM [District] WHERE [Name] = N'Кіцманський')
 BEGIN
-  insert into District(Name, RegionId, LastUpdDt, LastUpdUs)
-  select N'Кіцманський'
-  ,     @RegionId
-  ,     @LastUpdDt
-  ,     @LastUpdUs
-END
+	INSERT INTO [District]([Name], [RegionId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Кіцманський'
+	,	@RegionId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from District where Name = N'Вижницький')
+IF NOT EXISTS(SELECT 1 FROM [District] WHERE [Name] = N'Вижницький')
 BEGIN
-  insert into District(Name, RegionId, LastUpdDt, LastUpdUs)
-  select N'Вижницький'
-  ,     @RegionId
-  ,     @LastUpdDt
-  ,     @LastUpdUs
-END
+	INSERT INTO [District]([Name], [RegionId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Вижницький'
+	,	@RegionId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;

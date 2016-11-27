@@ -1,15 +1,13 @@
-﻿DECLARE @LastUpdDt SMALLDATETIME, @LastUpdUs NVARCHAR(50);
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV',
+	@CouncilId INT = 1;
 
-SET @LastUpdDt = GETDATE();
-SET @LastUpdUs = N'SV';
+INSERT INTO [Animal]([Name], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT N'Корова', @CouncilId, @LastUpdDt, @LastUpdUs;
 
-DECLARE @CouncilId INT = 3;
+INSERT INTO [Animal]([Name], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT N'Свиня', @CouncilId, @LastUpdDt, @LastUpdUs;
 
-INSERT INTO [dbo].[Animal] (Name, LastUpdDt, LastUpdUs)
-select N'Корова', @LastUpdDt, @LastUpdUs
-
-insert into Animal(Name, LastUpdDt, LastUpdUs)
-select N'Свиня', @LastUpdDt, @LastUpdUs
-
-insert into Animal(Name, LastUpdDt, LastUpdUs)
-select N'Собака', @LastUpdDt, @LastUpdUs
+INSERT INTO [Animal]([Name], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT N'Собака', @CouncilId, @LastUpdDt, @LastUpdUs;

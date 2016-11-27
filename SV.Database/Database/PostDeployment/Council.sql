@@ -1,13 +1,13 @@
-﻿/* --- SYSTEM SECTION --- */
+﻿/* +++ SYSTEM SECTION +++ */
 SET IDENTITY_INSERT [dbo].[Council] ON
 
 INSERT INTO [dbo].[Council]
 	([Id], [ParentId], [Name], [ShortName], [AddressId], [EDRPOUCode])
 	VALUES
-	(1, NULL, N'SYSTEM', NULL, NULL, '00000000');
+	(1, NULL, N'SYSTEM', N'SYS', NULL, '00000000');
 
 SET IDENTITY_INSERT [dbo].[Council] OFF
-/* === SYSTEM SECTION === */
+/* --- SYSTEM SECTION --- */
 
 SET IDENTITY_INSERT [dbo].[Council] ON -- TEMP
 INSERT INTO [dbo].[Council]([Id], [ParentId], [Name], [ShortName], [AddressId], [EDRPOUCode])

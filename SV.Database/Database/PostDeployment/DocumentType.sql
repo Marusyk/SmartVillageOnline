@@ -1,11 +1,10 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV',
+	@CouncilId INT = 1;
 
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+INSERT INTO [DocumentType]([Name], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT N'свідоцтво', @CouncilId, @LastUpdDt, @LastUpdUs;
 
-insert into DocumentType(Name, LastUpdDt, LastUpdUs)
-select N'свідоцтво', @LastUpdDt, @LastUpdUs
-
-insert into DocumentType(Name, LastUpdDt, LastUpdUs)
-select N'посвідчення', @LastUpdDt, @LastUpdUs
-
+INSERT INTO [DocumentType]([Name], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT N'посвідчення', @CouncilId, @LastUpdDt, @LastUpdUs;

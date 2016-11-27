@@ -1,40 +1,51 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
-declare @CityId int, @StreetId int
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV',
+	@CouncilId INT,
+	@CityId INT,
+	@StreetId INT;
 
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+SELECT
+	@CityId = [Id]
+FROM  [City]
+WHERE [Name] = N'Тростянець';
 
-select @CityId = Id
-from   City
-where  Name = N'Тростянець'
+SELECT
+	@StreetId = [Id]
+FROM  [Street]
+WHERE [Name] = N'Шевченка';
 
-select @StreetId = Id
-from   Street
-where  Name = N'Шевченка'
+SET @CouncilId = 3;
 
-insert into Address(CityId, StreetId, PostCode, BuildNr, FlatNr, LastUpdDt, LastUpdUs)
-select @CityId, @StreetId, NULL, N'51', NULL, @LastUpdDt, @LastUpdUs
+INSERT INTO [Address]([CityId], [StreetId], [PostCode], [BuildNr], [FlatNr], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT @CityId, @StreetId, NULL, N'51', NULL, @CouncilId, @LastUpdDt, @LastUpdUs;
 
-select @CityId = Id
-from   City
-where  Name = N'Чернівці'
+SELECT
+	@CityId = [Id]
+FROM  [City]
+WHERE [Name] = N'Чернівці';
 
-select @StreetId = Id
-from   Street
-where  Name = N'Головна'
+SELECT
+	@StreetId = [Id]
+FROM  [Street]
+WHERE [Name] = N'Головна';
 
-insert into Address(CityId, StreetId, PostCode, BuildNr, FlatNr, LastUpdDt, LastUpdUs)
-select @CityId, @StreetId, 12300, N'24a', N'400', @LastUpdDt, @LastUpdUs
+SET @CouncilId = 1;
 
-select @CityId = Id
-from   City
-where  Name = N'Снятин'
+INSERT INTO [Address]([CityId], [StreetId], [PostCode], [BuildNr], [FlatNr], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT @CityId, @StreetId, 12300, N'24a', N'400', @CouncilId, @LastUpdDt, @LastUpdUs;
 
-select @StreetId = Id
-from   Street
-where  Name = N'Українська'
+SELECT
+	@CityId = [Id]
+FROM  [City]
+WHERE [Name] = N'Снятин';
 
-insert into Address(CityId, StreetId, PostCode, BuildNr, FlatNr, LastUpdDt, LastUpdUs)
-select @CityId, @StreetId, NULL, N'15', N'4', @LastUpdDt, @LastUpdUs
+SELECT
+	@StreetId = [Id]
+FROM  [Street]
+WHERE [Name] = N'Українська';
 
+SET @CouncilId = 2;
 
+INSERT INTO [Address]([CityId], [StreetId], [PostCode], [BuildNr], [FlatNr], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT @CityId, @StreetId, NULL, N'15', N'4', @CouncilId, @LastUpdDt, @LastUpdUs;

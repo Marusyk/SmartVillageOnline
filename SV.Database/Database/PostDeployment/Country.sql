@@ -1,7 +1,6 @@
-﻿DECLARE @LastUpdDt SMALLDATETIME, @LastUpdUs NVARCHAR(50);
-
-SET @LastUpdDt = GETDATE();
-SET @LastUpdUs = N'SV';
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV';
 
 IF NOT EXISTS(SELECT 1 FROM [Country] WHERE [Name] = N'Україна')
 BEGIN

@@ -15,7 +15,7 @@ GO
 GO
 :r .\PostDeployment\Region.sql
 GO
-/*:r .\PostDeployment\District.sql
+:r .\PostDeployment\District.sql
 GO
 :r .\PostDeployment\CityType.sql
 GO
@@ -23,9 +23,9 @@ GO
 GO
 :r .\PostDeployment\City.sql
 GO
-:r .\PostDeployment\Street.sql
-GO
 :r .\PostDeployment\Council.sql
+GO
+:r .\PostDeployment\Street.sql
 GO
 :r .\PostDeployment\Address.sql
 GO
@@ -49,4 +49,3 @@ GO
 GO
 :r .\PostDeployment\People.sql
 GO
-*/

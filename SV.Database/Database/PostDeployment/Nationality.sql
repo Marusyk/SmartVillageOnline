@@ -1,14 +1,12 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV';
 
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+INSERT INTO [Nationality]([Name], [LastUpdDt], [LastUpdUs])
+SELECT N'українець', @LastUpdDt, @LastUpdUs;
 
-insert into Nationality(Name, LastUpdDt, LastUpdUs)
-select N'українець', @LastUpdDt, @LastUpdUs
+INSERT INTO [Nationality]([Name], [LastUpdDt], [LastUpdUs])
+SELECT N'українка', @LastUpdDt, @LastUpdUs;
 
-insert into Nationality(Name, LastUpdDt, LastUpdUs)
-select N'українка', @LastUpdDt, @LastUpdUs
-
-insert into Nationality(Name, LastUpdDt, LastUpdUs)
-select N'румун', @LastUpdDt, @LastUpdUs
-
+INSERT INTO [Nationality]([Name], [LastUpdDt], [LastUpdUs])
+SELECT N'румун', @LastUpdDt, @LastUpdUs;

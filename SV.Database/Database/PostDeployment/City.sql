@@ -1,94 +1,109 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
-declare @RegionId int, @DistrictId int, @CityTypeId int
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV',
+	@RegionId INT,
+	@DistrictId INT,
+	@CityTypeId INT;
 
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+SELECT
+	@CityTypeId = [Id]
+FROM  [CityType]
+WHERE [Name] = N'село';
 
-select @CityTypeId = Id
-from   CityType
-where  Name = N'село'   
+SELECT
+	@DistrictId = [Id]
+,	@RegionId = [RegionId]
+FROM  [District]
+WHERE [Name] = N'Снятинський';
 
-select @DistrictId = Id
-,      @RegionId = RegionId
-from   District
-where  Name = N'Снятинський' 
-
-IF NOT EXISTS(select 1 from City where Name = N'Тростянець')
+IF NOT EXISTS(SELECT 1 FROM [City] WHERE [Name] = N'Тростянець')
 BEGIN
-  insert into City(Name, CityTypeId, DistrictId, RegionId, LastUpdDt, LastUpdUs)
-  select N'Тростянець'
-  ,      @CityTypeId
-  ,      @DistrictId
-  ,      @RegionId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [City]([Name], [CityTypeId], [DistrictId], [RegionId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Тростянець'
+	,	@CityTypeId
+	,	@DistrictId
+	,	@RegionId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-select @CityTypeId = Id
-from   CityType
-where  Name = N'місто'
+SELECT
+	@CityTypeId = [Id]
+FROM  [CityType]
+WHERE [Name] = N'місто';
 
-select @RegionId = Id
-from   Region
-where  Name = N'Івано-Франківська'
+SELECT
+	@DistrictId = [Id]
+,	@RegionId = [RegionId]
+FROM  [District]
+WHERE [Name] = N'Івано-Франківська';
 
-IF NOT EXISTS(select 1 from City where Name = N'Снятин')
+IF NOT EXISTS(SELECT 1 FROM [City] WHERE [Name] = N'Снятин')
 BEGIN
-  insert into City(Name, CityTypeId, DistrictId, RegionId, LastUpdDt, LastUpdUs)
-  select N'Снятин'
-  ,      @CityTypeId
-  ,      NULL
-  ,      @RegionId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [City]([Name], [CityTypeId], [DistrictId], [RegionId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Снятин'
+	,	@CityTypeId
+	,	@DistrictId
+	,	@RegionId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-select @RegionId = Id
-from   Region
-where  Name = N'Київська'
+SELECT
+	@RegionId = [Id]
+FROM  [Region]
+WHERE [Name] = N'Київська';
 
-IF NOT EXISTS(select 1 from City where Name = N'Київ')
+IF NOT EXISTS(SELECT 1 FROM [City] WHERE [Name] = N'Київ')
 BEGIN
-  insert into City(Name, CityTypeId, DistrictId, RegionId, LastUpdDt, LastUpdUs)
-  select N'Київ'
-  ,      @CityTypeId
-  ,      NULL
-  ,      @RegionId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [City]([Name], [CityTypeId], [DistrictId], [RegionId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Київ'
+	,	@CityTypeId
+	,	NULL
+	,	@RegionId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-select @RegionId = Id
-from   Region
-where  Name = N'Чернівецька'
+SELECT
+	@RegionId = [Id]
+FROM  [Region]
+WHERE [Name] = N'Чернівецька';
 
-IF NOT EXISTS(select 1 from City where Name = N'Чернівці')
+IF NOT EXISTS(SELECT 1 FROM [City] WHERE [Name] = N'Чернівці')
 BEGIN
-  insert into City(Name, CityTypeId, DistrictId, RegionId, LastUpdDt, LastUpdUs)
-  select N'Чернівці'
-  ,      @CityTypeId
-  ,      NULL
-  ,      @RegionId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [City]([Name], [CityTypeId], [DistrictId], [RegionId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Чернівці'
+	,	@CityTypeId
+	,	NULL
+	,	@RegionId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-select @CityTypeId = Id
-from   CityType
-where  Name = N'селище'
+SELECT
+	@CityTypeId = [Id]
+FROM  [CityType]
+WHERE [Name] = N'селище';
 
-select @DistrictId = Id
-,      @RegionId = RegionId
-from   District
-where  Name = N'Кіцманський' 
+SELECT
+	@DistrictId = [Id]
+,	@RegionId = [RegionId]
+FROM  [District]
+WHERE [Name] = N'Кіцманський';
 
-IF NOT EXISTS(select 1 from City where Name = N'Лужани')
+IF NOT EXISTS(SELECT 1 FROM [City] WHERE [Name] = N'Лужани')
 BEGIN
-  insert into City(Name, CityTypeId, DistrictId, RegionId, LastUpdDt, LastUpdUs)
-  select N'Лужани'
-  ,      @CityTypeId
-  ,      @DistrictId
-  ,      @RegionId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [City]([Name], [CityTypeId], [DistrictId], [RegionId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Снятин'
+	,	@CityTypeId
+	,	@DistrictId
+	,	@RegionId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;

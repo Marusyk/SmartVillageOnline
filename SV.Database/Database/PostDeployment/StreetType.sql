@@ -1,35 +1,39 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV';
 
-IF NOT EXISTS(select 1 from StreetType where Name = N'вулиця')
+IF NOT EXISTS(SELECT 1 FROM [StreetType] WHERE [Name] = N'вулиця')
 BEGIN
-  insert into StreetType(Name, LastUpdDt, LastUpdUs)
-  select N'вулиця'
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [StreetType]([Name], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'вулиця'
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from StreetType where Name = N'урочище')
+IF NOT EXISTS(SELECT 1 FROM [StreetType] WHERE [Name] = N'урочище')
 BEGIN
-  insert into StreetType(Name, LastUpdDt, LastUpdUs)
-  select N'урочище'
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [StreetType]([Name], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'урочище'
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from StreetType where Name = N'провулок')
+IF NOT EXISTS(SELECT 1 FROM [StreetType] WHERE [Name] = N'провулок')
 BEGIN
-  insert into StreetType(Name, LastUpdDt, LastUpdUs)
-  select N'провулок'
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [StreetType]([Name], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'провулок'
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from StreetType where Name = N'проспект')
+IF NOT EXISTS(SELECT 1 FROM [StreetType] WHERE [Name] = N'проспект')
 BEGIN
-  insert into StreetType(Name, LastUpdDt, LastUpdUs)
-  select N'проспект'
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [StreetType]([Name], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'проспект'
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;

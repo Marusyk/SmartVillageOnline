@@ -1,13 +1,12 @@
-﻿DECLARE @LastUpdDt SMALLDATETIME, @LastUpdUs NVARCHAR(50);
-DECLARE @CountryId INT;
-
-SET @LastUpdDt = GETDATE();
-SET @LastUpdUs = N'SV';
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV',
+	@CountryId INT;
 
 SELECT
 	@CountryId = [Id]
-FROM	[Country]
-WHERE	[Name] = N'Україна';
+FROM  [Country]
+WHERE [Name] = N'Україна';
 
 IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Вінницька')
 BEGIN

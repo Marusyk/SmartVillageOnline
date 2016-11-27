@@ -1,58 +1,70 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
-declare @StreetTypeId int
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV',
+	@CouncilId INT = 1,
+	@StreetTypeId INT;
 
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+SELECT
+	@StreetTypeId = [Id]
+FROM  [StreetType]
+WHERE [Name] = N'вулиця';
 
-select @StreetTypeId = Id
-from   StreetType
-where  Name = N'вулиця'
-
-IF NOT EXISTS(select 1 from Street where Name = N'Шевченка')
+IF NOT EXISTS(SELECT 1 FROM [Street] WHERE [Name] = N'Шевченка')
 BEGIN
-  insert into Street(Name, StreetTypeId, LastUpdDt, LastUpdUs)
-  select N'Шевченка'
-  ,      @StreetTypeId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Street]([Name], [StreetTypeId], [CouncilId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Шевченка'
+	,	@StreetTypeId
+	,	@CouncilId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Street where Name = N'Головна')
+IF NOT EXISTS(SELECT 1 FROM [Street] WHERE [Name] = N'Головна')
 BEGIN
-  insert into Street(Name, StreetTypeId, LastUpdDt, LastUpdUs)
-  select N'Головна'
-  ,      @StreetTypeId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Street]([Name], [StreetTypeId], [CouncilId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Головна'
+	,	@StreetTypeId
+	,	@CouncilId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Street where Name = N'Січових стрільців')
+IF NOT EXISTS(SELECT 1 FROM [Street] WHERE [Name] = N'Січових стрільців')
 BEGIN
-  insert into Street(Name, StreetTypeId, LastUpdDt, LastUpdUs)
-  select N'Січових стрільців'
-  ,      @StreetTypeId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Street]([Name], [StreetTypeId], [CouncilId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Січових стрільців'
+	,	@StreetTypeId
+	,	@CouncilId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-IF NOT EXISTS(select 1 from Street where Name = N'Українська')
+IF NOT EXISTS(SELECT 1 FROM [Street] WHERE [Name] = N'Українська')
 BEGIN
-  insert into Street(Name, StreetTypeId, LastUpdDt, LastUpdUs)
-  select N'Українська'
-  ,      @StreetTypeId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Street]([Name], [StreetTypeId], [CouncilId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Українська'
+	,	@StreetTypeId
+	,	@CouncilId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;
 
-select @StreetTypeId = Id
-from   StreetType
-where  Name = N'проспект'
+SELECT
+	@StreetTypeId = [Id]
+FROM  [StreetType]
+WHERE [Name] = N'проспект';
 
-IF NOT EXISTS(select 1 from Street where Name = N'Незалежності')
+IF NOT EXISTS(SELECT 1 FROM [Street] WHERE [Name] = N'Незалежності')
 BEGIN
-  insert into Street(Name, StreetTypeId, LastUpdDt, LastUpdUs)
-  select N'Незалежності'
-  ,      @StreetTypeId
-  ,      @LastUpdDt
-  ,      @LastUpdUs
-END
+	INSERT INTO [Street]([Name], [StreetTypeId], [CouncilId], [LastUpdDt], [LastUpdUs])
+	SELECT
+		N'Незалежності'
+	,	@StreetTypeId
+	,	@CouncilId
+	,	@LastUpdDt
+	,	@LastUpdUs;
+END;

@@ -1,14 +1,13 @@
-﻿declare @LastUpdDt smalldatetime, @LastUpdUs varchar(50)
+﻿DECLARE
+	@LastUpdDt SMALLDATETIME = GETDATE(),
+	@LastUpdUs NVARCHAR(50) = N'SV',
+	@CouncilId INT = 1;
 
-SET @LastUpdDt = GETDATE()
-SET @LastUpdUs = N'SV'
+INSERT INTO [Material]([Name], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT N'дерево', @CouncilId, @LastUpdDt, @LastUpdUs;
 
-insert into Material(Name, LastUpdDt, LastUpdUs)
-select N'дерево', @LastUpdDt, @LastUpdUs
+INSERT INTO [Material]([Name], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT N'цемент',@CouncilId,  @LastUpdDt, @LastUpdUs;
 
-insert into Material(Name, LastUpdDt, LastUpdUs)
-select N'цемент', @LastUpdDt, @LastUpdUs
-
-insert into Material(Name, LastUpdDt, LastUpdUs)
-select N'цегла', @LastUpdDt, @LastUpdUs
-
+INSERT INTO [Material]([Name], [CouncilId], [LastUpdDt], [LastUpdUs])
+SELECT N'цегла', @CouncilId, @LastUpdDt, @LastUpdUs;
