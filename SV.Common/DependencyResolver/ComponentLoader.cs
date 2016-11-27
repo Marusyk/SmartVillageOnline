@@ -10,43 +10,43 @@ using Microsoft.Practices.Unity;
 
 namespace DependencyResolution
 {
-    public class ComponentLoader
-    {
-        public static void LoaderContainer(IUnityContainer container, string path, string pattern)
-        {
-            var dirCat = new DirectoryCatalog(path, pattern);
-            var importDef = BuildImportDefinition();
-            try
-            {
-                using (var aggregateCatalog = new AggregateCatalog())
-                {
-                    aggregateCatalog.Catalogs.Add(dirCat);
-                    using (var componsitionContainer = new CompositionContainer(aggregateCatalog))
-                    {
-                        var exports = componsitionContainer.GetExports(importDef);
-                        var modules =
-                            exports.Select(export => export.Value as IComponent).Where(m => m != null);
-                        var registerComponent = new RegisterComponent(container);
-                        foreach (var module in modules)
-                        {
-                            module.SetUp(registerComponent);
-                        }
-                    }
-                }
-            }
-            catch (ReflectionTypeLoadException ex)
-            {
-                var builder = new StringBuilder();
-                foreach (var loaderException in ex.LoaderExceptions)
-                {
-                    builder.AppendFormat($"{loaderException.Message}\n");
-                }
-                throw new TypeLoadException(builder.ToString(), ex);
-            }
-        }
+	public class ComponentLoader
+	{
+		public static void LoaderContainer(IUnityContainer container, string path, string pattern)
+		{
+			var dirCat = new DirectoryCatalog(path, pattern);
+			var importDef = BuildImportDefinition();
+			try
+			{
+				using (var aggregateCatalog = new AggregateCatalog())
+				{
+					aggregateCatalog.Catalogs.Add(dirCat);
+					using (var componsitionContainer = new CompositionContainer(aggregateCatalog))
+					{
+						var exports = componsitionContainer.GetExports(importDef);
+						var modules =
+							exports.Select(export => export.Value as IComponent).Where(m => m != null);
+						var registerComponent = new RegisterComponent(container);
+						foreach (var module in modules)
+						{
+							module.SetUp(registerComponent);
+						}
+					}
+				}
+			}
+			catch (ReflectionTypeLoadException ex)
+			{
+				var builder = new StringBuilder();
+				foreach (var loaderException in ex.LoaderExceptions)
+				{
+					builder.AppendFormat($"{loaderException.Message}\n");
+				}
+				throw new TypeLoadException(builder.ToString(), ex);
+			}
+		}
 
-        private static ImportDefinition BuildImportDefinition() =>
-            new ImportDefinition(def => true, typeof(IComponent).FullName, ImportCardinality.ZeroOrMore, false, false);
+		private static ImportDefinition BuildImportDefinition() =>
+			new ImportDefinition(def => true, typeof(IComponent).FullName, ImportCardinality.ZeroOrMore, false, false);
 
-    }
+	}
 }
