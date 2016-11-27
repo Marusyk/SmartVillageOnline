@@ -1,6 +1,4 @@
-﻿using DataModel;
-
-namespace BusinessEntities.BaseBusinessEntities
+﻿namespace BusinessEntities.BaseBusinessEntities
 {
 	public abstract class BaseDictionaryCouncilEntity : BaseDictionaryEntity
 	{

@@ -2,8 +2,8 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using BusinessEntities.BaseBusinessEntity;
 using BLL.Interfaces;
+using BusinessEntities.BaseBusinessEntities;
 
 namespace WebAPI.Infrastructure
 {

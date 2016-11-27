@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using BusinessEntities.BaseBusinessEntity;
 using BLL.Interfaces;
 using DataModel.Abstract;
 using DAL.Repository;
 using DAL.UnitOfWork;
+using BusinessEntities.BaseBusinessEntities;
 
 namespace BLL
 {

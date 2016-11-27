@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using BusinessEntities.BaseBusinessEntity;
+using BusinessEntities.BaseBusinessEntities;
 
 namespace BLL.Interfaces
 {
