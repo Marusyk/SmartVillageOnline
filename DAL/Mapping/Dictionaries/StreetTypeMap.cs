@@ -11,8 +11,10 @@ namespace DAL.Mapping.Dictionaries
 			HasKey(t => t.Id);
 			Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 			Property(t => t.Name).IsRequired().HasMaxLength(50);
-			HasMany(a => a.Streets).WithRequired(p => p.StreetType).HasForeignKey(p => p.StreetTypeId);
+			Property(t => t.LastUpdDt).IsRequired();
 			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
+
+			HasMany(a => a.Streets).WithRequired(p => p.StreetType).HasForeignKey(p => p.StreetTypeId);
 			ToTable("StreetType");
 		}
 	}

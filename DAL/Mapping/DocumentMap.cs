@@ -10,13 +10,18 @@ namespace DAL.Mapping
 		{
 			HasKey(t => t.Id);
 			Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+			Property(t => t.DocumentTypeId).IsOptional();
 			Property(t => t.Name).IsRequired().HasMaxLength(100);
+			Property(t => t.PassAuthorityId).IsOptional();
 			Property(t => t.Number).HasMaxLength(20);
 			Property(t => t.Code).HasMaxLength(10);
-			Property(t => t.DateReg).IsRequired();
+			Property(t => t.State).IsRequired();
+			Property(t => t.CouncilId).IsRequired();
+			Property(t => t.LastUpdDt).IsRequired();
+			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
+
 			HasMany(a => a.Educations).WithOptional(p => p.Document).HasForeignKey(p => p.DocumentId);
 			HasMany(a => a.PersonDocuments).WithRequired(p => p.Document).HasForeignKey(p => p.DocumentId);
-			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
 			ToTable("Document");
 		}
 	}

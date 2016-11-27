@@ -11,13 +11,17 @@ namespace DAL.Mapping.Dictionaries
 			HasKey(t => t.Id);
 			Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 			Property(t => t.CityId).IsRequired();
-			Property(t => t.BuildNr).HasMaxLength(10);
-			Property(t => t.FlatNr).HasMaxLength(10);
+			Property(t => t.StreetId).IsOptional();
+			Property(t => t.PostCode).IsOptional();
+			Property(t => t.BuildNr).IsOptional().HasMaxLength(10);
+			Property(t => t.FlatNr).IsOptional().HasMaxLength(10);
+			Property(t => t.CouncilId).IsRequired();
+			Property(t => t.LastUpdDt).IsRequired();
+			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
+
 			HasMany(a => a.Houses).WithRequired(p => p.Address).HasForeignKey(p => p.AddressId);
 			HasMany(a => a.PersonBirthAddress).WithOptional(p => p.AddressBith).HasForeignKey(p => p.AddressBirthId);
 			HasMany(a => a.PersonLiveAddress).WithOptional(p => p.AddressLive).HasForeignKey(p => p.AddressLiveId);
-			Property(t => t.CouncilId).IsRequired();
-			Property(t => t.LastUpdUs).HasMaxLength(50);
 			ToTable("Address");
 		}
 	}

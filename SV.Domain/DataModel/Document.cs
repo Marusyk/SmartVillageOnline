@@ -13,7 +13,6 @@ namespace DataModel
 		public string Number { get; set; }
 		public string Code { get; set; }
 		public bool State { get; set; }
-		public DateTime DateReg { get; set; }
 
 		//FK
 		public virtual DocumentType DocumentType { get; set; }

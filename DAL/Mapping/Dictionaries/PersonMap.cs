@@ -15,20 +15,34 @@ namespace DAL.Mapping.Dictionaries
 			Property(t => t.MiddleName).IsRequired().HasMaxLength(60);
 			Property(t => t.DateBirth).IsRequired();
 			Property(t => t.Sex).IsRequired();
-			Property(t => t.IdentificationCode).HasMaxLength(10);
-			Property(t => t.PassSeria).HasMaxLength(2);
+			Property(t => t.IsResident).IsRequired();
+			Property(t => t.AddressBirthId).IsOptional();
+			Property(t => t.AddressLiveId).IsOptional();
+			Property(t => t.NationalityId).IsOptional();
+			Property(t => t.IdentificationCode).IsOptional().HasMaxLength(10);
+			Property(t => t.PassSeria).IsOptional().HasMaxLength(2);
+			Property(t => t.PassNr).IsOptional();
+			Property(t => t.PassDate).IsOptional();
+			Property(t => t.PassAuthorityId).IsOptional();
+			Property(t => t.FamilyStatusId).IsOptional();
+			Property(t => t.CitizenshipId).IsOptional();
 			Property(t => t.CatalogId).IsRequired();
-			Property(t => t.PadFirstName).HasMaxLength(60);
-			Property(t => t.PadName).HasMaxLength(60);
-			Property(t => t.PadLastName).HasMaxLength(60);
-			Property(t => t.DatFirstName).HasMaxLength(60);
-			Property(t => t.DatName).HasMaxLength(60);
-			Property(t => t.DatLastName).HasMaxLength(60);
+			Property(t => t.IsSojourn).IsRequired();
+			Property(t => t.Photo).IsOptional();
+			Property(t => t.PadFirstName).IsOptional().HasMaxLength(60);
+			Property(t => t.PadName).IsOptional().HasMaxLength(60);
+			Property(t => t.PadLastName).IsOptional().HasMaxLength(60);
+			Property(t => t.DatFirstName).IsOptional().HasMaxLength(60);
+			Property(t => t.DatName).IsOptional().HasMaxLength(60);
+			Property(t => t.DatLastName).IsOptional().HasMaxLength(60);
+			Property(t => t.CouncilId).IsRequired();
+			Property(t => t.LastUpdDt).IsRequired();
+			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
+
 			HasMany(a => a.Peoples).WithRequired(p => p.Persons).HasForeignKey(p => p.PersonId);
 			HasMany(a => a.Educations).WithRequired(p => p.Person).HasForeignKey(p => p.PersonId);
 			HasMany(a => a.PersonDocuments).WithRequired(p => p.Person).HasForeignKey(p => p.PersonId);
 			HasMany(a => a.Employments).WithRequired(p => p.Person).HasForeignKey(p => p.PersonId);
-			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
 			ToTable("Person");
 		}
 	}

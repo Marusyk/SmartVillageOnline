@@ -14,9 +14,11 @@ namespace DAL.Mapping
 			Property(t => t.Name).IsRequired().HasMaxLength(250);
 			Property(t => t.ShortName).IsRequired().HasMaxLength(50);
 			Property(t => t.AddressId).IsOptional();
-			HasMany(a => a.ActivityTypes).WithRequired(p => p.Council).HasForeignKey(p => p.CouncilId);
-			//HasMany(a => a.Persons).WithRequired(p => p.Catalog).HasForeignKey(p => p.CatalogId);
+			Property(t => t.EDRPOUCode).IsOptional();
+			Property(t => t.LastUpdDt).IsRequired();
 			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
+
+			HasMany(a => a.ActivityTypes).WithRequired(p => p.Council).HasForeignKey(p => p.CouncilId);
 			ToTable("Council");
 		}
 	}

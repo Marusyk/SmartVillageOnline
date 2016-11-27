@@ -13,8 +13,12 @@ namespace DAL.Mapping
 			Property(t => t.PersonId).IsRequired();
 			Property(t => t.HouseId).IsRequired();
 			Property(t => t.PeopleNumber).IsRequired();
+			Property(t => t.FamilyRelationId).IsOptional();
+			Property(t => t.DateRegistration).IsOptional();
 			Property(t => t.IsMain).IsRequired();
+			Property(t => t.LastUpdDt).IsRequired();
 			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
+
 			ToTable("People");
 		}
 	}
