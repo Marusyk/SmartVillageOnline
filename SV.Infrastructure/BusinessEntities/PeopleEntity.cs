@@ -1,8 +1,8 @@
 ﻿using System;
 using BusinessEntities.BaseBusinessEntities;
-using DataModel.Dictionaries;
+using BusinessEntities.Dictionaries;
 
-namespace DataModel
+namespace BusinessEntities
 {
 	public class PeopleEntity : BaseBusinessEntity
 	{

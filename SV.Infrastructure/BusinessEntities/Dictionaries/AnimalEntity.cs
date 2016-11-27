@@ -1,6 +1,6 @@
 ﻿using BusinessEntities.BaseBusinessEntities;
 
-namespace DataModel.Dictionaries
+namespace BusinessEntities.Dictionaries
 {
 	public class AnimalEntity : BaseDictionaryCouncilEntity { }
 }

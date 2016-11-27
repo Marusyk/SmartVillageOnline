@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using DataModel.Dictionaries;
+using BusinessEntities.Dictionaries;
 using BusinessEntities.BaseBusinessEntities;
 
-namespace DataModel
+namespace BusinessEntities
 {
 	public class DocumentEntity : BaseDictionaryCouncilEntity
 	{

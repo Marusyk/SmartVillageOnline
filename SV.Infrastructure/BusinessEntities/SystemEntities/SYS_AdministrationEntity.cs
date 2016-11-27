@@ -1,7 +1,7 @@
 ﻿using System;
 using BusinessEntities.BaseBusinessEntities;
 
-namespace DataModel.SystemEntities
+namespace BusinessEntities.SystemEntities
 {
 	public class SYS_AdministrationEntity : BaseDictionaryEntity
 	{

@@ -1,7 +1,7 @@
 ﻿using BusinessEntities.BaseBusinessEntities;
 using System.Collections.Generic;
 
-namespace DataModel.Dictionaries
+namespace BusinessEntities.Dictionaries
 {
 	public class StreetTypeEntity : BaseDictionaryEntity
 	{

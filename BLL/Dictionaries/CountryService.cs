@@ -1,5 +1,5 @@
 ﻿using BusinessEntities.Dictionaries;
-using DataModel.Dictionaries;
+using BusinessEntities.Dictionaries;
 using DAL.UnitOfWork;
 
 namespace BLL.Dictionaries

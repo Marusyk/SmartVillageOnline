@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using BusinessEntities.BaseBusinessEntities;
 
-namespace DataModel.Dictionaries
+namespace BusinessEntities.Dictionaries
 {
 	public class PersonEntity : BaseBusinessCouncilEntity
 	{

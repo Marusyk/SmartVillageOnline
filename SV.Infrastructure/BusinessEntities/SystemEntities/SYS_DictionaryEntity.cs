@@ -1,6 +1,6 @@
 ﻿using BusinessEntities.BaseBusinessEntities;
 
-namespace DataModel.SystemEntities
+namespace BusinessEntities.SystemEntities
 {
 	public class SYS_DictionaryEntity : BaseDictionaryEntity
 	{
