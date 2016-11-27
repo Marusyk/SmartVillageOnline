@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using BusinessEntities.BaseBusinessEntities;
+using DataModel.Dictionaries;
 
-namespace DataModel.Dictionaries
+namespace DataModel
 {
-	public class CountryEntity : BaseDictionaryEntity
+	public class CatalogEntity : BaseDictionaryCouncilEntity
 	{
-		public virtual ICollection<RegionEntity> Regions { get; set; }
+		public int? ParentId { get; set; }
+
 		public virtual ICollection<PersonEntity> Persons { get; set; }
 	}
 }

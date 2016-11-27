@@ -2,12 +2,12 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using BusinessEntities.BaseBusinessEntities;
+using BusinessEntities.BaseBusinessEntity;
 using BLL.Interfaces;
 
 namespace WebAPI.Infrastructure
 {
-	public class BaseApiController<T> : ApiController where T : BaseBusinessEntities
+	public class BaseApiController<T> : ApiController where T : BaseBusinessEntity
 	{
 		#region Constructors
 		public BaseApiController(IService<T> entityService)

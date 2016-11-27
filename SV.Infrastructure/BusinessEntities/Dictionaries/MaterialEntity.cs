@@ -2,5 +2,5 @@
 
 namespace DataModel.Dictionaries
 {
-	public class AnimalEntity : BaseDictionaryCouncilEntity { }
+	public class MaterialEntity : BaseDictionaryCouncilEntity { }
 }

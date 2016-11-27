@@ -3,9 +3,9 @@ using BusinessEntities.BaseBusinessEntities;
 
 namespace DataModel.Dictionaries
 {
-	public class CountryEntity : BaseDictionaryEntity
+	public class PassAuthorityEntity : BaseDictionaryCouncilEntity
 	{
-		public virtual ICollection<RegionEntity> Regions { get; set; }
 		public virtual ICollection<PersonEntity> Persons { get; set; }
+		public virtual ICollection<DocumentEntity> Documents { get; set; }
 	}
 }

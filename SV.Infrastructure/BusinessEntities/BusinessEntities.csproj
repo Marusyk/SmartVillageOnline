@@ -41,17 +41,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseBusinessEntities\BaseBusinessEntities.cs" />
+    <Compile Include="BaseBusinessEntities\BaseBusinessCouncilEntity.cs" />
+    <Compile Include="BaseBusinessEntities\BaseBusinessEntity.cs" />
+    <Compile Include="BaseBusinessEntities\BaseDictionaryCouncilEntity.cs" />
     <Compile Include="BaseBusinessEntities\BaseDictionaryEntity.cs" />
+    <Compile Include="CatalogEntity.cs" />
+    <Compile Include="CouncilEntity.cs" />
+    <Compile Include="Dictionaries\ActivityType.cs" />
+    <Compile Include="Dictionaries\AddressEntity.cs" />
     <Compile Include="Dictionaries\AnimalEntity.cs" />
+    <Compile Include="Dictionaries\CityEntity.cs" />
+    <Compile Include="Dictionaries\CityTypeEntity.cs" />
+    <Compile Include="Dictionaries\CompanyEntity.cs" />
     <Compile Include="Dictionaries\CountryEntity.cs" />
     <Compile Include="Dictionaries\DistrictEntity.cs" />
+    <Compile Include="Dictionaries\DocumentTypeEntity.cs" />
+    <Compile Include="Dictionaries\EducationDegreeEntity.cs" />
+    <Compile Include="Dictionaries\FamilyRelationsEntity.cs" />
+    <Compile Include="Dictionaries\FamilyStatusEntity.cs" />
+    <Compile Include="Dictionaries\InstitutionEntity.cs" />
+    <Compile Include="Dictionaries\MaterialEntity.cs" />
+    <Compile Include="Dictionaries\NationalityEntity.cs" />
+    <Compile Include="Dictionaries\PassAuthorityEntity.cs" />
+    <Compile Include="Dictionaries\PensionTypeEntity.cs" />
+    <Compile Include="Dictionaries\PersonEntity.cs" />
+    <Compile Include="Dictionaries\PositionEntity.cs" />
     <Compile Include="Dictionaries\RegionEntity.cs" />
+    <Compile Include="Dictionaries\SpecialityEntity.cs" />
+    <Compile Include="Dictionaries\StreetEntity.cs" />
+    <Compile Include="Dictionaries\StreetTypeEntity.cs" />
+    <Compile Include="DocumentEntity.cs" />
+    <Compile Include="EducationEntity.cs" />
+    <Compile Include="EmploymentEntity.cs" />
+    <Compile Include="HouseEntity.cs" />
+    <Compile Include="PeopleEntity.cs" />
+    <Compile Include="PersonDocumentEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemEntities\SYS_AdministrationEntity.cs" />
+    <Compile Include="SystemEntities\SYS_DictionaryEntity.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SystemEntities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
