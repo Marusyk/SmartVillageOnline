@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using BusinessEntities.BaseBusinessEntities;
+using BusinessEntities.BaseBusinessEntity;
 using BLL.Interfaces;
 using DataModel.Abstract;
 using DAL.Repository;
@@ -9,7 +9,7 @@ using DAL.UnitOfWork;
 
 namespace BLL
 {
-	public class BaseServices<TEntity, TBusinessEntity> : IService<TBusinessEntity> where TBusinessEntity : BaseBusinessEntities where TEntity : BaseEntity
+	public class BaseServices<TEntity, TBusinessEntity> : IService<TBusinessEntity> where TBusinessEntity : BaseBusinessEntity where TEntity : BaseEntity
 	{
 		protected readonly IUnitOfWork UnitOfWork;
 		protected readonly IRepository<TEntity> Repository;

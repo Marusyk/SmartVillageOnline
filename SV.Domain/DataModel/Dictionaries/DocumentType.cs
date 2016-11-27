@@ -4,7 +4,7 @@ using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
 {
-	public class DocumentType : BaseDictionary
+	public class DocumentType : BaseDictionaryCouncil
 	{
 		public string Code { get; set; }
 

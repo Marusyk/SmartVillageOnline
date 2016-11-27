@@ -2,5 +2,5 @@
 
 namespace DataModel.Dictionaries
 {
-	public class Animal : BaseDictionary { }
+	public class Animal : BaseDictionaryCouncil { }
 }

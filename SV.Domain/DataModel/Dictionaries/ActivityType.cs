@@ -4,10 +4,8 @@ using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
 {
-	public class ActivityType : BaseDictionary
+	public class ActivityType : BaseDictionaryCouncil
 	{
-		public int CouncilId { get; set; }
-
 		//Navigation
 		[IgnoreDataMember]
 		public virtual ICollection<Employment> Employments { get; set; }

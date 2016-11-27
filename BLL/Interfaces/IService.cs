@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using BusinessEntities.BaseBusinessEntities;
+using BusinessEntities.BaseBusinessEntity;
 
 namespace BLL.Interfaces
 {
-	public interface IService<TEntity> where TEntity : BaseBusinessEntities
+	public interface IService<TEntity> where TEntity : BaseBusinessEntity
 	{
 		IEnumerable<TEntity> Get();
 		/*IEnumerable<TEntity> GetAll();

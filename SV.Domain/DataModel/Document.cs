@@ -6,7 +6,7 @@ using DataModel.Dictionaries;
 
 namespace DataModel
 {
-	public class Document : BaseDictionary
+	public class Document : BaseDictionaryCouncil
 	{
 		public int? DocumentTypeId { get; set; }
 		public int? PassAuthorityId { get; set; }

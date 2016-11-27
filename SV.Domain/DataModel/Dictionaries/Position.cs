@@ -4,7 +4,7 @@ using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
 {
-	public class Position : BaseDictionary
+	public class Position : BaseDictionaryCouncil
 	{
 		//Navigation
 		[IgnoreDataMember]

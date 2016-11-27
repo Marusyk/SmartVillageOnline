@@ -11,11 +11,13 @@ namespace DataModel.Dictionaries
 		public int? PostCode { get; set; }
 		public string BuildNr { get; set; }
 		public string FlatNr { get; set; }
+		public int CouncilId { get; set; }
 
 
 		//FK
 		public virtual City City { get; set; }
 		public virtual Street Street { get; set; }
+		public virtual Council Council { get; set; }
 
 		//Navigation
 		[IgnoreDataMember]
@@ -24,5 +26,7 @@ namespace DataModel.Dictionaries
 		public virtual ICollection<Person> PersonBirthAddress { get; set; }
 		[IgnoreDataMember]
 		public virtual ICollection<Person> PersonLiveAddress { get; set; }
+		[IgnoreDataMember]
+		public virtual ICollection<Council> Councils { get; set; }
 	}
 }

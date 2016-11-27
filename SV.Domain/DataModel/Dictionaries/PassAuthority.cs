@@ -4,7 +4,7 @@ using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
 {
-	public class PassAuthority : BaseDictionary
+	public class PassAuthority : BaseDictionaryCouncil
 	{
 		//Navigation
 		[IgnoreDataMember]

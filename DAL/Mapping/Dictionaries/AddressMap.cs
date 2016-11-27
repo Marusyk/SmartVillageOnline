@@ -16,6 +16,7 @@ namespace DAL.Mapping.Dictionaries
 			HasMany(a => a.Houses).WithRequired(p => p.Address).HasForeignKey(p => p.AddressId);
 			HasMany(a => a.PersonBirthAddress).WithOptional(p => p.AddressBith).HasForeignKey(p => p.AddressBirthId);
 			HasMany(a => a.PersonLiveAddress).WithOptional(p => p.AddressLive).HasForeignKey(p => p.AddressLiveId);
+			Property(t => t.CouncilId).IsRequired();
 			Property(t => t.LastUpdUs).HasMaxLength(50);
 			ToTable("Address");
 		}

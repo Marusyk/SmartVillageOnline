@@ -5,10 +5,9 @@ using DataModel.Dictionaries;
 
 namespace DataModel
 {
-	public class Catalog : BaseDictionary
+	public class Catalog : BaseDictionaryCouncil
 	{
 		public int? ParentId { get; set; }
-		public int? ModuleId { get; set; }
 
 		//Navigation
 		[IgnoreDataMember]

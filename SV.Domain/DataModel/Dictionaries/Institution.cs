@@ -4,7 +4,7 @@ using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
 {
-	public class Institution : BaseDictionary
+	public class Institution : BaseDictionaryCouncil
 	{
 		public int CityId { get; set; }
 

@@ -5,7 +5,7 @@ using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
 {
-	public class Person : BaseEntity
+	public class Person : BaseEntityCouncil
 	{
 		public string FirstName { get; set; }
 		public string LastName { get; set; }

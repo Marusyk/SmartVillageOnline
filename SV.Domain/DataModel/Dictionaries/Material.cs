@@ -2,5 +2,5 @@
 
 namespace DataModel.Dictionaries
 {
-	public class Material : BaseDictionary { }
+	public class Material : BaseDictionaryCouncil { }
 }

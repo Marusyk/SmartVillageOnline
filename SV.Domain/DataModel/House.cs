@@ -5,7 +5,7 @@ using DataModel.Dictionaries;
 
 namespace DataModel
 {
-	public class House : BaseEntity
+	public class House : BaseEntityCouncil
 	{
 		public string HouseNr { get; set; }
 		public string KadastrNr { get; set; }
