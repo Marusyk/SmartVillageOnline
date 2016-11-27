@@ -163,7 +163,7 @@ IF NOT EXISTS(SELECT 1 FROM [Region] WHERE [Name] = N'Рівненська')
 BEGIN
 	INSERT INTO [Region]([Name], [CountryId], [LastUpdDt], [LastUpdUs])
 	SELECT
-		N'Полтавська'
+		N'Рівненська'
 	,	@CountryId
 	,	@LastUpdDt
 	,	@LastUpdUs;
