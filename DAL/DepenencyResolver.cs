@@ -1,7 +1,6 @@
-﻿using System.ComponentModel.Composition;
-using DAL.Repository;
-using DAL.UnitOfWork;
+﻿using DAL.Repository;
 using DependencyResolution.Interfaces;
+using System.ComponentModel.Composition;
 
 namespace DAL
 {
@@ -10,7 +9,6 @@ namespace DAL
 	{
 		public void SetUp(IRegisterComponent registerComponent)
 		{
-			registerComponent.RegisterType<IUnitOfWork, UnitOfWork.UnitOfWork>();
 			registerComponent.RegisterType(typeof(IRepository<>), typeof(EFRepository<>));
 		}
 	}

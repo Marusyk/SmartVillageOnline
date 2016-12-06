@@ -15,7 +15,7 @@ namespace DAL.DBContext
 			: base("EFDbContext")
 		{
 			//Configuration.ProxyCreationEnabled = true;
-			Configuration.LazyLoadingEnabled = false;
+		//	Configuration.LazyLoadingEnabled = false;
 		}
 
 		public new IDbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity

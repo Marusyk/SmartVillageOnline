@@ -2,6 +2,6 @@
 {
 	public abstract class BaseDictionary : BaseEntity
 	{
-		public string Name { get; set; }
+		public virtual string Name { get; set; }
 	}
 }

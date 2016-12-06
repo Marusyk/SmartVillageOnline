@@ -6,6 +6,6 @@ namespace BLL.Dictionaries
 {
 	public class CountryService : BaseServices<Country, CountryEntity>
 	{
-		public CountryService(IUnitOfWork unitOfWork) : base(unitOfWork) { }
+		public CountryService(UnitOfWork unitOfWork) : base(unitOfWork) { }
 	}
 }

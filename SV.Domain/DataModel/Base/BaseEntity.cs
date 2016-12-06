@@ -10,8 +10,8 @@ namespace DataModel.Abstract
 			LastUpdDt = DateTime.Now;
 		}
 
-		public int Id { get; set; }
-		public DateTime LastUpdDt { get; set; }
-		public string LastUpdUs { get; set; }
+		public virtual int Id { get; set; }
+		public virtual DateTime LastUpdDt { get; set; }
+		public virtual string LastUpdUs { get; set; }
 	}
 }
