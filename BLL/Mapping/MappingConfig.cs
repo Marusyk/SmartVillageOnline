@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using BusinessEntities.Dictionaries;
-using DataModel.Dictionaries;
+﻿using AutoMapper;
 
 namespace BLL.Mapping
 {
-	public class MappingConfig
+	public static class MappingConfig
 	{
-		public MappingConfig()
+		public static void RegisterMapping()
 		{
+			Mapper.Initialize(config => {
+					config.AddProfile(new AutomapperProfile());
+			});
 		}
 	}
 }

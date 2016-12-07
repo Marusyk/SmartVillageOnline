@@ -45,6 +45,7 @@
     <Compile Include="Dictionaries\CountryService.cs" />
     <Compile Include="Dictionaries\RegionService.cs" />
     <Compile Include="Interfaces\IService.cs" />
+    <Compile Include="Mapping\AutomapperProfile.cs" />
     <Compile Include="Mapping\MappingConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

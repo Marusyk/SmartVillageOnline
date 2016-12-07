@@ -23,12 +23,7 @@ namespace BLL
 		public IEnumerable<TBusinessEntity> Get()
 		{
 			var entities = Repository.Get();
-			var config = new MapperConfiguration(cfg =>
-			{
-				cfg.CreateMap<TEntity, TBusinessEntity>();
-			});
-			var mapper = config.CreateMapper();
-			var entitiesModel = mapper.Map<List<TEntity>, List<TBusinessEntity>>(entities.ToList());
+			var entitiesModel = Mapper.Map<List<TEntity>, List<TBusinessEntity>>(entities.ToList());
 			return entitiesModel;
 		}
 /*

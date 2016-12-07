@@ -2,12 +2,5 @@
 
 namespace DataModel.Dictionaries
 {
-	public class Animal : BaseDictionary
-	{
-
-		public int CouncilId { get; set; }
-
-		//FK
-	//	public virtual Council Council { get; set; }
-	}
+	public class Animal : BaseDictionaryCouncil { }
 }

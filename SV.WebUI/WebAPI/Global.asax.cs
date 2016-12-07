@@ -22,7 +22,8 @@ namespace WebAPI
 			var formatters = GlobalConfiguration.Configuration.Formatters;
 			var jsonFormatter = formatters.JsonFormatter;
 			var settings = jsonFormatter.SerializerSettings;
-			settings.Formatting = Formatting.Indented; ;
+			settings.Formatting = Formatting.Indented;
+			settings.NullValueHandling = NullValueHandling.Ignore;
 			var appXmlType =
 				formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
 			formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
