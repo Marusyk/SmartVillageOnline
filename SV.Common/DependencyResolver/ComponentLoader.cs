@@ -39,14 +39,15 @@ namespace DependencyResolution
 				var builder = new StringBuilder();
 				foreach (var loaderException in ex.LoaderExceptions)
 				{
-					builder.AppendFormat($"{loaderException.Message}\n");
+					builder.AppendFormat("{0}\n", loaderException.Message);
 				}
 				throw new TypeLoadException(builder.ToString(), ex);
 			}
 		}
 
-		private static ImportDefinition BuildImportDefinition() =>
-			new ImportDefinition(def => true, typeof(IComponent).FullName, ImportCardinality.ZeroOrMore, false, false);
-
+		private static ImportDefinition BuildImportDefinition()
+		{
+			return new ImportDefinition(def => true, typeof (IComponent).FullName, ImportCardinality.ZeroOrMore, false, false);
+		}
 	}
 }
