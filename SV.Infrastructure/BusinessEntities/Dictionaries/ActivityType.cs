@@ -5,6 +5,6 @@ namespace BusinessEntities.Dictionaries
 {
 	public class ActivityTypeEntity : BaseDictionaryCouncilEntity
 	{
-		public virtual ICollection<EmploymentEntity> Employments { get; set; }
+		public ICollection<EmploymentEntity> Employments { get; set; }
 	}
 }

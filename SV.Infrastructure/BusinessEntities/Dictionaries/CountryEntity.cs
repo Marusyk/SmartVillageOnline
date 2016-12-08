@@ -5,7 +5,7 @@ namespace BusinessEntities.Dictionaries
 {
 	public class CountryEntity : BaseDictionaryEntity
 	{
-		public virtual ICollection<RegionEntity> Regions { get; set; }
-		public virtual ICollection<PersonEntity> Persons { get; set; }
+		public ICollection<RegionEntity> Regions { get; set; }
+		public ICollection<PersonEntity> Persons { get; set; }
 	}
 }

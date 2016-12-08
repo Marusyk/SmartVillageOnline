@@ -15,9 +15,9 @@ namespace BusinessEntities
 		public bool IsCurrent { get; set; }
 		public string Description { get; set; }
 
-		public virtual PersonEntity Person { get; set; }
-		public virtual ActivityTypeEntity ActivityType { get; set; }
-		public virtual CompanyEntity Company { get; set; }
-		public virtual PositionEntity Position { get; set; }
+		public PersonEntity Person { get; set; }
+		public ActivityTypeEntity ActivityType { get; set; }
+		public CompanyEntity Company { get; set; }
+		public PositionEntity Position { get; set; }
 	}
 }

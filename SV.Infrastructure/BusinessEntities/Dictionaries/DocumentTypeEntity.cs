@@ -7,6 +7,6 @@ namespace BusinessEntities.Dictionaries
 	{
 		public string Code { get; set; }
 
-		public virtual ICollection<DocumentEntity> Documents { get; set; }
+		public ICollection<DocumentEntity> Documents { get; set; }
 	}
 }

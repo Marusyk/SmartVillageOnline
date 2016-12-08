@@ -9,11 +9,11 @@ namespace BusinessEntities.Dictionaries
 		public int? DistrictId { get; set; }
 		public int RegionId { get; set; }
 
-		public virtual CityTypeEntity CityType { get; set; }
-		public virtual DistrictEntity District { get; set; }
-		public virtual RegionEntity Region { get; set; }
-		
-		public virtual ICollection<AddressEntity> Addresses { get; set; }
-		public virtual ICollection<InstitutionEntity> Institution { get; set; }
+		public CityTypeEntity CityType { get; set; }
+		public DistrictEntity District { get; set; }
+		public RegionEntity Region { get; set; }
+			   
+		public ICollection<AddressEntity> Addresses { get; set; }
+		public ICollection<InstitutionEntity> Institution { get; set; }
 	}
 }

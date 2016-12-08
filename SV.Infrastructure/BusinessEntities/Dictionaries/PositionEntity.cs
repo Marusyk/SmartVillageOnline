@@ -5,6 +5,6 @@ namespace BusinessEntities.Dictionaries
 {
 	public class PositionEntity : BaseDictionaryCouncilEntity
 	{
-		public virtual ICollection<EmploymentEntity> Employments { get; set; }
+		public ICollection<EmploymentEntity> Employments { get; set; }
 	}
 }

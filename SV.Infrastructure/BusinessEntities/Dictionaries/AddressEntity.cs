@@ -11,13 +11,13 @@ namespace BusinessEntities.Dictionaries
 		public string BuildNr { get; set; }
 		public string FlatNr { get; set; }
 
-		public virtual CityEntity City { get; set; }
-		public virtual StreetEntity Street { get; set; }
+		public CityEntity City { get; set; }
+		public StreetEntity Street { get; set; }
 
-		public virtual ICollection<HouseEntity> Houses { get; set; }
-		public virtual ICollection<PersonEntity> PersonBirthAddress { get; set; }
-		public virtual ICollection<PersonEntity> PersonLiveAddress { get; set; }
-		public virtual ICollection<CouncilEntity> Councils { get; set; }
-		public virtual ICollection<CompanyEntity> Companies { get; set; }
+		public ICollection<HouseEntity> Houses { get; set; }
+		public ICollection<PersonEntity> PersonBirthAddress { get; set; }
+		public ICollection<PersonEntity> PersonLiveAddress { get; set; }
+		public ICollection<CouncilEntity> Councils { get; set; }
+		public ICollection<CompanyEntity> Companies { get; set; }
 	}
 }

@@ -14,10 +14,10 @@ namespace BusinessEntities
 		public int? DocumentId { get; set; }
 		public string Description { get; set; }
 
-		public virtual PersonEntity Person { get; set; }
-		public virtual InstitutionEntity Institution { get; set; }
-		public virtual SpecialityEntity Speciality { get; set; }
-		public virtual EducationDegreeEntity EducationDegree { get; set; }
-		public virtual DocumentEntity Document { get; set; }
+		public PersonEntity Person { get; set; }
+		public InstitutionEntity Institution { get; set; }
+		public SpecialityEntity Speciality { get; set; }
+		public EducationDegreeEntity EducationDegree { get; set; }
+		public DocumentEntity Document { get; set; }
 	}
 }

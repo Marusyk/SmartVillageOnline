@@ -13,8 +13,8 @@ namespace BusinessEntities
 		public DateTime? DateRegistration { get; set; }
 		public bool IsMain { get; set; }
 
-		public virtual HouseEntity Houses { get; set; }
-		public virtual PersonEntity Persons { get; set; }
-		public virtual FamilyRelationsEntity FamilyRelations { get; set; }
+		public HouseEntity Houses { get; set; }
+		public PersonEntity Persons { get; set; }
+		public FamilyRelationsEntity FamilyRelations { get; set; }
 	}
 }

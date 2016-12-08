@@ -7,8 +7,8 @@ namespace BusinessEntities.Dictionaries
 	{
 		public int CityId { get; set; }
 
-		public virtual CityEntity City { get; set; }
+		public CityEntity City { get; set; }
 
-		public virtual ICollection<EducationEntity> Educations { get; set; }
+		public ICollection<EducationEntity> Educations { get; set; }
 	}
 }

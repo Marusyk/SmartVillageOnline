@@ -16,8 +16,8 @@ namespace BusinessEntities
 		public int? Year { get; set; }
 		public string Code { get; set; }
 
-		public virtual AddressEntity Address { get; set; }
+		public AddressEntity Address { get; set; }
 
-		public virtual ICollection<PeopleEntity> Peoples { get; set; }
+		public ICollection<PeopleEntity> Peoples { get; set; }
 	}
 }

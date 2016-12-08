@@ -12,10 +12,10 @@ namespace BusinessEntities
 		public string Code { get; set; }
 		public bool State { get; set; }
 
-		public virtual DocumentTypeEntity DocumentType { get; set; }
-		public virtual PassAuthorityEntity PassAuthority { get; set; }
+		public DocumentTypeEntity DocumentType { get; set; }
+		public PassAuthorityEntity PassAuthority { get; set; }
 
-		public virtual ICollection<EducationEntity> Educations { get; set; }
-		public virtual ICollection<PersonDocumentEntity> PersonDocuments { get; set; }
+		public ICollection<EducationEntity> Educations { get; set; }
+		public ICollection<PersonDocumentEntity> PersonDocuments { get; set; }
 	}
 }

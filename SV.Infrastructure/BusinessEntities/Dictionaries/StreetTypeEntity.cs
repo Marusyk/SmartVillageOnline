@@ -5,6 +5,6 @@ namespace BusinessEntities.Dictionaries
 {
 	public class StreetTypeEntity : BaseDictionaryEntity
 	{
-		public virtual ICollection<StreetEntity> Streets { get; set; }
+		public ICollection<StreetEntity> Streets { get; set; }
 	}
 }

@@ -8,7 +8,7 @@ namespace BusinessEntities
 		public int PersonId { get; set; }
 		public int DocumentId { get; set; }
 
-		public virtual PersonEntity Person { get; set; }
-		public virtual DocumentEntity Document { get; set; }
+		public PersonEntity Person { get; set; }
+		public DocumentEntity Document { get; set; }
 	}
 }

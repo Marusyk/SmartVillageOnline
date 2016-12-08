@@ -7,8 +7,8 @@ namespace BusinessEntities.Dictionaries
 	{
 		public int StreetTypeId { get; set; }
 
-		public virtual StreetTypeEntity StreetType { get; set; }
+		public StreetTypeEntity StreetType { get; set; }
 
-		public virtual ICollection<AddressEntity> Addresses { get; set; }
+		public ICollection<AddressEntity> Addresses { get; set; }
 	}
 }

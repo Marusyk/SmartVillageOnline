@@ -12,22 +12,22 @@ namespace BusinessEntities
 		public int? AddressId { get; set; }
 		public string EDRPOUCode { get; set; }
 
-		public virtual AddressEntity Address { get; set; }
+		public AddressEntity Address { get; set; }
 
-		public virtual ICollection<AddressEntity> Addresses { get; set; }
-		public virtual ICollection<ActivityTypeEntity> ActivityTypes { get; set; }
-		public virtual ICollection<AnimalEntity> Animals { get; set; }
-		public virtual ICollection<CompanyEntity> Companies { get; set; }
-		public virtual ICollection<DocumentTypeEntity> DocumentTypes { get; set; }
-		public virtual ICollection<HouseEntity> Houses { get; set; }
-		public virtual ICollection<CatalogEntity> Catalogs { get; set; }
-		public virtual ICollection<DocumentEntity> Documents { get; set; }
-		public virtual ICollection<InstitutionEntity> Institutions { get; set; }
-		public virtual ICollection<MaterialEntity> Materials { get; set; }
-		public virtual ICollection<PassAuthorityEntity> PassAuthorities { get; set; }
-		public virtual ICollection<PersonEntity> Persons { get; set; }
-		public virtual ICollection<PositionEntity> Positions { get; set; }
-		public virtual ICollection<SpecialityEntity> Specialities { get; set; }
-		public virtual ICollection<StreetEntity> Streets { get; set; }
+		public ICollection<AddressEntity> Addresses { get; set; }
+		public ICollection<ActivityTypeEntity> ActivityTypes { get; set; }
+		public ICollection<AnimalEntity> Animals { get; set; }
+		public ICollection<CompanyEntity> Companies { get; set; }
+		public ICollection<DocumentTypeEntity> DocumentTypes { get; set; }
+		public ICollection<HouseEntity> Houses { get; set; }
+		public ICollection<CatalogEntity> Catalogs { get; set; }
+		public ICollection<DocumentEntity> Documents { get; set; }
+		public ICollection<InstitutionEntity> Institutions { get; set; }
+		public ICollection<MaterialEntity> Materials { get; set; }
+		public ICollection<PassAuthorityEntity> PassAuthorities { get; set; }
+		public ICollection<PersonEntity> Persons { get; set; }
+		public ICollection<PositionEntity> Positions { get; set; }
+		public ICollection<SpecialityEntity> Specialities { get; set; }
+		public ICollection<StreetEntity> Streets { get; set; }
 	}
 }

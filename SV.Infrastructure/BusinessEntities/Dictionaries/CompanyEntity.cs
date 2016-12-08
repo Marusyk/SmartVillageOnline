@@ -9,6 +9,6 @@ namespace BusinessEntities.Dictionaries
 
 		public AddressEntity Address { get; set; }
 
-		public virtual ICollection<EmploymentEntity> Employments { get; set; }
+		public ICollection<EmploymentEntity> Employments { get; set; }
 	}
 }

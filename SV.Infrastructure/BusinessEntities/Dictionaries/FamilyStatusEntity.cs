@@ -5,6 +5,6 @@ namespace BusinessEntities.Dictionaries
 {
 	public class FamilyStatusEntity : BaseDictionaryEntity
 	{
-		public virtual ICollection<PersonEntity> Persons { get; set; }
+		public ICollection<PersonEntity> Persons { get; set; }
 	}
 }

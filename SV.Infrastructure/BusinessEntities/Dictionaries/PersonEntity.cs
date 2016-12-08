@@ -32,17 +32,17 @@ namespace BusinessEntities.Dictionaries
 		public string DatName { get; set; }
 		public string DatLastName { get; set; }
 
-		public virtual AddressEntity AddressBith { get; set; }
-		public virtual AddressEntity AddressLive { get; set; }
-		public virtual NationalityEntity Nationality { get; set; }
-		public virtual PassAuthorityEntity PassAuthority { get; set; }
-		public virtual FamilyStatusEntity FamilyStatus { get; set; }
-		public virtual CountryEntity Citizenship { get; set; }
-		public virtual CatalogEntity Catalog { get; set; }
+		public AddressEntity AddressBith { get; set; }
+		public AddressEntity AddressLive { get; set; }
+		public NationalityEntity Nationality { get; set; }
+		public PassAuthorityEntity PassAuthority { get; set; }
+		public FamilyStatusEntity FamilyStatus { get; set; }
+		public CountryEntity Citizenship { get; set; }
+		public CatalogEntity Catalog { get; set; }
 
-		public virtual ICollection<PeopleEntity> Peoples { get; set; }
-		public virtual ICollection<EducationEntity> Educations { get; set; }
-		public virtual ICollection<PersonDocumentEntity> PersonDocuments { get; set; }
-		public virtual ICollection<EmploymentEntity> Employments { get; set; }
+		public ICollection<PeopleEntity> Peoples { get; set; }
+		public ICollection<EducationEntity> Educations { get; set; }
+		public ICollection<PersonDocumentEntity> PersonDocuments { get; set; }
+		public ICollection<EmploymentEntity> Employments { get; set; }
 	}
 }
