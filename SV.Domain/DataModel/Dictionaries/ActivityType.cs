@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
@@ -9,9 +8,8 @@ namespace DataModel.Dictionaries
 		public int CouncilId { get; set; }
 
 		//FK
-		public Council Council { get; set; }
+		public virtual Council Council { get; set; }
 		//Navigation
-		[IgnoreDataMember]
 		public virtual ICollection<Employment> Employments { get; set; }
 	}
 }

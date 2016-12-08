@@ -1,18 +1,20 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
 {
-	public class Company : BaseDictionaryCouncil
+	public class Company : BaseDictionary
 	{
 		public int? AddressId { get; set; }
+		public int CouncilId { get; set; }
+
 
 		//FK
 		public Address Address { get; set; }
+		public virtual Council Council { get; set; }
+
 
 		//Navigation
-		[IgnoreDataMember]
 		public virtual ICollection<Employment> Employments { get; set; }
 	}
 }

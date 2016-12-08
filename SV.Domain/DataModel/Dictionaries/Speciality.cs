@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
 {
-	public class Speciality : BaseDictionaryCouncil
+	public class Speciality : BaseDictionary
 	{
+		public int CouncilId { get; set; }
+
+		//FK
+		public virtual Council Council { get; set; }
+
 		//Navigation
-		[IgnoreDataMember]
 		public virtual ICollection<Education> Educations { get; set; }
 	}
 }

@@ -1,15 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.ModelConfiguration;
-using DataModel.Dictionaries;
+﻿using DataModel.Dictionaries;
 
 namespace DAL.Mapping.Dictionaries
 {
-	public class PersonMap : EntityTypeConfiguration<Person>
+	public class PersonMap : BaseModelMap<Person>
 	{
 		public PersonMap()
 		{
-			HasKey(t => t.Id);
-			Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 			Property(t => t.FirstName).IsRequired().HasMaxLength(60);
 			Property(t => t.LastName).IsRequired().HasMaxLength(60);
 			Property(t => t.MiddleName).IsRequired().HasMaxLength(60);
@@ -36,8 +32,6 @@ namespace DAL.Mapping.Dictionaries
 			Property(t => t.DatName).IsOptional().HasMaxLength(60);
 			Property(t => t.DatLastName).IsOptional().HasMaxLength(60);
 			Property(t => t.CouncilId).IsRequired();
-			Property(t => t.LastUpdDt).IsRequired();
-			Property(t => t.LastUpdUs).IsRequired().HasMaxLength(50);
 
 			HasMany(a => a.Peoples).WithRequired(p => p.Persons).HasForeignKey(p => p.PersonId);
 			HasMany(a => a.Educations).WithRequired(p => p.Person).HasForeignKey(p => p.PersonId);

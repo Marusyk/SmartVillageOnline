@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DBContext\EFDbContext.cs" />
     <Compile Include="DepenencyResolver.cs" />
+    <Compile Include="Mapping\BaseModelMap.cs" />
     <Compile Include="Mapping\CatalogMap.cs" />
     <Compile Include="Mapping\CouncilMap.cs" />
     <Compile Include="Mapping\Dictionaries\ActivityTypeMap.cs" />

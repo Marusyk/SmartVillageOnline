@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
 {
-	public class Person : BaseEntityCouncil
+	public class Person : BaseEntity
 	{
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
@@ -32,6 +31,8 @@ namespace DataModel.Dictionaries
 		public string DatFirstName { get; set; }
 		public string DatName { get; set; }
 		public string DatLastName { get; set; }
+		public int CouncilId { get; set; }
+
 
 		//FK
 		public virtual Address AddressBith { get; set; }
@@ -41,15 +42,13 @@ namespace DataModel.Dictionaries
 		public virtual FamilyStatus FamilyStatus { get; set; }
 		public virtual Country Citizenship { get; set; }
 		public virtual Catalog Catalog { get; set; }
+		public virtual Council Council { get; set; }
+
 
 		//Navigation
-		[IgnoreDataMember]
 		public virtual ICollection<People> Peoples { get; set; }
-		[IgnoreDataMember]
 		public virtual ICollection<Education> Educations { get; set; }
-		[IgnoreDataMember]
 		public virtual ICollection<PersonDocument> PersonDocuments { get; set; }
-		[IgnoreDataMember]
 		public virtual ICollection<Employment> Employments { get; set; }
 	}
 }

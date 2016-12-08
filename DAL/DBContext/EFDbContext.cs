@@ -31,7 +31,7 @@ namespace DAL.DBContext
 			var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
 				.Where(type => !string.IsNullOrEmpty(type.Namespace))
 				.Where(type => type.BaseType != null && type.BaseType.IsGenericType
-					&& type.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>));
+					&& type.BaseType.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>)); // here type.BaseType.BaseType because we have BaseModelMap
 			foreach (var configurationInstance in typesToRegister.Select(Activator.CreateInstance))
 			{
 				modelBuilder.Configurations.Add((dynamic)configurationInstance);

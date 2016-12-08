@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
 using DataModel.Abstract;
 
 namespace DataModel.Dictionaries
@@ -12,9 +11,7 @@ namespace DataModel.Dictionaries
 		public virtual Country Country { get; set; }
 
 		//Navigation
-		[IgnoreDataMember]
 		public virtual ICollection<District> Districts { get; set; }
-		[IgnoreDataMember]
 		public virtual ICollection<City> Cities { get; set; }
 	}
 }
