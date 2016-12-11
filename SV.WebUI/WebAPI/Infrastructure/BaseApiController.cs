@@ -45,50 +45,61 @@ namespace WebAPI.Infrastructure
 			var message = $"{nameof(T)}: No content";
 			return ErrorMsg(HttpStatusCode.NoContent, message);
 		}
-		/*
+		
 		// Get entity with paging
-		public HttpResponseMessage Get(int pageNo, int pageSize)
-		{
-			throw new NotImplementedException();
-		}
+		//public HttpResponseMessage Get(int pageNo, int pageSize)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
 		// Get entity by ID
 		public HttpResponseMessage GetById(int id)
 		{
-			var entity = EntityServices.GetById(id);
+			var entity = EntityService.GetById(id);
 			if (entity != null)
 			{
 				return Request.CreateResponse(HttpStatusCode.OK, entity);
 			}
 
-			var message = $"No {GenericTypeName} with ID = {id}";
+			var message = $"No {nameof(T)} with ID = {id}";
 			return ErrorMsg(HttpStatusCode.NoContent, message);
 		}
-
+		/*
 		// Insert new entity
 		public HttpResponseMessage Post([FromBody] T entity)
 		{
 			throw new NotImplementedException();
 		}
-
+		*/
 		// Remove the entity by ID
 		public HttpResponseMessage Delete(int id)
 		{
 			if (id <= 0)
 				return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
-			var result = EntityServices.Delete(id);
-			var message = $"{GenericTypeName} with ID = {id} was " + (result ? "deleted" : "not deleted");
-			return result ? Request.CreateResponse(HttpStatusCode.OK, message) : ErrorMsg(HttpStatusCode.InternalServerError, message);
-		}
 
+			var result = EntityService.Delete(id);
+
+			var message = $"{nameof(T)} with ID = {id} was ";
+			if (result)
+			{
+				message += "deleted";
+				return Request.CreateResponse(HttpStatusCode.OK, message);
+			}
+			message += "not deleted";
+			return ErrorMsg(HttpStatusCode.InternalServerError, message);
+		}
+		
 		// Update the entity
-		public HttpResponseMessage Put(int id, [FromBody] T entity)
-		{
-			if (id <= 0)
-				return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
-			var result = EntityServices.Update(id, entity);
-			return result ? Request.CreateResponse(HttpStatusCode.OK, "GOOOD") : ErrorMsg(HttpStatusCode.InternalServerError, "FAIL"); ;
-		}*/
+		//public HttpResponseMessage Put(int id, [FromBody] T entity)
+		//{
+		//	if (id <= 0)
+		//		return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
+
+		//	var result = EntityService.Update(id, entity);
+		//	return result ?
+		//		Request.CreateResponse(HttpStatusCode.OK, "Updated") :
+		//		ErrorMsg(HttpStatusCode.InternalServerError, "Not updated!");
+		//}
 		#endregion
 	}
 }

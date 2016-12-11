@@ -6,6 +6,7 @@ using DataModel.Abstract;
 using DAL.Repository;
 using DAL.UnitOfWork;
 using BusinessEntities.BaseBusinessEntities;
+using System.Transactions;
 
 namespace BLL
 {
@@ -24,25 +25,26 @@ namespace BLL
 		{
 			var entities = Repository.Get();
 			var entitiesModel = Mapper.Map<List<TEntity>, List<TBusinessEntity>>(entities.ToList());
+
 			return entitiesModel;
 		}
-/*
-		public IEnumerable<TBusinessEntity> GetAll()
-		{
 
-			var entities = UnitOfWork.Repository<TEntity>().GetAll().ToList();
+		//public IEnumerable<TBusinessEntity> GetAll()
+		//{
 
-			if (!entities.Any())
-				return null;
+		//	var entities = UnitOfWork.Repository<TEntity>().GetAll().ToList();
 
-			var config = new MapperConfiguration(cfg =>
-			{
-				cfg.CreateMap<TEntity, TBusinessEntity>();
-			});
-			var mapper = config.CreateMapper();
-			var entitiesModel = mapper.Map<List<TEntity>, List<TBusinessEntity>>(entities);
-			return entitiesModel;
-		}
+		//	if (!entities.Any())
+		//		return null;
+
+		//	var config = new MapperConfiguration(cfg =>
+		//	{
+		//		cfg.CreateMap<TEntity, TBusinessEntity>();
+		//	});
+		//	var mapper = config.CreateMapper();
+		//	var entitiesModel = mapper.Map<List<TEntity>, List<TBusinessEntity>>(entities);
+		//	return entitiesModel;
+		//}
 
 		public TBusinessEntity GetById(object id)
 		{
@@ -51,119 +53,104 @@ namespace BLL
 			if (entity == null)
 				return null;
 
-			var config = new MapperConfiguration(cfg =>
-			{
-				cfg.CreateMap<TEntity, TBusinessEntity>();
-			});
-			var mapper = config.CreateMapper();
-			var entityModel = mapper.Map<TEntity, TBusinessEntity>(entity);
+			var entityModel = Mapper.Map<TEntity, TBusinessEntity>(entity);
 
 			return entityModel;
 		}
 
-		public TBusinessEntity Get(Func<TBusinessEntity, bool> @where)
-		{
-			throw new NotImplementedException();
-		}
+		//public TBusinessEntity Get(Func<TBusinessEntity, bool> @where)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-		public IEnumerable<TBusinessEntity> GetMany(Func<TBusinessEntity, bool> @where)
-		{
-			throw new NotImplementedException();
-		}
+		//public IEnumerable<TBusinessEntity> GetMany(Func<TBusinessEntity, bool> @where)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-		public IQueryable<TBusinessEntity> GetManyQueryable(Func<TBusinessEntity, bool> @where)
-		{
-			throw new NotImplementedException();
-		}
+		//public IQueryable<TBusinessEntity> GetManyQueryable(Func<TBusinessEntity, bool> @where)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-		public IQueryable<TBusinessEntity> GetWithInclude(Expression<Func<TBusinessEntity, bool>> predicate, params string[] include)
-		{
-			throw new NotImplementedException();
-		}
+		//public IQueryable<TBusinessEntity> GetWithInclude(Expression<Func<TBusinessEntity, bool>> predicate, params string[] include)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-		public TBusinessEntity GetSingle(Func<TBusinessEntity, bool> predicate)
-		{
-			throw new NotImplementedException();
-		}
+		//public TBusinessEntity GetSingle(Func<TBusinessEntity, bool> predicate)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-		public TBusinessEntity GetFirst(Func<TBusinessEntity, bool> predicate)
-		{
-			throw new NotImplementedException();
-		}
+		//public TBusinessEntity GetFirst(Func<TBusinessEntity, bool> predicate)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-		public bool Exists(object primaryKey)
-		{
-			throw new NotImplementedException();
-		}
+		//public bool Exists(object primaryKey)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-		public int Insert(TBusinessEntity entity)
-		{
-			throw new NotImplementedException();
-		}
+		//public int Insert(TBusinessEntity entity)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-		public bool Update(int id, TBusinessEntity entityToUpdate)
-		{
-			var success = false;
-			if (entityToUpdate != null)
-			{
-				using (var scope = new TransactionScope())
-				{
-					var entity = UnitOfWork.Repository<TEntity>().GetById(id);
-					if (entity != null)
-					{
-						var config = new MapperConfiguration(cfg =>
-						{
-							cfg.CreateMap<TBusinessEntity, TEntity>();
-						});
-						var mapper = config.CreateMapper();
-						var entityModel = mapper.Map<TBusinessEntity, TEntity>(entityToUpdate);
-						entity = entityModel;
-						UnitOfWork.Repository<TEntity>().Update(entity);
-						UnitOfWork.Save();
-						scope.Complete();
-						success = true;
-					}
-				}
-			}
-			return success;
-		}
+		//public bool Update(int id, TBusinessEntity entityToUpdate)
+		//{
+		//	if (entityToUpdate == null)
+		//		return false;
 
-		public bool Delete(TBusinessEntity entityToDelete)
-		{
-			var success = false;
+		//	using (var scope = new TransactionScope())
+		//	{
+		//		var entity = UnitOfWork.Repository<TEntity>().GetById(id);
+		//		if (entity == null)
+		//			return false;
 
-			if (entityToDelete != null)
-			{
-				using (var scope = new TransactionScope())
-				{
-					UnitOfWork.Repository<TEntity>().Delete(entityToDelete);
-					UnitOfWork.Save();
-					scope.Complete();
-					success = true;
-				}
-			}
-			return success;
-		}
+		//		var entityModel = Mapper.Map<TBusinessEntity, TEntity>(entityToUpdate);
+		//		entity = entityModel;
+		//		UnitOfWork.Repository<TEntity>().Update(entity);
+		//		UnitOfWork.Save();
+		//		scope.Complete();
+		//	}
+		//	return true;
+		//}
+
+		//public bool Delete(TBusinessEntity entityToDelete)
+		//{
+		//	var success = false;
+
+		//	if (entityToDelete != null)
+		//	{
+		//		using (var scope = new TransactionScope())
+		//		{
+		//			UnitOfWork.Repository<TEntity>().Delete(entityToDelete);
+		//			UnitOfWork.Save();
+		//			scope.Complete();
+		//			success = true;
+		//		}
+		//	}
+		//	return success;
+		//}
 
 		public bool Delete(object id)
 		{
-			var success = false;
+			if ((int) id <= 0)
+				return false;
 
-			if ((int)id > 0)
+			using (var scope = new TransactionScope())
 			{
-				using (var scope = new TransactionScope())
-				{
-					var entity = UnitOfWork.Repository<TEntity>().GetById(id);
-					if (entity != null)
-					{
-						UnitOfWork.Repository<TEntity>().Delete(entity);
-						UnitOfWork.Save();
-						scope.Complete();
-						success = true;
-					}
-				}
+				var entity = UnitOfWork.Repository<TEntity>().GetById(id);
+				if (entity == null)
+					return false;
+
+				UnitOfWork.Repository<TEntity>().Delete(entity);
+				UnitOfWork.Save();
+				scope.Complete();
 			}
-			return success;
-		}*/
+			return true;
+		}
 	}
 }

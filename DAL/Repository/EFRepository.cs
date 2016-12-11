@@ -67,7 +67,10 @@ namespace DAL.Repository
 
 		public virtual void Update(TEntity entityToUpdate)
 		{
-			DbSet.Attach(entityToUpdate);
+			if (Context.Entry(entityToUpdate).State == EntityState.Detached)
+			{
+				DbSet.Attach(entityToUpdate);
+			}
 			Context.Entry(entityToUpdate).State = EntityState.Modified;
 		}
 

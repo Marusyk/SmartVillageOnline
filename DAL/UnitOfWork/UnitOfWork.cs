@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
+using System.Linq;
 using DAL.DBContext;
 using DataModel.Abstract;
 using DAL.Repository;
@@ -36,10 +37,7 @@ namespace DAL.UnitOfWork
 				foreach (var eve in e.EntityValidationErrors)
 				{
 					outputLines.Add($"{DateTime.Now}: Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\"has the following validation errors:");
-					foreach (var ve in eve.ValidationErrors)
-					{
-						outputLines.Add($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
-					}
+					outputLines.AddRange(eve.ValidationErrors.Select(ve => $"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\""));
 				}
 				System.IO.File.AppendAllLines(@"F:\SVerrors.txt", outputLines);
 				throw;

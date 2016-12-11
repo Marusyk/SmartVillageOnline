@@ -10,6 +10,7 @@ namespace BLL.Mapping
 	{
 		public AutomapperProfile()
 		{
+			// from entity to business entity
 			CreateMap<Animal, AnimalEntity>();
 			CreateMap<Council, CouncilEntity>();
 			CreateMap<ActivityType, ActivityTypeEntity>();
@@ -33,7 +34,7 @@ namespace BLL.Mapping
 			CreateMap<Region, RegionEntity>();
 			CreateMap<Speciality, SpecialityEntity>();
 			CreateMap<Street, StreetEntity>();
-			CreateMap<StreetType, StreetType>();
+			CreateMap<StreetType, StreetTypeEntity>();
 			CreateMap<Catalog, CatalogEntity>();
 			CreateMap<Document, DocumentEntity>();
 			CreateMap<Education, EducationEntity>();
@@ -41,6 +42,39 @@ namespace BLL.Mapping
 			CreateMap<House, HouseEntity>();
 			CreateMap<People, PeopleEntity>();
 			CreateMap<PersonDocument, PersonDocumentEntity>();
+
+			// from business entity to entity
+			CreateMap<AnimalEntity, Animal>();
+			CreateMap<CouncilEntity, Council>();
+			CreateMap<ActivityTypeEntity, ActivityType>();
+			CreateMap<AddressEntity, Address>();
+			CreateMap<CityEntity, City>();
+			CreateMap<CityTypeEntity, CityType>();
+			CreateMap<CompanyEntity, Company>();
+			CreateMap<CountryEntity, Country>();
+			CreateMap<DistrictEntity, District>();
+			CreateMap<DocumentTypeEntity, DocumentType>();
+			CreateMap<EducationDegreeEntity, EducationDegree>();
+			CreateMap<FamilyRelationsEntity, FamilyRelations>();
+			CreateMap<FamilyStatusEntity, FamilyStatus>();
+			CreateMap<InstitutionEntity, Institution>();
+			CreateMap<MaterialEntity, Material>();
+			CreateMap<NationalityEntity, Nationality>();
+			CreateMap<PassAuthorityEntity, PassAuthority>();
+			CreateMap<PensionTypeEntity, PensionType>();
+			CreateMap<PersonEntity, Person>();
+			CreateMap<PositionEntity, Position>();
+			CreateMap<RegionEntity, Region>();
+			CreateMap<SpecialityEntity, Speciality>();
+			CreateMap<StreetEntity, Street>();
+			CreateMap<StreetTypeEntity, StreetType>();
+			CreateMap<CatalogEntity, Catalog>();
+			CreateMap<DocumentEntity, Document>();
+			CreateMap<EducationEntity, Education>();
+			CreateMap<EmploymentEntity, Employment>();
+			CreateMap<HouseEntity, House>();
+			CreateMap<PeopleEntity, People>();
+			CreateMap<PersonDocumentEntity, PersonDocument>();
 		}
 	}
 }
