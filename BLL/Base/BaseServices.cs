@@ -98,25 +98,25 @@ namespace BLL
 		//	throw new NotImplementedException();
 		//}
 
-		//public bool Update(int id, TBusinessEntity entityToUpdate)
-		//{
-		//	if (entityToUpdate == null)
-		//		return false;
+		public bool Update(int id, TBusinessEntity entityToUpdate)
+		{
+			if (entityToUpdate == null)
+				return false;
 
-		//	using (var scope = new TransactionScope())
-		//	{
-		//		var entity = UnitOfWork.Repository<TEntity>().GetById(id);
-		//		if (entity == null)
-		//			return false;
+			using (var scope = new TransactionScope())
+			{
+				var entity = UnitOfWork.Repository<TEntity>().GetById(id);
+				if (entity == null)
+					return false;
 
-		//		var entityModel = Mapper.Map<TBusinessEntity, TEntity>(entityToUpdate);
-		//		entity = entityModel;
-		//		UnitOfWork.Repository<TEntity>().Update(entity);
-		//		UnitOfWork.Save();
-		//		scope.Complete();
-		//	}
-		//	return true;
-		//}
+				var entityModel = Mapper.Map<TBusinessEntity, TEntity>(entityToUpdate);
+				entity = entityModel;
+				UnitOfWork.Repository<TEntity>().Update(entity);
+				UnitOfWork.Save();
+				scope.Complete();
+			}
+			return true;
+		}
 
 		//public bool Delete(TBusinessEntity entityToDelete)
 		//{

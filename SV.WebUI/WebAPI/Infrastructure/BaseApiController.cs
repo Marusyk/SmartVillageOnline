@@ -88,18 +88,18 @@ namespace WebAPI.Infrastructure
 			message += "not deleted";
 			return ErrorMsg(HttpStatusCode.InternalServerError, message);
 		}
-		
-		// Update the entity
-		//public HttpResponseMessage Put(int id, [FromBody] T entity)
-		//{
-		//	if (id <= 0)
-		//		return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
 
-		//	var result = EntityService.Update(id, entity);
-		//	return result ?
-		//		Request.CreateResponse(HttpStatusCode.OK, "Updated") :
-		//		ErrorMsg(HttpStatusCode.InternalServerError, "Not updated!");
-		//}
+		//Update the entity
+		public HttpResponseMessage Put(int id, [FromBody] T entity)
+		{
+			if (id <= 0)
+				return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
+
+			var result = EntityService.Update(id, entity);
+			return result ?
+				Request.CreateResponse(HttpStatusCode.OK, "Updated") :
+				ErrorMsg(HttpStatusCode.InternalServerError, "Not updated!");
+		}
 		#endregion
 	}
 }

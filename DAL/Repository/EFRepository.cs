@@ -67,10 +67,12 @@ namespace DAL.Repository
 
 		public virtual void Update(TEntity entityToUpdate)
 		{
-			if (Context.Entry(entityToUpdate).State == EntityState.Detached)
+			var attachedEntity = Context.ChangeTracker.Entries<TEntity>().FirstOrDefault(e => e.Entity.Id == entityToUpdate.Id);
+			if (attachedEntity != null)
 			{
-				DbSet.Attach(entityToUpdate);
+				Context.Entry(attachedEntity.Entity).State = EntityState.Detached;
 			}
+
 			Context.Entry(entityToUpdate).State = EntityState.Modified;
 		}
 

@@ -19,7 +19,7 @@ namespace BLL.Interfaces
 		TEntity GetFirst(Func<TEntity, bool> predicate);
 		bool Exists(object primaryKey);
 		int Insert(TEntity entity);*/
-		//bool Update(int id, TEntity entityToUpdate);
+		bool Update(int id, TEntity entityToUpdate);
 		//bool Delete(TEntity entityToDelete);
 		bool Delete(object id);
 	}
