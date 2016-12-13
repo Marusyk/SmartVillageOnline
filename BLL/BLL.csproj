@@ -45,9 +45,11 @@
     <Compile Include="Dictionaries\AnimalService.cs" />
     <Compile Include="Dictionaries\CountryService.cs" />
     <Compile Include="Dictionaries\RegionService.cs" />
+    <Compile Include="Extensions\QueryableExtensions.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Mapping\AutomapperProfile.cs" />
     <Compile Include="Mapping\MappingConfig.cs" />
+    <Compile Include="PaginatedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -52,10 +52,10 @@ namespace WebAPI.Infrastructure
 		}
 
 		// Get entity with paging
-		//public virtual HttpResponseMessage Get(int pageNo, int pageSize)
-		//{
-		//	throw new NotImplementedException();
-		//}
+		public virtual HttpResponseMessage Get(int pageNo, int pageSize)
+		{
+			throw new NotImplementedException();
+		}
 
 		// Get entity by ID
 		public virtual HttpResponseMessage GetById(int id)
