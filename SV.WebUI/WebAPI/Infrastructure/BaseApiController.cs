@@ -40,7 +40,7 @@ namespace WebAPI.Infrastructure
 		// Get all entities
 		public virtual HttpResponseMessage Get()
 		{
-			var entities = EntityService.Get();
+			var entities = EntityService.GetAll();
 
 			if (entities != null)
 			{

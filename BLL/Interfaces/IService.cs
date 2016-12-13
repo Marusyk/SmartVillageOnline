@@ -8,8 +8,7 @@ namespace BLL.Interfaces
 {
 	public interface IService<TBusinessEntity> where TBusinessEntity : BaseBusinessEntity
 	{
-		IEnumerable<TBusinessEntity> Get();
-		//IEnumerable<TEntity> GetAll();
+		IEnumerable<TBusinessEntity> GetAll();
 		TBusinessEntity GetById(object id);
 		/*TEntity Get(Func<TEntity, bool> where);
 		IEnumerable<TEntity> GetMany(Func<TEntity, bool> where);

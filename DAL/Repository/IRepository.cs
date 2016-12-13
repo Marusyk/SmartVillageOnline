@@ -8,7 +8,6 @@ namespace DAL.Repository
 {
 	public interface IRepository<TEntity> where TEntity : BaseEntity
 	{
-		IEnumerable<TEntity> Get();
 		IEnumerable<TEntity> GetAll();
 		TEntity GetById(object id);
 		TEntity Get(Func<TEntity, bool> where);

@@ -21,9 +21,9 @@ namespace BLL
 			Repository = UnitOfWork.Repository<TEntity>();
 		}
 
-		public IEnumerable<TBusinessEntity> Get()
+		public IEnumerable<TBusinessEntity> GetAll()
 		{
-			var entities = Repository.Get();
+			var entities = Repository.GetAll();
 			var entitiesModel = Mapper.Map<List<TEntity>, List<TBusinessEntity>>(entities.ToList());
 
 			return entitiesModel;

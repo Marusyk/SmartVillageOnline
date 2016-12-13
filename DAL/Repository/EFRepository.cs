@@ -33,12 +33,6 @@ namespace DAL.Repository
 
 		#region Implementing IRepository...
 
-		public IEnumerable<TEntity> Get()
-		{
-			IQueryable<TEntity> query = DbSet;
-			return query.ToList();
-		}
-
 		public IEnumerable<TEntity> GetAll() => DbSet.ToList();
 
 		public TEntity GetById(object id) => DbSet.Find(id);
