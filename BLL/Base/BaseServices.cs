@@ -48,7 +48,7 @@ namespace BLL
 
 		public TBusinessEntity GetById(object id)
 		{
-			var entity = UnitOfWork.Repository<TEntity>().GetById(id);
+			var entity = Repository.GetById(id);
 
 			if (entity == null)
 				return null;
@@ -88,52 +88,56 @@ namespace BLL
 		//	throw new NotImplementedException();
 		//}
 
-		//public bool Exists(object primaryKey)
-		//{
-		//	throw new NotImplementedException();
-		//}
+		public bool Exists(object primaryKey) => Repository.Exists(primaryKey);
 
-		//public int Insert(TBusinessEntity entity)
-		//{
-		//	throw new NotImplementedException();
-		//}
-
-		public bool Update(int id, TBusinessEntity entityToUpdate)
+		public int Insert(TBusinessEntity businessEntity)
 		{
-			if (entityToUpdate == null)
+			if (businessEntity == null)
+				return default(int);
+
+			using (var scope = new TransactionScope())
+			{
+				var entity = Mapper.Map<TBusinessEntity, TEntity>(businessEntity);
+				Repository.Insert(entity);
+				UnitOfWork.Save();
+				scope.Complete();
+				return entity.Id;
+			}
+		}
+
+		public bool Update(int id, TBusinessEntity businessEntity)
+		{
+			if (businessEntity == null)
 				return false;
 
 			using (var scope = new TransactionScope())
 			{
-				var entity = UnitOfWork.Repository<TEntity>().GetById(id);
+				var entity = Repository.GetById(id);
 				if (entity == null)
 					return false;
 
-				var entityModel = Mapper.Map<TBusinessEntity, TEntity>(entityToUpdate);
-				entity = entityModel;
-				UnitOfWork.Repository<TEntity>().Update(entity);
+				Mapper.Map(businessEntity, entity);
+				Repository.Update(entity);
 				UnitOfWork.Save();
 				scope.Complete();
 			}
 			return true;
 		}
 
-		//public bool Delete(TBusinessEntity entityToDelete)
-		//{
-		//	var success = false;
+		public bool Delete(TBusinessEntity businessEntity)
+		{
+			if (businessEntity == null)
+				return false;
 
-		//	if (entityToDelete != null)
-		//	{
-		//		using (var scope = new TransactionScope())
-		//		{
-		//			UnitOfWork.Repository<TEntity>().Delete(entityToDelete);
-		//			UnitOfWork.Save();
-		//			scope.Complete();
-		//			success = true;
-		//		}
-		//	}
-		//	return success;
-		//}
+			using (var scope = new TransactionScope())
+			{
+				var entity = Mapper.Map<TBusinessEntity, TEntity>(businessEntity);
+				Repository.Delete(entity);
+				UnitOfWork.Save();
+				scope.Complete();
+			}
+			return true;
+		}
 
 		public bool Delete(object id)
 		{
@@ -142,11 +146,11 @@ namespace BLL
 
 			using (var scope = new TransactionScope())
 			{
-				var entity = UnitOfWork.Repository<TEntity>().GetById(id);
+				var entity = Repository.GetById(id);
 				if (entity == null)
 					return false;
 
-				UnitOfWork.Repository<TEntity>().Delete(entity);
+				Repository.Delete(entity);
 				UnitOfWork.Save();
 				scope.Complete();
 			}

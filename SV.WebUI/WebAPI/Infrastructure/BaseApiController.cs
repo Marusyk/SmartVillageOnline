@@ -28,12 +28,17 @@ namespace WebAPI.Infrastructure
 			};
 			return Request.CreateErrorResponse(statusCode, error);
 		}
+
+		private Uri GetCreatedEntityLink(int id)
+		{
+			return new Uri(Url.Link("DefaultApi", new { id }));
+		}
 		#endregion
 
 		#region Public
 
 		// Get all entities
-		public HttpResponseMessage Get()
+		public virtual HttpResponseMessage Get()
 		{
 			var entities = EntityService.Get();
 
@@ -45,15 +50,15 @@ namespace WebAPI.Infrastructure
 			var message = $"{nameof(T)}: No content";
 			return ErrorMsg(HttpStatusCode.NoContent, message);
 		}
-		
+
 		// Get entity with paging
-		//public HttpResponseMessage Get(int pageNo, int pageSize)
+		//public virtual HttpResponseMessage Get(int pageNo, int pageSize)
 		//{
 		//	throw new NotImplementedException();
 		//}
 
 		// Get entity by ID
-		public HttpResponseMessage GetById(int id)
+		public virtual HttpResponseMessage GetById(int id)
 		{
 			var entity = EntityService.GetById(id);
 			if (entity != null)
@@ -64,41 +69,38 @@ namespace WebAPI.Infrastructure
 			var message = $"No {nameof(T)} with ID = {id}";
 			return ErrorMsg(HttpStatusCode.NoContent, message);
 		}
-		/*
-		// Insert new entity
-		public HttpResponseMessage Post([FromBody] T entity)
-		{
-			throw new NotImplementedException();
-		}
-		*/
-		// Remove the entity by ID
-		public HttpResponseMessage Delete(int id)
-		{
-			if (id <= 0)
-				return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
 
+		// Insert new entity
+		public virtual HttpResponseMessage Post([FromBody] T entity)
+		{
+			var id = EntityService.Insert(entity);
+
+			if (id <= default(int)) 
+				return ErrorMsg(HttpStatusCode.InternalServerError, "Please, specify the correct entity");
+
+			var response = Request.CreateResponse(HttpStatusCode.Created, entity);
+			response.Headers.Location = GetCreatedEntityLink(id);
+			return response;
+		}
+
+		// Remove the entity by ID
+		public virtual HttpResponseMessage Delete(int id)
+		{
 			var result = EntityService.Delete(id);
 
-			var message = $"{nameof(T)} with ID = {id} was ";
-			if (result)
-			{
-				message += "deleted";
-				return Request.CreateResponse(HttpStatusCode.OK, message);
-			}
-			message += "not deleted";
-			return ErrorMsg(HttpStatusCode.InternalServerError, message);
+			return result ?
+				Request.CreateResponse(HttpStatusCode.OK, $"{nameof(T)} with ID = {id} was deleted") :
+				ErrorMsg(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
 		}
 
 		//Update the entity
-		public HttpResponseMessage Put(int id, [FromBody] T entity)
+		public virtual HttpResponseMessage Put(int id, [FromBody] T entity)
 		{
-			if (id <= 0)
-				return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
-
 			var result = EntityService.Update(id, entity);
+
 			return result ?
-				Request.CreateResponse(HttpStatusCode.OK, "Updated") :
-				ErrorMsg(HttpStatusCode.InternalServerError, "Not updated!");
+				Request.CreateResponse(HttpStatusCode.OK, entity) :
+				ErrorMsg(HttpStatusCode.InternalServerError, "Please, specify the correct id");
 		}
 		#endregion
 	}
