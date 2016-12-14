@@ -2,11 +2,11 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
-    <TargetDatabaseName>db075f8ee004d64cfebdd4a6dc017c7a27</TargetDatabaseName>
+    <TargetDatabaseName>db90d85f3577bf47dc9288a6dc0183a829</TargetDatabaseName>
     <DeployScriptFileName>SV.Database.sql</DeployScriptFileName>
-    <TargetConnectionString>Data Source=075f8ee0-04d6-4cfe-bdd4-a6dc017c7a27.sqlserver.sequelizer.com;Persist Security Info=True;User ID=uboyasgzsnzobdor;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
+    <TargetConnectionString>Data Source=90d85f35-77bf-47dc-9288-a6dc0183a829.sqlserver.sequelizer.com;Persist Security Info=False;User ID=sgdmrqqbcaedfysv;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
     <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
-    <CreateNewDatabase>True</CreateNewDatabase>
+    <CreateNewDatabase>False</CreateNewDatabase>
     <ProfileVersionNumber>1</ProfileVersionNumber>
   </PropertyGroup>
 </Project>
