@@ -9,6 +9,7 @@ namespace BLL.Interfaces
 	public interface IService<TBusinessEntity> where TBusinessEntity : BaseBusinessEntity
 	{
 		IEnumerable<TBusinessEntity> GetAll();
+		PaginatedList<TBusinessEntity> Get(int pageNo, int pageSize);
 		TBusinessEntity GetById(object id);
 		/*TEntity Get(Func<TEntity, bool> where);
 		IEnumerable<TEntity> GetMany(Func<TEntity, bool> where);

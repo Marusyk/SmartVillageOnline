@@ -7,6 +7,7 @@ using DAL.Repository;
 using DAL.UnitOfWork;
 using BusinessEntities.BaseBusinessEntities;
 using System.Transactions;
+using BLL.Extensions;
 
 namespace BLL
 {
@@ -29,22 +30,16 @@ namespace BLL
 			return entitiesModel;
 		}
 
-		//public IEnumerable<TBusinessEntity> GetAll()
-		//{
+		public PaginatedList<TBusinessEntity> Get(int pageNo, int pageSize)
+		{
+			var entities = Repository.GetAll();
+			var entitiesModel = Mapper.Map<List<TEntity>, List<TBusinessEntity>>(entities.ToList());
 
-		//	var entities = UnitOfWork.Repository<TEntity>().GetAll().ToList();
+			pageNo = pageNo > 0 ? pageNo : 1;
+			pageSize = pageSize > 0 ? pageSize : 0;
 
-		//	if (!entities.Any())
-		//		return null;
-
-		//	var config = new MapperConfiguration(cfg =>
-		//	{
-		//		cfg.CreateMap<TEntity, TBusinessEntity>();
-		//	});
-		//	var mapper = config.CreateMapper();
-		//	var entitiesModel = mapper.Map<List<TEntity>, List<TBusinessEntity>>(entities);
-		//	return entitiesModel;
-		//}
+			return entitiesModel.ToPaginatedList(pageNo, pageSize);
+		}
 
 		public TBusinessEntity GetById(object id)
 		{

@@ -1,10 +1,11 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace BLL.Extensions
 {
-	public static class QueryableExtensions
+	public static class EnumerableExtensions
 	{
-		public static PaginatedList<T> ToPaginatedList<T>(this IQueryable<T> query, int pageIndex, int pageSize)
+		public static PaginatedList<T> ToPaginatedList<T>(this IEnumerable<T> query, int pageIndex, int pageSize)
 		{
 			var totalCount = query.Count();
 			var collection = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);

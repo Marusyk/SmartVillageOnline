@@ -11,7 +11,7 @@ namespace BLL
 		public int TotalCount { get; private set; }
 		public int TotalPageCount { get; }
 
-		public PaginatedList(int pageIndex, int pageSize, int totalCount, IQueryable<T> source)
+		public PaginatedList(int pageIndex, int pageSize, int totalCount, IEnumerable<T> source)
 		{
 			AddRange(source);
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -54,7 +55,22 @@ namespace WebAPI.Infrastructure
 		// Get entity with paging
 		public virtual HttpResponseMessage Get(int pageNo, int pageSize)
 		{
-			throw new NotImplementedException();
+			var paginatedEntities = EntityService.Get(pageNo, pageSize);
+
+			if (!paginatedEntities.Any())
+			{
+				var message = $"{nameof(T)}: No content";
+				return ErrorMsg(HttpStatusCode.NoContent, message);
+			}
+
+			var response = Request.CreateResponse(HttpStatusCode.OK, paginatedEntities);
+			response.Headers.Add("X-Paging-PageNo", paginatedEntities.PageIndex.ToString());
+			response.Headers.Add("X-Paging-PageSize", paginatedEntities.PageSize.ToString());
+			response.Headers.Add("X-Paging-PageCount", paginatedEntities.TotalPageCount.ToString());
+			response.Headers.Add("X-Paging-TotalRecordCount", paginatedEntities.TotalCount.ToString());
+			response.Headers.Add("X-Paging-HasPreviousPage", paginatedEntities.HasPreviousPage.ToString());
+			response.Headers.Add("X-Paging-HasNextPage", paginatedEntities.HasNextPage.ToString());
+			return response;
 		}
 
 		// Get entity by ID
