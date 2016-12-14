@@ -4,6 +4,7 @@ using DependencyResolution.Interfaces;
 using BLL.Dictionaries;
 using BLL.Interfaces;
 using BLL.Mapping;
+using BusinessEntities.SystemEntities;
 using DAL.UnitOfWork;
 
 namespace BLL
@@ -14,6 +15,8 @@ namespace BLL
 		public void SetUp(IRegisterComponent registerComponent)
 		{
 			MappingConfig.RegisterMapping();
+
+			registerComponent.RegisterType(typeof(IService<SYS_DictionaryEntity>), typeof(DictionaryService));
 
 			registerComponent.RegisterType(typeof(IUnitOfWork), typeof(UnitOfWork));
 			registerComponent.RegisterType(typeof(IService<AnimalEntity>), typeof(AnimalService));

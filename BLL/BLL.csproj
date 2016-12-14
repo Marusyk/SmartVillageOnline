@@ -47,6 +47,7 @@
     <Compile Include="DependencyResolver.cs" />
     <Compile Include="Dictionaries\AnimalService.cs" />
     <Compile Include="Dictionaries\CountryService.cs" />
+    <Compile Include="Dictionaries\DictionaryService.cs" />
     <Compile Include="Dictionaries\RegionService.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Interfaces\IService.cs" />

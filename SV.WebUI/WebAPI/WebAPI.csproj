@@ -261,6 +261,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Dictionaries\AnimalController.cs" />
     <Compile Include="Controllers\Dictionaries\CountryController.cs" />
+    <Compile Include="Controllers\Dictionaries\DictionaryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Dictionaries\RegionController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -345,6 +346,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Sunflower-icon.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -371,6 +373,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TestClientReferences.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TestClientDialogs.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\DictionaryTest.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -403,6 +406,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\TestDict.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Region\" />

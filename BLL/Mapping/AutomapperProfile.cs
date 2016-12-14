@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using BusinessEntities;
 using BusinessEntities.Dictionaries;
+using BusinessEntities.SystemEntities;
 using DataModel;
 using DataModel.Dictionaries;
+using DataModel.SystemEntities;
 
 namespace BLL.Mapping
 {
@@ -42,6 +44,7 @@ namespace BLL.Mapping
 			CreateMap<House, HouseEntity>();
 			CreateMap<People, PeopleEntity>();
 			CreateMap<PersonDocument, PersonDocumentEntity>();
+			CreateMap<SYS_Dictionary, SYS_DictionaryEntity>();
 
 			// from business entity to entity
 			CreateMap<AnimalEntity, Animal>();
@@ -75,6 +78,7 @@ namespace BLL.Mapping
 			CreateMap<HouseEntity, House>();
 			CreateMap<PeopleEntity, People>();
 			CreateMap<PersonDocumentEntity, PersonDocument>();
+			CreateMap<SYS_DictionaryEntity, SYS_Dictionary>();
 		}
 	}
 }
