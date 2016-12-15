@@ -39,21 +39,21 @@ function AddEntity() {
 	if (dict === "Region") {
 		entities = {
 			Name: $("#txtaddName").val(),
-			CountryID: $("#linked1").val()
+			CountryId: $("#linked1").val()
 		};
 	} else
 		if (dict === "District") {
 			entities = {
 				Name: $("#txtaddName").val(),
-				RegionID: $("#linked1").val()
+				RegionId: $("#linked1").val()
 			};
 		} else
 			if (dict === "City") {
 				entities = {
 					Name: $("#txtaddName").val(),
-					RegionID: $("#linked3").val(),
-					DistrictID: $("#linked2").val(),
-					CityTypeID: $("#linked1").val()
+					RegionId: $("#linked3").val(),
+					DistrictId: $("#linked2").val(),
+					CityTypeId: $("#linked1").val()
 				};
 			} else {
 				entities = {
@@ -95,9 +95,9 @@ function DeleteEntity() {
 
 
 function WriteResponse(entities) {
-	var strResult = "<table class='table table-hover'><th>ID</th><th>Name</th><th>LastUpdUS</th><th>LastUpdDT</th>";
+	var strResult = "<table class='table table-hover'><th>Id</th><th>Name</th><th>LastUpdUs</th><th>LastUpdDt</th>";
 	$.each(entities, function (index, entity) {
-		strResult += "<tr><td>" + entity.ID + "</td><td> " + entity.Name + "</td><td>" + entity.LastUpdUS + "</td><td>" + entity.LastUpdDT + "</td></tr>";
+		strResult += "<tr><td>" + entity.Id + "</td><td> " + entity.Name + "</td><td>" + entity.LastUpdUs + "</td><td>" + entity.LastUpdDt + "</td></tr>";
 	});
 	strResult += "</table>";
 	$("#divResult").html(strResult);
@@ -106,8 +106,8 @@ function WriteResponse(entities) {
 
 function ShowEntity(entity) {
 	if (entity != null) {
-		var strResult = "<table class='table table-hover'><th>ID</th><th>Name</th><th>LastUpdUS</th><th>LastUpdDT</th>";
-		strResult += "<tr><td>" + entity.ID + "</td><td> " + entity.Name + "</td><td>" + entity.LastUpdUS + "</td><td>" + entity.LastUpdDT + "</td></tr>";
+		var strResult = "<table class='table table-hover'><th>Id</th><th>Name</th><th>LastUpdUs</th><th>LastUpdDt</th>";
+		strResult += "<tr><td>" + entity.Id + "</td><td> " + entity.Name + "</td><td>" + entity.LastUpdUs + "</td><td>" + entity.LastUpdDt + "</td></tr>";
 		strResult += "</table>";
 		$("#divResult").html(strResult);
 		$("#lblResult").show();
@@ -127,7 +127,7 @@ function GetDictionary() {
 		data: {},
 		success: function (result) {
 			$.each(result, function (i) {
-				$("#sysDictList").append($("<option></option>").val(result[i].ID).html(result[i].Name));
+				$("#sysDictList").append($("<option></option>").val(result[i].Id).html(result[i].Name));
 			});
 		},
 		failure: function () {
@@ -147,7 +147,7 @@ function GetRelatedEntities(name, comp) {
 		success: function (result) {
 			$(comp).empty();
 			$.each(result, function (i, result) {
-				$(comp).append($("<option></option>").val(result.ID).html(result.Name));
+				$(comp).append($("<option></option>").val(result.Id).html(result.Name));
 			});
 		},
 		failure: function () {
