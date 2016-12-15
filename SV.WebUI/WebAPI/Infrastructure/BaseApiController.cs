@@ -83,7 +83,7 @@ namespace WebAPI.Infrastructure
 			}
 
 			var message = $"No {nameof(T)} with ID = {id}";
-			return ErrorMsg(HttpStatusCode.NoContent, message);
+			return ErrorMsg(HttpStatusCode.NotFound, message);
 		}
 
 		// Insert new entity
@@ -92,7 +92,7 @@ namespace WebAPI.Infrastructure
 			var id = EntityService.Insert(entity);
 
 			if (id <= default(int)) 
-				return ErrorMsg(HttpStatusCode.InternalServerError, "Please, specify the correct entity");
+				return ErrorMsg(HttpStatusCode.BadRequest, "Please, specify the correct entity");
 
 			var response = Request.CreateResponse(HttpStatusCode.Created, entity);
 			response.Headers.Location = GetCreatedEntityLink(id);
@@ -105,18 +105,22 @@ namespace WebAPI.Infrastructure
 			var result = EntityService.Delete(id);
 
 			return result ?
-				Request.CreateResponse(HttpStatusCode.OK, $"{nameof(T)} with ID = {id} was deleted") :
-				ErrorMsg(HttpStatusCode.NotAcceptable, "Please, specify the correct id");
+				Request.CreateResponse(HttpStatusCode.NoContent, $"{nameof(T)} with ID = {id} was deleted") :
+				ErrorMsg(HttpStatusCode.NotFound, "Please, specify the correct id");
 		}
 
 		//Update the entity
 		public virtual HttpResponseMessage Put(int id, [FromBody] T entity)
 		{
+			if (entity == null || entity.Id != id)
+			{
+				return ErrorMsg(HttpStatusCode.BadRequest, "Please, specify the correct entity");
+			}
 			var result = EntityService.Update(id, entity);
 
 			return result ?
-				Request.CreateResponse(HttpStatusCode.OK, entity) :
-				ErrorMsg(HttpStatusCode.InternalServerError, "Please, specify the correct id");
+				Request.CreateResponse(HttpStatusCode.NoContent) :
+				ErrorMsg(HttpStatusCode.InternalServerError, "Please, specify the correct entity");
 		}
 		#endregion
 	}
