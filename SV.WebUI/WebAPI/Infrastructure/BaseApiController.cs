@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.OData;
 using BLL.Interfaces;
 using BusinessEntities.BaseBusinessEntities;
 
@@ -39,6 +40,7 @@ namespace WebAPI.Infrastructure
 		#region Public
 
 		// Get all entities
+		[EnableQuery]
 		public virtual HttpResponseMessage Get()
 		{
 			var entities = EntityService.GetAll();
