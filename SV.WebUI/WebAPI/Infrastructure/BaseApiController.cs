@@ -119,7 +119,7 @@ namespace WebAPI.Infrastructure
 			var result = EntityService.Update(id, entity);
 
 			return result ?
-				Request.CreateResponse(HttpStatusCode.NoContent) :
+				Request.CreateResponse(HttpStatusCode.OK, entity) :
 				ErrorMsg(HttpStatusCode.InternalServerError, "Please, specify the correct entity");
 		}
 		#endregion
